@@ -1,0 +1,92 @@
+{
+  "request": {
+    "method": "POST",
+    "endpoint": "/api/agents/",
+    "full_url": "https://api.automatos.app/api/agents/",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-type": "application/json",
+      "x-api-key": "test_api_key_for_backend_validation_2025",
+      "authorization": "Bearer test_api_key_for_backend_validation_2025"
+    },
+    "data": {
+      "name": "Test Agent Secondary 1754049314",
+      "agent_type": "security_expert",
+      "description": "Secondary test agent created at 1754049314",
+      "configuration": {
+        "security_frameworks": [
+          "OWASP",
+          "NIST"
+        ],
+        "scan_types": [
+          "static",
+          "dynamic"
+        ],
+        "focus_areas": [
+          "vulnerabilities",
+          "compliance"
+        ]
+      }
+    },
+    "expected_status": [
+      200,
+      201
+    ],
+    "timestamp": "2025-08-01T11:55:13.249593"
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "date": "Fri, 01 Aug 2025 11:55:13 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-encoding": "gzip"
+    },
+    "data": {
+      "id": 13,
+      "name": "Test Agent Secondary 1754049314",
+      "description": "Secondary test agent created at 1754049314",
+      "agent_type": "security_expert",
+      "status": "active",
+      "configuration": {
+        "security_frameworks": [
+          "OWASP",
+          "NIST"
+        ],
+        "scan_types": [
+          "static",
+          "dynamic"
+        ],
+        "focus_areas": [
+          "vulnerabilities",
+          "compliance"
+        ]
+      },
+      "performance_metrics": null,
+      "priority_level": "medium",
+      "max_concurrent_tasks": 5,
+      "auto_start": false,
+      "created_at": "2025-08-01T11:55:13.262376",
+      "updated_at": "2025-08-01T11:55:13.262376",
+      "created_by": "api",
+      "skills": []
+    },
+    "raw_text": "{\"id\":13,\"name\":\"Test Agent Secondary 1754049314\",\"description\":\"Secondary test agent created at 1754049314\",\"agent_type\":\"security_expert\",\"status\":\"active\",\"configuration\":{\"security_frameworks\":[\"OWASP\",\"NIST\"],\"scan_types\":[\"static\",\"dynamic\"],\"focus_areas\":[\"vulnerabilities\",\"compliance\"]},\"performance_metrics\":null,\"priority_level\":\"medium\",\"max_concurrent_tasks\":5,\"auto_start\":false,\"created_at\":\"2025-08-01T11:55:13.262376\",\"updated_at\":\"2025-08-01T11:55:13.262376\",\"created_by\":\"api\",\"skills\":[]}",
+    "content_length": 508,
+    "response_time_ms": 33.05
+  },
+  "validation": {
+    "is_success": true,
+    "expected_status": [
+      200,
+      201
+    ],
+    "actual_status": 200
+  },
+  "timestamp": "2025-08-01T11:55:13.282775"
+}

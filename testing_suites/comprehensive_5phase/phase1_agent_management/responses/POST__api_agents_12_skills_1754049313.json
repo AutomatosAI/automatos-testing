@@ -1,0 +1,85 @@
+{
+  "request": {
+    "method": "POST",
+    "endpoint": "/api/agents/12/skills",
+    "full_url": "https://api.automatos.app/api/agents/12/skills",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-type": "application/json",
+      "x-api-key": "test_api_key_for_backend_validation_2025",
+      "authorization": "Bearer test_api_key_for_backend_validation_2025"
+    },
+    "data": {
+      "name": "Security Analysis",
+      "category": "security",
+      "description": "Security assessment and analysis capabilities",
+      "proficiency_level": "expert",
+      "parameters": {
+        "scan_types": [
+          "static",
+          "dynamic"
+        ],
+        "frameworks": [
+          "OWASP"
+        ]
+      }
+    },
+    "expected_status": [
+      200,
+      201
+    ],
+    "timestamp": "2025-08-01T11:55:13.353005"
+  },
+  "response": {
+    "status_code": 422,
+    "headers": {
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "date": "Fri, 01 Aug 2025 11:55:13 GMT",
+      "content-type": "application/json",
+      "content-length": "359",
+      "connection": "keep-alive"
+    },
+    "data": {
+      "detail": [
+        {
+          "type": "list_type",
+          "loc": [
+            "body"
+          ],
+          "msg": "Input should be a valid list",
+          "input": {
+            "name": "Security Analysis",
+            "category": "security",
+            "description": "Security assessment and analysis capabilities",
+            "proficiency_level": "expert",
+            "parameters": {
+              "scan_types": [
+                "static",
+                "dynamic"
+              ],
+              "frameworks": [
+                "OWASP"
+              ]
+            }
+          },
+          "url": "https://errors.pydantic.dev/2.5/v/list_type"
+        }
+      ]
+    },
+    "raw_text": "{\"detail\":[{\"type\":\"list_type\",\"loc\":[\"body\"],\"msg\":\"Input should be a valid list\",\"input\":{\"name\":\"Security Analysis\",\"category\":\"security\",\"description\":\"Security assessment and analysis capabilities\",\"proficiency_level\":\"expert\",\"parameters\":{\"scan_types\":[\"static\",\"dynamic\"],\"frameworks\":[\"OWASP\"]}},\"url\":\"https://errors.pydantic.dev/2.5/v/list_type\"}]}",
+    "content_length": 359,
+    "response_time_ms": 7.8
+  },
+  "validation": {
+    "is_success": false,
+    "expected_status": [
+      200,
+      201
+    ],
+    "actual_status": 422
+  },
+  "timestamp": "2025-08-01T11:55:13.360886"
+}

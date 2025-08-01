@@ -1,0 +1,12 @@
+{
+  timestamp: 2025-07-30T22:10:46.000Z,
+  test_type: performance_benchmark,
+  total_requests: 12,
+  total_failures: 0,
+  success_rate: 100.0,
+  average_response_time: 260.6,
+  min_response_time: 5.1,
+  max_response_time: 1018.0,
+  requests_per_second: 0.4,
+  failure_rate: 0.0
+}

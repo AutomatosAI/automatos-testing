@@ -1,0 +1,189 @@
+{
+  "test_execution": {
+    "timestamp": "2025-08-01T10:30:27.092976",
+    "overall_success": false,
+    "total_duration_seconds": 15.21,
+    "total_duration_minutes": 0.25,
+    "phases_executed": 5
+  },
+  "phase_results": {
+    "phase_1": {
+      "name": "Phase 1: Agent Management",
+      "success": true,
+      "duration": 1.5576486587524414,
+      "script": "phase1_agent_management/scripts/comprehensive_agent_test.py"
+    },
+    "phase_2": {
+      "name": "Phase 2: Workflow Orchestration",
+      "success": false,
+      "duration": 1.0734574794769287,
+      "script": "phase2_workflow_orchestration/scripts/comprehensive_workflow_test.py"
+    },
+    "phase_3": {
+      "name": "Phase 3: Document Management",
+      "success": false,
+      "duration": 1.0735130310058594,
+      "script": "phase3_document_management/scripts/comprehensive_document_test.py"
+    },
+    "phase_4": {
+      "name": "Phase 4: Context Engineering",
+      "success": true,
+      "duration": 1.5599491596221924,
+      "script": "phase4_context_engineering/scripts/comprehensive_context_test.py"
+    },
+    "phase_5": {
+      "name": "Phase 5: Performance Analytics",
+      "success": false,
+      "duration": 1.9404239654541016,
+      "script": "phase5_performance_analytics/scripts/comprehensive_performance_test.py"
+    }
+  },
+  "summary": {
+    "successful_phases": 2,
+    "failed_phases": 3,
+    "success_rate": 40.0,
+    "total_phases": 5
+  },
+  "performance_summary": {
+    "fastest_phase": "Phase 2: Workflow Orchestration",
+    "slowest_phase": "Phase 5: Performance Analytics",
+    "average_phase_duration": 1.44
+  },
+  "detailed_log": [
+    {
+      "timestamp": "2025-08-01T10:30:11.879012",
+      "event_type": "phase_start",
+      "phase_name": "Phase 1: Agent Management",
+      "data": {
+        "script": "phase1_agent_management/scripts/comprehensive_agent_test.py"
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:13.436600",
+      "event_type": "phase_output",
+      "phase_name": "Phase 1: Agent Management",
+      "data": {
+        "stdout": "\ud83d\ude80 COMPREHENSIVE AGENT MANAGEMENT TESTING\n==========================================\n\ud83d\ude80 STARTING COMPREHENSIVE AGENT MANAGEMENT TESTING\n============================================================\n\n\ud83d\udd0d PHASE 1: ENVIRONMENT SETUP & DISCOVERY\n\u2705 Environment setup completed - 65 endpoints discovered\n\n\ud83e\udd16 PHASE 2: AGENT CRUD OPERATIONS\n\u2705 CRUD operations completed - 0 agents created\n\n\ud83d\udee0\ufe0f PHASE 3: AGENT SKILLS MANAGEMENT\n\u26a0\ufe0f No agents available for skills testing\n\n\u26a1 PHASE 4: AGENT EXECUTION & STATUS\n\u26a0\ufe0f No agents available for execution testing\n\n\ud83e\udde0 PHASE 5: ADVANCED OPERATIONS\n\u2705 Advanced operations testing completed\n\n\ud83d\udea8 PHASE 6: ERROR HANDLING\n\u2705 Error handling testing completed\n\n\u26a1 PHASE 7: PERFORMANCE TESTING\n\u2705 Performance testing completed\n\n\ud83e\uddf9 PHASE 8: CLEANUP\n\u2705 Cleanup completed - 0 agents deleted\n\n\ud83d\udcca AGENT MANAGEMENT TESTING COMPLETED\n\ud83d\udcca Total API Calls: 17\n\u2705 Successful: 13\n\u274c Failed: 4\n\ud83d\udcc8 Success Rate: 76.5%\n\ud83c\udfaf Required Threshold: 70.0%\n\u2705 AGENT MANAGEMENT TESTS PASSED - Meeting minimum threshold\n\n\ud83c\udf89 COMPREHENSIVE AGENT MANAGEMENT TESTING COMPLETED SUCCESSFULLY!\n",
+        "stderr": "",
+        "return_code": 0
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:13.436680",
+      "event_type": "phase_complete",
+      "phase_name": "Phase 1: Agent Management",
+      "data": {
+        "success": true,
+        "duration_seconds": 1.56
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:15.438911",
+      "event_type": "phase_start",
+      "phase_name": "Phase 2: Workflow Orchestration",
+      "data": {
+        "script": "phase2_workflow_orchestration/scripts/comprehensive_workflow_test.py"
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:16.512307",
+      "event_type": "phase_output",
+      "phase_name": "Phase 2: Workflow Orchestration",
+      "data": {
+        "stdout": "\ud83d\ude80 COMPREHENSIVE WORKFLOW ORCHESTRATION TESTING\n===============================================\n\ud83d\ude80 STARTING COMPREHENSIVE WORKFLOW ORCHESTRATION TESTING\n======================================================================\n\n\ud83d\udd0d PHASE 1: ENVIRONMENT SETUP & DISCOVERY\n\u2705 Environment setup completed - 65 endpoints discovered\n\ud83d\udca5 COMPREHENSIVE TESTING FAILED: 'WorkflowOrchestrationTester' object has no attribute 'test_workflow_patterns'\n\ud83d\udd0d Error details: Traceback (most recent call last):\n  File \"/root/automotas_tests/testing_suites/comprehensive_5phase/phase2_workflow_orchestration/scripts/comprehensive_workflow_test.py\", line 56, in run_comprehensive_tests\n    self.test_workflow_patterns()\nAttributeError: 'WorkflowOrchestrationTester' object has no attribute 'test_workflow_patterns'. Did you mean: 'test_workflow_templates'?\n\n\n\ud83d\udca5 COMPREHENSIVE WORKFLOW ORCHESTRATION TESTING FAILED!\n",
+        "stderr": "",
+        "return_code": 1
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:16.512367",
+      "event_type": "phase_complete",
+      "phase_name": "Phase 2: Workflow Orchestration",
+      "data": {
+        "success": false,
+        "duration_seconds": 1.07
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:18.514620",
+      "event_type": "phase_start",
+      "phase_name": "Phase 3: Document Management",
+      "data": {
+        "script": "phase3_document_management/scripts/comprehensive_document_test.py"
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:19.587921",
+      "event_type": "phase_output",
+      "phase_name": "Phase 3: Document Management",
+      "data": {
+        "stdout": "\ud83d\ude80 COMPREHENSIVE DOCUMENT MANAGEMENT TESTING\n============================================\n\ud83d\ude80 STARTING COMPREHENSIVE DOCUMENT MANAGEMENT TESTING\n================================================================\n\n\ud83d\udd0d PHASE 1: ENVIRONMENT SETUP & DISCOVERY\n\n\ud83d\udccb Testing Document Endpoint Availability:\n  /api/documents/: \u2705 Available\n  /api/documents/processing/pipeline: \u2705 Available\n  /api/documents/processing/live-status: \u2705 Available\n  /api/documents/analytics/overview: \u2705 Available\n  /api/documents/analytics/search-patterns: \u2705 Available\n\u2705 Environment setup completed - 65 total endpoints discovered\n\ud83d\udca5 COMPREHENSIVE TESTING FAILED: 'DocumentManagementTester' object has no attribute 'test_document_upload'\n\ud83d\udd0d Error details: Traceback (most recent call last):\n  File \"/root/automotas_tests/testing_suites/comprehensive_5phase/phase3_document_management/scripts/comprehensive_document_test.py\", line 58, in run_comprehensive_tests\n    self.test_document_upload()\nAttributeError: 'DocumentManagementTester' object has no attribute 'test_document_upload'\n\n\n\ud83d\udca5 COMPREHENSIVE DOCUMENT MANAGEMENT TESTING FAILED!\n",
+        "stderr": "",
+        "return_code": 1
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:19.588126",
+      "event_type": "phase_complete",
+      "phase_name": "Phase 3: Document Management",
+      "data": {
+        "success": false,
+        "duration_seconds": 1.07
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:21.590342",
+      "event_type": "phase_start",
+      "phase_name": "Phase 4: Context Engineering",
+      "data": {
+        "script": "phase4_context_engineering/scripts/comprehensive_context_test.py"
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:23.150235",
+      "event_type": "phase_output",
+      "phase_name": "Phase 4: Context Engineering",
+      "data": {
+        "stdout": "\ud83d\ude80 COMPREHENSIVE CONTEXT ENGINEERING TESTING\n============================================\n\ud83d\ude80 STARTING COMPREHENSIVE CONTEXT ENGINEERING TESTING\n======================================================================\n\n\ud83d\udd0d PHASE 1: ENVIRONMENT SETUP & CONTEXT SYSTEM DISCOVERY\n\n\ud83d\udccb Testing Context Engineering Endpoint Availability:\n  /api/context/stats: \u2705 Available\n  /api/context/patterns: \u2705 Available\n  /api/context/sources: \u2705 Available\n  /api/context/embeddings/stats: \u2705 Available\n\u2705 Environment setup completed - 65 total endpoints discovered\n\n\ud83d\udd27 PHASE 2: CONTEXT INITIALIZATION & MANAGEMENT\n\u2705 Context initialization completed - 0 contexts initialized\n\n\ud83e\udde0 PHASE 3: RAG SYSTEM PERFORMANCE TESTING\n\u2705 RAG system testing completed - 1 RAG operations tested\n\n\ud83d\udd0d PHASE 4: CONTEXT QUERY & RETRIEVAL OPERATIONS\n\u2705 Context query testing completed - 0 queries executed\n\n\ud83d\udd22 PHASE 5: VECTOR EMBEDDINGS OPERATIONS\n\u2705 Vector embeddings testing completed - 1 embeddings generated\n\n\ud83d\udcda PHASE 6: CONTEXT SOURCES & DISTRIBUTION\n\u2705 Context sources testing completed\n\n\ud83d\udcca PHASE 7: CONTEXT PERFORMANCE METRICS & ANALYTICS\n\u2705 Context analytics testing completed\n\n\ud83e\udde0 PHASE 8: ADVANCED CONTEXT OPERATIONS\n\u2705 Advanced context operations testing completed\n\n\ud83d\udea8 PHASE 9: ERROR HANDLING & EDGE CASES\n\u2705 Error handling testing completed\n\n\u26a1 PHASE 10: PERFORMANCE & STRESS TESTING\n\u2705 Performance testing completed\n\n\ud83d\udcca CONTEXT ENGINEERING TESTING COMPLETED\n\ud83d\udcca Total API Calls: 53\n\u2705 Successful: 50\n\u274c Failed: 3\n\ud83d\udcc8 Success Rate: 94.3%\n\ud83c\udfaf Required Threshold: 70.0%\n\u2705 CONTEXT ENGINEERING TESTS PASSED - Meeting minimum threshold\n\n\ud83c\udf89 COMPREHENSIVE CONTEXT ENGINEERING TESTING COMPLETED SUCCESSFULLY!\n",
+        "stderr": "",
+        "return_code": 0
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:23.150292",
+      "event_type": "phase_complete",
+      "phase_name": "Phase 4: Context Engineering",
+      "data": {
+        "success": true,
+        "duration_seconds": 1.56
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:25.152505",
+      "event_type": "phase_start",
+      "phase_name": "Phase 5: Performance Analytics",
+      "data": {
+        "script": "phase5_performance_analytics/scripts/comprehensive_performance_test.py"
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:27.092795",
+      "event_type": "phase_output",
+      "phase_name": "Phase 5: Performance Analytics",
+      "data": {
+        "stdout": "\ud83d\ude80 COMPREHENSIVE PERFORMANCE ANALYTICS TESTING\n==============================================\n\ud83d\ude80 STARTING COMPREHENSIVE PERFORMANCE ANALYTICS TESTING\n===========================================================================\n\n\ud83d\udd0d PHASE 1: ENVIRONMENT SETUP & PERFORMANCE SYSTEM DISCOVERY\n\n\ud83d\udccb Testing Performance Analytics Endpoint Availability:\n  /api/system/metrics: \u2705 Available\n  /api/system/performance/dashboard: \u2705 Available\n  /api/analytics/performance: \u2705 Available\n  /api/system/health/detailed: \u2705 Available\n\u2705 Environment setup completed - 65 total endpoints discovered\n\ud83d\udca5 COMPREHENSIVE TESTING FAILED: 'PerformanceAnalyticsTester' object has no attribute 'test_system_metrics'\n\ud83d\udd0d Error details: Traceback (most recent call last):\n  File \"/root/automotas_tests/testing_suites/comprehensive_5phase/phase5_performance_analytics/scripts/comprehensive_performance_test.py\", line 58, in run_comprehensive_tests\n    self.test_system_metrics()\nAttributeError: 'PerformanceAnalyticsTester' object has no attribute 'test_system_metrics'\n\n\n\ud83d\udca5 COMPREHENSIVE PERFORMANCE ANALYTICS TESTING FAILED!\n",
+        "stderr": "",
+        "return_code": 1
+      }
+    },
+    {
+      "timestamp": "2025-08-01T10:30:27.092931",
+      "event_type": "phase_complete",
+      "phase_name": "Phase 5: Performance Analytics",
+      "data": {
+        "success": false,
+        "duration_seconds": 1.94
+      }
+    }
+  ]
+}

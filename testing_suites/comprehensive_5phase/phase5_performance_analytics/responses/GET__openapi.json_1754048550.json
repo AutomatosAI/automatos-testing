@@ -1,0 +1,3862 @@
+{
+  "request": {
+    "method": "GET",
+    "endpoint": "/openapi.json",
+    "full_url": "https://api.automatos.app/openapi.json",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-type": "application/json",
+      "x-api-key": "test_api_key_for_backend_validation_2025",
+      "authorization": "Bearer test_api_key_for_backend_validation_2025"
+    },
+    "data": null,
+    "expected_status": 200,
+    "timestamp": "2025-08-01T11:42:30.509590"
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "date": "Fri, 01 Aug 2025 11:42:30 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-encoding": "gzip"
+    },
+    "data": {
+      "openapi": "3.1.0",
+      "info": {
+        "title": "Automotas AI API",
+        "description": "Comprehensive API for Automotas AI agent management, workflows, and document processing",
+        "version": "1.0.0"
+      },
+      "paths": {
+        "/api/workflows/active": {
+          "get": {
+            "tags": [
+              "workflow-enhanced"
+            ],
+            "summary": "Get Active Workflows",
+            "description": "Get all currently active workflows with live status",
+            "operationId": "get_active_workflows_api_workflows_active_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/workflows/stats/dashboard": {
+          "get": {
+            "tags": [
+              "workflow-enhanced"
+            ],
+            "summary": "Get Workflow Dashboard Stats",
+            "description": "Get comprehensive workflow statistics for dashboard",
+            "operationId": "get_workflow_dashboard_stats_api_workflows_stats_dashboard_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/workflows/{workflow_id}/live-progress": {
+          "get": {
+            "tags": [
+              "workflow-enhanced"
+            ],
+            "summary": "Get Workflow Live Progress",
+            "description": "Get live progress for a specific workflow execution",
+            "operationId": "get_workflow_live_progress_api_workflows__workflow_id__live_progress_get",
+            "parameters": [
+              {
+                "name": "workflow_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Workflow Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/workflows/{workflow_id}/execute-advanced": {
+          "post": {
+            "tags": [
+              "workflow-enhanced"
+            ],
+            "summary": "Execute Workflow Advanced",
+            "description": "Execute workflow with advanced options and live progress tracking",
+            "operationId": "execute_workflow_advanced_api_workflows__workflow_id__execute_advanced_post",
+            "parameters": [
+              {
+                "name": "workflow_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Workflow Id"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "title": "Execution Data"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/workflows/templates/recommended": {
+          "get": {
+            "tags": [
+              "workflow-enhanced"
+            ],
+            "summary": "Get Recommended Workflow Templates",
+            "description": "Get recommended workflow templates based on system usage",
+            "operationId": "get_recommended_workflow_templates_api_workflows_templates_recommended_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/documents/processing/pipeline": {
+          "get": {
+            "tags": [
+              "document-processing"
+            ],
+            "summary": "Get Processing Pipeline",
+            "description": "Get document processing pipeline status and metrics",
+            "operationId": "get_processing_pipeline_api_documents_processing_pipeline_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/documents/processing/live-status": {
+          "get": {
+            "tags": [
+              "document-processing"
+            ],
+            "summary": "Get Live Processing Status",
+            "description": "Get real-time processing status for live updates",
+            "operationId": "get_live_processing_status_api_documents_processing_live_status_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/documents/analytics/overview": {
+          "get": {
+            "tags": [
+              "document-processing"
+            ],
+            "summary": "Get Document Analytics",
+            "description": "Get comprehensive document analytics and insights",
+            "operationId": "get_document_analytics_api_documents_analytics_overview_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/documents/analytics/search-patterns": {
+          "get": {
+            "tags": [
+              "document-processing"
+            ],
+            "summary": "Get Search Patterns",
+            "description": "Get document search and usage patterns",
+            "operationId": "get_search_patterns_api_documents_analytics_search_patterns_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/documents/processing/reprocess-all": {
+          "post": {
+            "tags": [
+              "document-processing"
+            ],
+            "summary": "Reprocess All Documents",
+            "description": "Reprocess all documents in the system",
+            "operationId": "reprocess_all_documents_api_documents_processing_reprocess_all_post",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/config": {
+          "post": {
+            "tags": [
+              "system"
+            ],
+            "summary": "Create System Config",
+            "description": "Create or update system configuration",
+            "operationId": "create_system_config_api_system_config_post",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SystemConfigCreate"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/SystemConfigResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "get": {
+            "tags": [
+              "system"
+            ],
+            "summary": "List System Configs",
+            "description": "List system configurations",
+            "operationId": "list_system_configs_api_system_config_get",
+            "parameters": [
+              {
+                "name": "skip",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 0,
+                  "title": "Skip"
+                }
+              },
+              {
+                "name": "limit",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "maximum": 1000,
+                  "minimum": 1,
+                  "default": 100,
+                  "title": "Limit"
+                }
+              },
+              {
+                "name": "search",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Search"
+                }
+              },
+              {
+                "name": "active_only",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "boolean",
+                  "default": true,
+                  "title": "Active Only"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SystemConfigResponse"
+                      },
+                      "title": "Response List System Configs Api System Config Get"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/config/{config_key}": {
+          "get": {
+            "tags": [
+              "system"
+            ],
+            "summary": "Get System Config",
+            "description": "Get system configuration by key",
+            "operationId": "get_system_config_api_system_config__config_key__get",
+            "parameters": [
+              {
+                "name": "config_key",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "title": "Config Key"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/SystemConfigResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": [
+              "system"
+            ],
+            "summary": "Update System Config",
+            "description": "Update system configuration",
+            "operationId": "update_system_config_api_system_config__config_key__put",
+            "parameters": [
+              {
+                "name": "config_key",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "title": "Config Key"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SystemConfigCreate"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/SystemConfigResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/rag": {
+          "post": {
+            "tags": [
+              "system"
+            ],
+            "summary": "Create Rag Config",
+            "description": "Create RAG configuration",
+            "operationId": "create_rag_config_api_system_rag_post",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/RAGConfigCreate"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/RAGConfigResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "get": {
+            "tags": [
+              "system"
+            ],
+            "summary": "List Rag Configs",
+            "description": "List RAG configurations",
+            "operationId": "list_rag_configs_api_system_rag_get",
+            "parameters": [
+              {
+                "name": "skip",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 0,
+                  "title": "Skip"
+                }
+              },
+              {
+                "name": "limit",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "maximum": 1000,
+                  "minimum": 1,
+                  "default": 100,
+                  "title": "Limit"
+                }
+              },
+              {
+                "name": "active_only",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "boolean",
+                  "default": true,
+                  "title": "Active Only"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/RAGConfigResponse"
+                      },
+                      "title": "Response List Rag Configs Api System Rag Get"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/rag/{config_id}": {
+          "get": {
+            "tags": [
+              "system"
+            ],
+            "summary": "Get Rag Config",
+            "description": "Get RAG configuration by ID",
+            "operationId": "get_rag_config_api_system_rag__config_id__get",
+            "parameters": [
+              {
+                "name": "config_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Config Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/RAGConfigResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/rag/{config_id}/test": {
+          "post": {
+            "tags": [
+              "system"
+            ],
+            "summary": "Test Rag Config",
+            "description": "Test RAG configuration with a query",
+            "operationId": "test_rag_config_api_system_rag__config_id__test_post",
+            "parameters": [
+              {
+                "name": "config_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Config Id"
+                }
+              },
+              {
+                "name": "query",
+                "in": "query",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "description": "Test query for RAG system",
+                  "title": "Query"
+                },
+                "description": "Test query for RAG system"
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/health": {
+          "get": {
+            "tags": [
+              "system"
+            ],
+            "summary": "Get System Health",
+            "description": "Get system health status",
+            "operationId": "get_system_health_api_system_health_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/SystemHealthResponse"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/metrics": {
+          "get": {
+            "tags": [
+              "statistics"
+            ],
+            "summary": "Get System Metrics",
+            "description": "Get system performance metrics",
+            "operationId": "get_system_metrics_api_system_metrics_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/SystemMetrics"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/test-route": {
+          "get": {
+            "tags": [
+              "system"
+            ],
+            "summary": "Test Route",
+            "operationId": "test_route_api_system_test_route_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/context/stats": {
+          "get": {
+            "tags": [
+              "Context Engineering"
+            ],
+            "summary": "Get Context Stats",
+            "description": "Get real-time context engineering statistics",
+            "operationId": "get_context_stats_api_context_stats_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/context/performance": {
+          "get": {
+            "tags": [
+              "Context Engineering"
+            ],
+            "summary": "Get Rag Performance Data",
+            "description": "Get RAG performance data for charts",
+            "operationId": "get_rag_performance_data_api_context_performance_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/context/sources": {
+          "get": {
+            "tags": [
+              "Context Engineering"
+            ],
+            "summary": "Get Context Sources",
+            "description": "Get context sources distribution",
+            "operationId": "get_context_sources_api_context_sources_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/context/queries/recent": {
+          "get": {
+            "tags": [
+              "Context Engineering"
+            ],
+            "summary": "Get Recent Queries",
+            "description": "Get recent context queries",
+            "operationId": "get_recent_queries_api_context_queries_recent_get",
+            "parameters": [
+              {
+                "name": "limit",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "maximum": 50,
+                  "minimum": 1,
+                  "default": 10,
+                  "title": "Limit"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/context/patterns": {
+          "get": {
+            "tags": [
+              "Context Engineering"
+            ],
+            "summary": "Get Context Patterns",
+            "description": "Get context patterns based on RAG configurations",
+            "operationId": "get_context_patterns_api_context_patterns_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/context/rag/{config_id}/test": {
+          "post": {
+            "tags": [
+              "Context Engineering"
+            ],
+            "summary": "Test Rag Configuration",
+            "description": "Test RAG configuration with real retrieval",
+            "operationId": "test_rag_configuration_api_context_rag__config_id__test_post",
+            "parameters": [
+              {
+                "name": "config_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Config Id"
+                }
+              },
+              {
+                "name": "query",
+                "in": "query",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "description": "Test query for RAG system",
+                  "title": "Query"
+                },
+                "description": "Test query for RAG system"
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/context/system/health": {
+          "get": {
+            "tags": [
+              "Context Engineering"
+            ],
+            "summary": "Get Context System Health",
+            "description": "Get context engineering system health",
+            "operationId": "get_context_system_health_api_context_system_health_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/context/initialize": {
+          "post": {
+            "tags": [
+              "Context Engineering"
+            ],
+            "summary": "Initialize Context System",
+            "description": "Initialize or reinitialize the context engineering system",
+            "operationId": "initialize_context_system_api_context_initialize_post",
+            "parameters": [
+              {
+                "name": "database_url",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Database Url"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/skills/categories": {
+          "get": {
+            "tags": [
+              "skills"
+            ],
+            "summary": "Get Skills By Categories",
+            "description": "Get skills organized by categories",
+            "operationId": "get_skills_by_categories_api_agents_skills_categories_get",
+            "parameters": [
+              {
+                "name": "category",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/SkillCategory"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Category"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SkillsByCategory"
+                      },
+                      "title": "Response Get Skills By Categories Api Agents Skills Categories Get"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/{agent_id}/skills": {
+          "get": {
+            "tags": [
+              "skills"
+            ],
+            "summary": "Get Agent Skills",
+            "description": "Get skills associated with a specific agent",
+            "operationId": "get_agent_skills_api_agents__agent_id__skills_get",
+            "parameters": [
+              {
+                "name": "agent_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Agent Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SkillResponse"
+                      },
+                      "title": "Response Get Agent Skills Api Agents  Agent Id  Skills Get"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": [
+              "skills"
+            ],
+            "summary": "Add Skills To Agent",
+            "description": "Add skills to an agent",
+            "operationId": "add_skills_to_agent_api_agents__agent_id__skills_post",
+            "parameters": [
+              {
+                "name": "agent_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Agent Id"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "title": "Skill Ids"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/{agent_id}/skills/{skill_id}": {
+          "delete": {
+            "tags": [
+              "skills"
+            ],
+            "summary": "Remove Skill From Agent",
+            "description": "Remove a skill from an agent",
+            "operationId": "remove_skill_from_agent_api_agents__agent_id__skills__skill_id__delete",
+            "parameters": [
+              {
+                "name": "agent_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Agent Id"
+                }
+              },
+              {
+                "name": "skill_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Skill Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/skills": {
+          "get": {
+            "tags": [
+              "skills"
+            ],
+            "summary": "Get All Skills",
+            "description": "Get all skills with optional filtering",
+            "operationId": "get_all_skills_api_agents_skills_get",
+            "parameters": [
+              {
+                "name": "category",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/SkillCategory"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Category"
+                }
+              },
+              {
+                "name": "skill_type",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Skill Type"
+                }
+              },
+              {
+                "name": "is_active",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": true,
+                  "title": "Is Active"
+                }
+              },
+              {
+                "name": "skip",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 0,
+                  "title": "Skip"
+                }
+              },
+              {
+                "name": "limit",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "maximum": 1000,
+                  "minimum": 1,
+                  "default": 100,
+                  "title": "Limit"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SkillResponse"
+                      },
+                      "title": "Response Get All Skills Api Agents Skills Get"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": [
+              "skills"
+            ],
+            "summary": "Create Skill",
+            "description": "Create a new skill",
+            "operationId": "create_skill_api_agents_skills_post",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SkillCreate"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/SkillResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/skills/{skill_id}": {
+          "put": {
+            "tags": [
+              "skills"
+            ],
+            "summary": "Update Skill",
+            "description": "Update an existing skill",
+            "operationId": "update_skill_api_agents_skills__skill_id__put",
+            "parameters": [
+              {
+                "name": "skill_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Skill Id"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SkillUpdate"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/SkillResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": [
+              "skills"
+            ],
+            "summary": "Delete Skill",
+            "description": "Delete a skill (soft delete by setting is_active=False)",
+            "operationId": "delete_skill_api_agents_skills__skill_id__delete",
+            "parameters": [
+              {
+                "name": "skill_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Skill Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/": {
+          "post": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "Create Agent",
+            "description": "Create a new agent with enhanced fields",
+            "operationId": "create_agent_api_agents__post",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AgentCreate"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/AgentResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "get": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "List Agents",
+            "description": "List agents with enhanced filtering and pagination",
+            "operationId": "list_agents_api_agents__get",
+            "parameters": [
+              {
+                "name": "skip",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 0,
+                  "title": "Skip"
+                }
+              },
+              {
+                "name": "limit",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "maximum": 1000,
+                  "minimum": 1,
+                  "default": 100,
+                  "title": "Limit"
+                }
+              },
+              {
+                "name": "status",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/AgentStatus"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Status"
+                }
+              },
+              {
+                "name": "agent_type",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/AgentType"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Agent Type"
+                }
+              },
+              {
+                "name": "priority_level",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/PriorityLevel"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Priority Level"
+                }
+              },
+              {
+                "name": "search",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Search"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AgentResponse"
+                      },
+                      "title": "Response List Agents Api Agents  Get"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/{agent_id}": {
+          "get": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "Get Agent",
+            "description": "Get a specific agent by ID",
+            "operationId": "get_agent_api_agents__agent_id__get",
+            "parameters": [
+              {
+                "name": "agent_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Agent Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/AgentResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "Update Agent",
+            "description": "Update an existing agent with enhanced fields",
+            "operationId": "update_agent_api_agents__agent_id__put",
+            "parameters": [
+              {
+                "name": "agent_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Agent Id"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AgentUpdate"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/AgentResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "Delete Agent",
+            "description": "Delete an agent (soft delete by setting status to inactive)",
+            "operationId": "delete_agent_api_agents__agent_id__delete",
+            "parameters": [
+              {
+                "name": "agent_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Agent Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/{agent_id}/start": {
+          "post": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "Start Agent",
+            "description": "Start an agent (set status to active)",
+            "operationId": "start_agent_api_agents__agent_id__start_post",
+            "parameters": [
+              {
+                "name": "agent_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Agent Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/{agent_id}/stop": {
+          "post": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "Stop Agent",
+            "description": "Stop an agent (set status to inactive)",
+            "operationId": "stop_agent_api_agents__agent_id__stop_post",
+            "parameters": [
+              {
+                "name": "agent_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Agent Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/{agent_id}/performance": {
+          "get": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "Get Agent Performance",
+            "description": "Get agent performance metrics",
+            "operationId": "get_agent_performance_api_agents__agent_id__performance_get",
+            "parameters": [
+              {
+                "name": "agent_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Agent Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/{agent_id}/clone": {
+          "post": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "Clone Agent",
+            "description": "Clone an existing agent with a new name",
+            "operationId": "clone_agent_api_agents__agent_id__clone_post",
+            "parameters": [
+              {
+                "name": "agent_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Agent Id"
+                }
+              },
+              {
+                "name": "new_name",
+                "in": "query",
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "title": "New Name"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/test123": {
+          "get": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "Test Simple Route",
+            "operationId": "test_simple_route_api_agents_test123_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/agents/health": {
+          "get": {
+            "tags": [
+              "agents"
+            ],
+            "summary": "Health Check",
+            "description": "Health check endpoint",
+            "operationId": "health_check_api_agents_health_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/patterns/": {
+          "get": {
+            "tags": [
+              "patterns"
+            ],
+            "summary": "Get Patterns",
+            "description": "Get all patterns with optional filtering",
+            "operationId": "get_patterns_api_patterns__get",
+            "parameters": [
+              {
+                "name": "pattern_type",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Pattern Type"
+                }
+              },
+              {
+                "name": "is_active",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": true,
+                  "title": "Is Active"
+                }
+              },
+              {
+                "name": "skip",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "default": 0,
+                  "title": "Skip"
+                }
+              },
+              {
+                "name": "limit",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "integer",
+                  "maximum": 1000,
+                  "minimum": 1,
+                  "default": 100,
+                  "title": "Limit"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PatternResponse"
+                      },
+                      "title": "Response Get Patterns Api Patterns  Get"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "post": {
+            "tags": [
+              "patterns"
+            ],
+            "summary": "Create Pattern",
+            "description": "Create a new pattern",
+            "operationId": "create_pattern_api_patterns__post",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PatternCreate"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/PatternResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/patterns/{pattern_id}": {
+          "get": {
+            "tags": [
+              "patterns"
+            ],
+            "summary": "Get Pattern",
+            "description": "Get a specific pattern by ID",
+            "operationId": "get_pattern_api_patterns__pattern_id__get",
+            "parameters": [
+              {
+                "name": "pattern_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Pattern Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/PatternResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "put": {
+            "tags": [
+              "patterns"
+            ],
+            "summary": "Update Pattern",
+            "description": "Update an existing pattern",
+            "operationId": "update_pattern_api_patterns__pattern_id__put",
+            "parameters": [
+              {
+                "name": "pattern_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Pattern Id"
+                }
+              }
+            ],
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/PatternUpdate"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/PatternResponse"
+                    }
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "delete": {
+            "tags": [
+              "patterns"
+            ],
+            "summary": "Delete Pattern",
+            "description": "Delete a pattern (soft delete by setting is_active=False)",
+            "operationId": "delete_pattern_api_patterns__pattern_id__delete",
+            "parameters": [
+              {
+                "name": "pattern_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Pattern Id"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/patterns/{pattern_id}/use": {
+          "post": {
+            "tags": [
+              "patterns"
+            ],
+            "summary": "Use Pattern",
+            "description": "Record pattern usage and update effectiveness score",
+            "operationId": "use_pattern_api_patterns__pattern_id__use_post",
+            "parameters": [
+              {
+                "name": "pattern_id",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "title": "Pattern Id"
+                }
+              },
+              {
+                "name": "effectiveness_score",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Effectiveness Score"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/agents/statistics": {
+          "get": {
+            "tags": [
+              "statistics"
+            ],
+            "summary": "Get Agent Statistics",
+            "description": "Get comprehensive agent statistics for dashboard",
+            "operationId": "get_agent_statistics_api_system_agents_statistics_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/AgentStatistics"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/skills/statistics": {
+          "get": {
+            "tags": [
+              "statistics"
+            ],
+            "summary": "Get Skill Statistics",
+            "description": "Get skill-related statistics",
+            "operationId": "get_skill_statistics_api_system_skills_statistics_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/patterns/statistics": {
+          "get": {
+            "tags": [
+              "statistics"
+            ],
+            "summary": "Get Pattern Statistics",
+            "description": "Get pattern-related statistics",
+            "operationId": "get_pattern_statistics_api_system_patterns_statistics_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/system/performance/statistics": {
+          "get": {
+            "tags": [
+              "statistics"
+            ],
+            "summary": "Get Performance Statistics",
+            "description": "Get performance-related statistics",
+            "operationId": "get_performance_statistics_api_system_performance_statistics_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/templates/": {
+          "get": {
+            "tags": [
+              "templates"
+            ],
+            "summary": "Get Agent Templates",
+            "description": "Get all available agent templates for the creation wizard",
+            "operationId": "get_agent_templates_api_templates__get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "items": {
+                        "$ref": "#/components/schemas/AgentTemplate"
+                      },
+                      "type": "array",
+                      "title": "Response Get Agent Templates Api Templates  Get"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/templates/templates/{agent_type}": {
+          "get": {
+            "tags": [
+              "templates"
+            ],
+            "summary": "Get Template By Type",
+            "description": "Get a specific template by agent type",
+            "operationId": "get_template_by_type_api_templates_templates__agent_type__get",
+            "parameters": [
+              {
+                "name": "agent_type",
+                "in": "path",
+                "required": true,
+                "schema": {
+                  "$ref": "#/components/schemas/AgentType"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/templates/templates/skills/suggestions": {
+          "get": {
+            "tags": [
+              "templates"
+            ],
+            "summary": "Get Skill Suggestions",
+            "description": "Get skill suggestions based on agent type",
+            "operationId": "get_skill_suggestions_api_templates_templates_skills_suggestions_get",
+            "parameters": [
+              {
+                "name": "agent_type",
+                "in": "query",
+                "required": true,
+                "schema": {
+                  "$ref": "#/components/schemas/AgentType"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              },
+              "422": {
+                "description": "Validation Error",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/HTTPValidationError"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/templates/creation-wizard/config": {
+          "get": {
+            "tags": [
+              "templates"
+            ],
+            "summary": "Get Creation Wizard Config",
+            "description": "Get configuration options for the agent creation wizard",
+            "operationId": "get_creation_wizard_config_api_templates_creation_wizard_config_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/test-data": {
+          "get": {
+            "summary": "Get Test Data",
+            "description": "Helper endpoint that returns available test data for API testing",
+            "operationId": "get_test_data_api_test_data_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/health": {
+          "get": {
+            "summary": "Health Check",
+            "description": "Basic health check endpoint",
+            "operationId": "health_check_health_get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/": {
+          "get": {
+            "summary": "Root",
+            "description": "Root endpoint with API information",
+            "operationId": "root__get",
+            "responses": {
+              "200": {
+                "description": "Successful Response",
+                "content": {
+                  "application/json": {
+                    "schema": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "components": {
+        "schemas": {
+          "AgentCreate": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 255,
+                "minLength": 1,
+                "title": "Name"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              },
+              "agent_type": {
+                "$ref": "#/components/schemas/AgentType"
+              },
+              "configuration": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Configuration"
+              },
+              "skill_ids": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "integer"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Skill Ids",
+                "default": []
+              },
+              "priority_level": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/PriorityLevel"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": "medium"
+              },
+              "max_concurrent_tasks": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "maximum": 100.0,
+                    "minimum": 1.0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Max Concurrent Tasks",
+                "default": 5
+              },
+              "auto_start": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Auto Start",
+                "default": false
+              }
+            },
+            "type": "object",
+            "required": [
+              "name",
+              "agent_type"
+            ],
+            "title": "AgentCreate"
+          },
+          "AgentResponse": {
+            "properties": {
+              "id": {
+                "type": "integer",
+                "title": "Id"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              },
+              "agent_type": {
+                "type": "string",
+                "title": "Agent Type"
+              },
+              "status": {
+                "type": "string",
+                "title": "Status"
+              },
+              "configuration": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Configuration"
+              },
+              "performance_metrics": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Performance Metrics"
+              },
+              "priority_level": {
+                "type": "string",
+                "title": "Priority Level"
+              },
+              "max_concurrent_tasks": {
+                "type": "integer",
+                "title": "Max Concurrent Tasks"
+              },
+              "auto_start": {
+                "type": "boolean",
+                "title": "Auto Start"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Created At"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Updated At"
+              },
+              "created_by": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Created By"
+              },
+              "skills": {
+                "items": {
+                  "type": "object"
+                },
+                "type": "array",
+                "title": "Skills",
+                "default": []
+              }
+            },
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "description",
+              "agent_type",
+              "status",
+              "configuration",
+              "performance_metrics",
+              "priority_level",
+              "max_concurrent_tasks",
+              "auto_start",
+              "created_at",
+              "updated_at",
+              "created_by"
+            ],
+            "title": "AgentResponse"
+          },
+          "AgentStatistics": {
+            "properties": {
+              "total_agents": {
+                "type": "integer",
+                "title": "Total Agents"
+              },
+              "active_agents": {
+                "type": "integer",
+                "title": "Active Agents"
+              },
+              "inactive_agents": {
+                "type": "integer",
+                "title": "Inactive Agents"
+              },
+              "agents_by_type": {
+                "additionalProperties": {
+                  "type": "integer"
+                },
+                "type": "object",
+                "title": "Agents By Type"
+              },
+              "average_performance": {
+                "type": "number",
+                "title": "Average Performance"
+              },
+              "total_executions": {
+                "type": "integer",
+                "title": "Total Executions"
+              },
+              "successful_executions": {
+                "type": "integer",
+                "title": "Successful Executions"
+              },
+              "failed_executions": {
+                "type": "integer",
+                "title": "Failed Executions"
+              }
+            },
+            "type": "object",
+            "required": [
+              "total_agents",
+              "active_agents",
+              "inactive_agents",
+              "agents_by_type",
+              "average_performance",
+              "total_executions",
+              "successful_executions",
+              "failed_executions"
+            ],
+            "title": "AgentStatistics"
+          },
+          "AgentStatus": {
+            "type": "string",
+            "enum": [
+              "active",
+              "inactive",
+              "training"
+            ],
+            "title": "AgentStatus"
+          },
+          "AgentTemplate": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
+              "description": {
+                "type": "string",
+                "title": "Description"
+              },
+              "agent_type": {
+                "$ref": "#/components/schemas/AgentType"
+              },
+              "default_skills": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "title": "Default Skills"
+              },
+              "default_configuration": {
+                "type": "object",
+                "title": "Default Configuration"
+              },
+              "priority_level": {
+                "$ref": "#/components/schemas/PriorityLevel"
+              },
+              "max_concurrent_tasks": {
+                "type": "integer",
+                "title": "Max Concurrent Tasks"
+              }
+            },
+            "type": "object",
+            "required": [
+              "name",
+              "description",
+              "agent_type",
+              "default_skills",
+              "default_configuration",
+              "priority_level",
+              "max_concurrent_tasks"
+            ],
+            "title": "AgentTemplate"
+          },
+          "AgentType": {
+            "type": "string",
+            "enum": [
+              "code_architect",
+              "security_expert",
+              "performance_optimizer",
+              "data_analyst",
+              "infrastructure_manager",
+              "custom",
+              "system",
+              "specialized"
+            ],
+            "title": "AgentType"
+          },
+          "AgentUpdate": {
+            "properties": {
+              "name": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Name"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/AgentStatus"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "configuration": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Configuration"
+              },
+              "skill_ids": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "type": "integer"
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Skill Ids"
+              },
+              "priority_level": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/PriorityLevel"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "max_concurrent_tasks": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "maximum": 100.0,
+                    "minimum": 1.0
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Max Concurrent Tasks"
+              },
+              "auto_start": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Auto Start"
+              }
+            },
+            "type": "object",
+            "title": "AgentUpdate"
+          },
+          "HTTPValidationError": {
+            "properties": {
+              "detail": {
+                "items": {
+                  "$ref": "#/components/schemas/ValidationError"
+                },
+                "type": "array",
+                "title": "Detail"
+              }
+            },
+            "type": "object",
+            "title": "HTTPValidationError"
+          },
+          "PatternCreate": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 255,
+                "minLength": 1,
+                "title": "Name"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              },
+              "pattern_type": {
+                "type": "string",
+                "title": "Pattern Type"
+              },
+              "pattern_data": {
+                "type": "object",
+                "title": "Pattern Data"
+              }
+            },
+            "type": "object",
+            "required": [
+              "name",
+              "pattern_type",
+              "pattern_data"
+            ],
+            "title": "PatternCreate"
+          },
+          "PatternResponse": {
+            "properties": {
+              "id": {
+                "type": "integer",
+                "title": "Id"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              },
+              "pattern_type": {
+                "type": "string",
+                "title": "Pattern Type"
+              },
+              "pattern_data": {
+                "type": "object",
+                "title": "Pattern Data"
+              },
+              "usage_count": {
+                "type": "integer",
+                "title": "Usage Count"
+              },
+              "effectiveness_score": {
+                "type": "number",
+                "title": "Effectiveness Score"
+              },
+              "is_active": {
+                "type": "boolean",
+                "title": "Is Active"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Created At"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Updated At"
+              },
+              "created_by": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Created By"
+              }
+            },
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "description",
+              "pattern_type",
+              "pattern_data",
+              "usage_count",
+              "effectiveness_score",
+              "is_active",
+              "created_at",
+              "updated_at",
+              "created_by"
+            ],
+            "title": "PatternResponse"
+          },
+          "PatternUpdate": {
+            "properties": {
+              "name": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Name"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              },
+              "pattern_type": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Pattern Type"
+              },
+              "pattern_data": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Pattern Data"
+              },
+              "is_active": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Is Active"
+              }
+            },
+            "type": "object",
+            "title": "PatternUpdate"
+          },
+          "PriorityLevel": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ],
+            "title": "PriorityLevel"
+          },
+          "RAGConfigCreate": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
+              "embedding_model": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Embedding Model",
+                "default": "sentence-transformers/all-MiniLM-L6-v2"
+              },
+              "chunk_size": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Chunk Size",
+                "default": 1000
+              },
+              "chunk_overlap": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Chunk Overlap",
+                "default": 200
+              },
+              "retrieval_strategy": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Retrieval Strategy",
+                "default": "similarity"
+              },
+              "top_k": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Top K",
+                "default": 5
+              },
+              "similarity_threshold": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Similarity Threshold",
+                "default": 0.7
+              },
+              "configuration": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Configuration"
+              }
+            },
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "title": "RAGConfigCreate"
+          },
+          "RAGConfigResponse": {
+            "properties": {
+              "id": {
+                "type": "integer",
+                "title": "Id"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
+              "embedding_model": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Embedding Model"
+              },
+              "chunk_size": {
+                "type": "integer",
+                "title": "Chunk Size"
+              },
+              "chunk_overlap": {
+                "type": "integer",
+                "title": "Chunk Overlap"
+              },
+              "retrieval_strategy": {
+                "type": "string",
+                "title": "Retrieval Strategy"
+              },
+              "top_k": {
+                "type": "integer",
+                "title": "Top K"
+              },
+              "similarity_threshold": {
+                "type": "number",
+                "title": "Similarity Threshold"
+              },
+              "configuration": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Configuration"
+              },
+              "is_active": {
+                "type": "boolean",
+                "title": "Is Active"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Created At"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Updated At"
+              },
+              "created_by": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Created By"
+              }
+            },
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "embedding_model",
+              "chunk_size",
+              "chunk_overlap",
+              "retrieval_strategy",
+              "top_k",
+              "similarity_threshold",
+              "configuration",
+              "is_active",
+              "created_at",
+              "updated_at",
+              "created_by"
+            ],
+            "title": "RAGConfigResponse"
+          },
+          "SkillCategory": {
+            "type": "string",
+            "enum": [
+              "development",
+              "security",
+              "infrastructure",
+              "analytics"
+            ],
+            "title": "SkillCategory"
+          },
+          "SkillCreate": {
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 255,
+                "minLength": 1,
+                "title": "Name"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              },
+              "skill_type": {
+                "$ref": "#/components/schemas/SkillType"
+              },
+              "category": {
+                "$ref": "#/components/schemas/SkillCategory"
+              },
+              "implementation": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Implementation"
+              },
+              "parameters": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Parameters"
+              }
+            },
+            "type": "object",
+            "required": [
+              "name",
+              "skill_type",
+              "category"
+            ],
+            "title": "SkillCreate"
+          },
+          "SkillResponse": {
+            "properties": {
+              "id": {
+                "type": "integer",
+                "title": "Id"
+              },
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              },
+              "skill_type": {
+                "type": "string",
+                "title": "Skill Type"
+              },
+              "category": {
+                "type": "string",
+                "title": "Category"
+              },
+              "implementation": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Implementation"
+              },
+              "parameters": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Parameters"
+              },
+              "performance_data": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Performance Data"
+              },
+              "is_active": {
+                "type": "boolean",
+                "title": "Is Active"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Created At"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Updated At"
+              },
+              "created_by": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Created By"
+              }
+            },
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "description",
+              "skill_type",
+              "category",
+              "implementation",
+              "parameters",
+              "performance_data",
+              "is_active",
+              "created_at",
+              "updated_at",
+              "created_by"
+            ],
+            "title": "SkillResponse"
+          },
+          "SkillType": {
+            "type": "string",
+            "enum": [
+              "cognitive",
+              "technical",
+              "communication"
+            ],
+            "title": "SkillType"
+          },
+          "SkillUpdate": {
+            "properties": {
+              "name": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Name"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              },
+              "category": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/SkillCategory"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "implementation": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Implementation"
+              },
+              "parameters": {
+                "anyOf": [
+                  {
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Parameters"
+              },
+              "is_active": {
+                "anyOf": [
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Is Active"
+              }
+            },
+            "type": "object",
+            "title": "SkillUpdate"
+          },
+          "SkillsByCategory": {
+            "properties": {
+              "category": {
+                "type": "string",
+                "title": "Category"
+              },
+              "skills": {
+                "items": {
+                  "$ref": "#/components/schemas/SkillResponse"
+                },
+                "type": "array",
+                "title": "Skills"
+              }
+            },
+            "type": "object",
+            "required": [
+              "category",
+              "skills"
+            ],
+            "title": "SkillsByCategory"
+          },
+          "SystemConfigCreate": {
+            "properties": {
+              "config_key": {
+                "type": "string",
+                "title": "Config Key"
+              },
+              "config_value": {
+                "type": "object",
+                "title": "Config Value"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              }
+            },
+            "type": "object",
+            "required": [
+              "config_key",
+              "config_value"
+            ],
+            "title": "SystemConfigCreate"
+          },
+          "SystemConfigResponse": {
+            "properties": {
+              "id": {
+                "type": "integer",
+                "title": "Id"
+              },
+              "config_key": {
+                "type": "string",
+                "title": "Config Key"
+              },
+              "config_value": {
+                "type": "object",
+                "title": "Config Value"
+              },
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Description"
+              },
+              "is_active": {
+                "type": "boolean",
+                "title": "Is Active"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Created At"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Updated At"
+              },
+              "updated_by": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Updated By"
+              }
+            },
+            "type": "object",
+            "required": [
+              "id",
+              "config_key",
+              "config_value",
+              "description",
+              "is_active",
+              "created_at",
+              "updated_at",
+              "updated_by"
+            ],
+            "title": "SystemConfigResponse"
+          },
+          "SystemHealthResponse": {
+            "properties": {
+              "status": {
+                "type": "string",
+                "title": "Status"
+              },
+              "timestamp": {
+                "type": "string",
+                "format": "date-time",
+                "title": "Timestamp"
+              },
+              "services": {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object",
+                "title": "Services"
+              },
+              "metrics": {
+                "type": "object",
+                "title": "Metrics"
+              },
+              "version": {
+                "type": "string",
+                "title": "Version"
+              }
+            },
+            "type": "object",
+            "required": [
+              "status",
+              "timestamp",
+              "services",
+              "metrics",
+              "version"
+            ],
+            "title": "SystemHealthResponse"
+          },
+          "SystemMetrics": {
+            "properties": {
+              "uptime": {
+                "type": "string",
+                "title": "Uptime"
+              },
+              "cpu_usage": {
+                "type": "number",
+                "title": "Cpu Usage"
+              },
+              "memory_usage": {
+                "type": "number",
+                "title": "Memory Usage"
+              },
+              "active_connections": {
+                "type": "integer",
+                "title": "Active Connections"
+              },
+              "total_requests": {
+                "type": "integer",
+                "title": "Total Requests"
+              },
+              "error_rate": {
+                "type": "number",
+                "title": "Error Rate"
+              }
+            },
+            "type": "object",
+            "required": [
+              "uptime",
+              "cpu_usage",
+              "memory_usage",
+              "active_connections",
+              "total_requests",
+              "error_rate"
+            ],
+            "title": "SystemMetrics"
+          },
+          "ValidationError": {
+            "properties": {
+              "loc": {
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                },
+                "type": "array",
+                "title": "Location"
+              },
+              "msg": {
+                "type": "string",
+                "title": "Message"
+              },
+              "type": {
+                "type": "string",
+                "title": "Error Type"
+              }
+            },
+            "type": "object",
+            "required": [
+              "loc",
+              "msg",
+              "type"
+            ],
+            "title": "ValidationError"
+          }
+        }
+      }
+    },
+    "raw_text": "{\"openapi\":\"3.1.0\",\"info\":{\"title\":\"Automotas AI API\",\"description\":\"Comprehensive API for Automotas AI agent management, workflows, and document processing\",\"version\":\"1.0.0\"},\"paths\":{\"/api/workflows/active\":{\"get\":{\"tags\":[\"workflow-enhanced\"],\"summary\":\"Get Active Workflows\",\"description\":\"Get all currently active workflows with live status\",\"operationId\":\"get_active_workflows_api_workflows_active_get\",\"responses\":{\"200\":{\"description\":\"Successful Response\",\"content\":{\"application/json\":{\"schema\":{}}}}}}},\"/api/workflows/stats/dashboard\":{\"get\":{\"tags\":[\"workflow-enhanced\"],\"summary\":\"Get Workflow Dashboard Stats\",\"description\":\"Get comprehensive workflow statistics for dashboard\",\"operationId\":\"get_workflow_dashboard_stats_api_workflows_stats_dashboard_get\",\"responses\":{\"200\":{\"description\":\"Successful Response\",\"content\":{\"application/json\":{\"schema\":{}}}}}}},\"/api/workflows/{workflow_id}/live-progress\":{\"get\":{\"tags\":[\"workflow-enhanced\"],\"summary\":\"Get Workflow Live Progress\",\"",
+    "content_length": 48799,
+    "response_time_ms": 15.92
+  },
+  "validation": {
+    "is_success": true,
+    "expected_status": 200,
+    "actual_status": 200
+  },
+  "timestamp": "2025-08-01T11:42:30.527636"
+}

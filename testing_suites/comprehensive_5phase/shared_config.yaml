@@ -1,0 +1,223 @@
+api:
+  base_url: https://api.automatos.app
+  fallback_urls:
+  - http://206.81.0.227:8000
+  - http://localhost:8000
+  authentication:
+    api_key: test_api_key_for_backend_validation_2025
+    headers:
+      Content-Type: application/json
+      X-API-Key: test_api_key_for_backend_validation_2025
+      Authorization: Bearer test_api_key_for_backend_validation_2025
+  timeout: 30
+  max_retries: 3
+  retry_delay: 1.0
+logging:
+  level: INFO
+  format: json
+  capture_full_responses: true
+  capture_request_bodies: true
+  log_response_times: true
+  log_headers: true
+performance:
+  excellent_response_time_ms: 200
+  acceptable_response_time_ms: 1000
+  success_threshold: 0.7
+test_data:
+  agents:
+  - name: External Test Agent Alpha
+    agent_type: code_architect
+    description: Primary test agent for external API testing
+    configuration:
+      programming_languages:
+      - python
+      - javascript
+      frameworks:
+      - fastapi
+      - react
+      focus_areas:
+      - testing
+      - validation
+  - name: External Test Agent Beta
+    agent_type: security_expert
+    description: Secondary test agent for external validation
+    configuration:
+      security_frameworks:
+      - OWASP
+      - NIST
+      scan_types:
+      - static
+      - dynamic
+      focus_areas:
+      - vulnerabilities
+      - compliance
+  workflows:
+  - name: External Test Workflow
+    description: Test workflow for external API validation
+    pattern: sequential
+    agents:
+    - External Test Agent Alpha
+  documents:
+  - filename: test_document.txt
+    content: This is a test document for external API testing
+    type: text/plain
+  skills:
+  - name: Python Development
+    category: programming
+    description: Python programming and development skills
+    proficiency_level: advanced
+    parameters:
+      languages:
+      - python
+      frameworks:
+      - fastapi
+      - django
+  - name: Security Analysis
+    category: security
+    description: Security assessment and analysis capabilities
+    proficiency_level: expert
+    parameters:
+      scan_types:
+      - static
+      - dynamic
+      frameworks:
+      - OWASP
+  context_engineering:
+    contexts:
+    - name: Test Context Alpha
+      description: Primary test context for RAG testing
+      type: knowledge_base
+      sources:
+      - documentation
+      - code_samples
+    - name: Test Context Beta
+      description: Secondary test context for validation
+      type: conversation_history
+      sources:
+      - chat_logs
+      - user_queries
+    embeddings:
+    - text: This is a test document for embedding generation
+      context_id: test_context_alpha
+    - text: Another test document for context validation
+      context_id: test_context_beta
+expected_endpoints:
+  agent_management:
+  - /api/agents
+  - /api/agents/{id}
+  - /api/agents/{id}/skills
+  - /api/agents/{id}/execute
+  - /api/agents/{id}/status
+  workflow_orchestration:
+  - /api/workflows
+  - /api/workflows/active
+  - /api/workflows/stats/dashboard
+  - /api/workflows/{workflow_id}/execute-advanced
+  - /api/workflows/templates/recommended
+  document_management:
+  - /api/documents
+  - /api/documents/processing/pipeline
+  - /api/documents/processing/live-status
+  - /api/documents/analytics/overview
+  - /api/documents/analytics/search-patterns
+  context_engineering:
+  - /api/context/stats
+  - /api/context/performance
+  - /api/system/rag
+  - /api/system/rag/{config_id}
+  - /api/system/rag/{config_id}/test
+  performance_analytics:
+  - /api/system/metrics
+  - /api/system/health
+  - /api/system/config
+  - /api/system/test-route
+user_journeys:
+  agent_developer:
+    name: Agent Developer Journey
+    steps:
+    - action: create_agent
+      endpoint: /api/agents
+      method: POST
+      description: Create a new agent via external API
+    - action: list_agents
+      endpoint: /api/agents
+      method: GET
+      description: List all agents
+    - action: get_agent
+      endpoint: /api/agents/{id}
+      method: GET
+      description: Get specific agent details
+  workflow_designer:
+    name: Workflow Designer Journey
+    steps:
+    - action: list_workflows
+      endpoint: /api/workflows
+      method: GET
+      description: Browse available workflows
+    - action: get_active_workflows
+      endpoint: /api/workflows/active
+      method: GET
+      description: Get active workflows
+    - action: get_dashboard_stats
+      endpoint: /api/workflows/stats/dashboard
+      method: GET
+      description: Get workflow dashboard statistics
+  system_administrator:
+    name: System Administrator Journey
+    steps:
+    - action: check_health
+      endpoint: /health
+      method: GET
+      description: Check basic system health
+    - action: detailed_health
+      endpoint: /api/system/health
+      method: GET
+      description: Get detailed system health
+    - action: system_metrics
+      endpoint: /api/system/metrics
+      method: GET
+      description: Get system performance metrics
+    - action: context_stats
+      endpoint: /api/context/stats
+      method: GET
+      description: Get context system statistics
+  skills:
+  - name: Python Development
+    category: programming
+    description: Python programming and development skills
+    proficiency_level: advanced
+    parameters:
+      languages:
+      - python
+      frameworks:
+      - fastapi
+      - django
+  - name: Security Analysis
+    category: security
+    description: Security assessment and analysis capabilities
+    proficiency_level: expert
+    parameters:
+      scan_types:
+      - static
+      - dynamic
+      frameworks:
+      - OWASP
+  context_engineering:
+    contexts:
+    - name: Test Context Alpha
+      description: Primary test context for RAG testing
+      type: knowledge_base
+      sources:
+      - documentation
+      - code_samples
+    - name: Test Context Beta
+      description: Secondary test context for validation
+      type: conversation_history
+      sources:
+      - chat_logs
+      - user_queries
+    embeddings:
+    - text: This is a test document for embedding generation
+      context_id: test_context_alpha
+    - text: Another test document for context validation
+      context_id: test_context_beta

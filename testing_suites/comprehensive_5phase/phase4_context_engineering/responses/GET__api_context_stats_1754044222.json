@@ -1,0 +1,47 @@
+{
+  "request": {
+    "method": "GET",
+    "endpoint": "/api/context/stats",
+    "full_url": "https://api.automatos.app/api/context/stats",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-type": "application/json",
+      "x-api-key": "test_api_key_for_backend_validation_2025",
+      "authorization": "Bearer test_api_key_for_backend_validation_2025"
+    },
+    "data": null,
+    "expected_status": 200,
+    "timestamp": "2025-08-01T10:30:22.813445"
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "date": "Fri, 01 Aug 2025 10:30:22 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-encoding": "gzip"
+    },
+    "data": {
+      "contextQueries": 0,
+      "retrievalSuccess": 0.0,
+      "avgResponseTime": "0.000s",
+      "vectorEmbeddings": 0,
+      "systemStatus": "operational",
+      "lastQueryTime": null
+    },
+    "raw_text": "{\"contextQueries\":0,\"retrievalSuccess\":0.0,\"avgResponseTime\":\"0.000s\",\"vectorEmbeddings\":0,\"systemStatus\":\"operational\",\"lastQueryTime\":null}",
+    "content_length": 141,
+    "response_time_ms": 12.38
+  },
+  "validation": {
+    "is_success": true,
+    "expected_status": 200,
+    "actual_status": 200
+  },
+  "timestamp": "2025-08-01T10:30:22.825965"
+}

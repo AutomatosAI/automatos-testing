@@ -1,0 +1,51 @@
+{
+  "request": {
+    "method": "DELETE",
+    "endpoint": "/api/agents/12",
+    "full_url": "https://api.automatos.app/api/agents/12",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-type": "application/json",
+      "x-api-key": "test_api_key_for_backend_validation_2025",
+      "authorization": "Bearer test_api_key_for_backend_validation_2025"
+    },
+    "data": null,
+    "expected_status": [
+      200,
+      204,
+      404
+    ],
+    "timestamp": "2025-08-01T11:55:15.626431"
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "date": "Fri, 01 Aug 2025 11:55:15 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-encoding": "gzip"
+    },
+    "data": {
+      "message": "Agent deleted successfully",
+      "agent_id": 12
+    },
+    "raw_text": "{\"message\":\"Agent deleted successfully\",\"agent_id\":12}",
+    "content_length": 54,
+    "response_time_ms": 64.09
+  },
+  "validation": {
+    "is_success": true,
+    "expected_status": [
+      200,
+      204,
+      404
+    ],
+    "actual_status": 200
+  },
+  "timestamp": "2025-08-01T11:55:15.690642"
+}

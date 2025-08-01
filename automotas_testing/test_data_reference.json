@@ -1,0 +1,76 @@
+{
+  "test_data_reference": {
+    "description": "Real entity IDs and valid values for API testing",
+    "last_updated": "2025-07-30T11:54:00Z",
+    
+    "agents": {
+      "valid_ids": [1, 2, 3],
+      "records": [
+        {"id": 1, "name": "Test Agent 1", "type": "custom"},
+        {"id": 2, "name": "Security Expert", "type": "security_expert"},
+        {"id": 3, "name": "Performance Optimizer", "type": "performance_optimizer"}
+      ],
+      "valid_types": [
+        "code_architect",
+        "security_expert", 
+        "performance_optimizer",
+        "data_analyst",
+        "infrastructure_manager",
+        "custom",
+        "system",
+        "specialized"
+      ]
+    },
+    
+    "workflows": {
+      "valid_ids": [1, 2, 3],
+      "records": [
+        {"id": 1, "name": "Test Workflow 1", "status": "draft"},
+        {"id": 2, "name": "Security Audit Flow", "status": "active"},
+        {"id": 3, "name": "Performance Test Flow", "status": "active"}
+      ],
+      "valid_statuses": ["draft", "active", "completed", "failed", "archived"]
+    },
+    
+    "test_payloads": {
+      "agent_create": {
+        "name": "Test Agent Created",
+        "description": "A test agent created via API",
+        "agent_type": "code_architect",
+        "configuration": {"test_mode": true}
+      },
+      
+      "workflow_create": {
+        "name": "Test Workflow Created",
+        "description": "A test workflow created via API",
+        "workflow_definition": {"steps": ["init", "process", "complete"]},
+        "status": "draft"
+      },
+      
+      "system_config": {
+        "config_key": "test_setting",
+        "config_value": "test_value"
+      },
+      
+      "rag_config": {
+        "name": "test_rag_config",
+        "description": "Test RAG configuration"
+      }
+    },
+    
+    "endpoint_examples": {
+      "replace_placeholders": {
+        "from": "/api/agents/{agent_id}",
+        "to": "/api/agents/1"
+      },
+      "working_examples": [
+        "GET /api/agents/1",
+        "GET /api/agents/2", 
+        "GET /api/agents/3",
+        "GET /api/workflows/1/live-progress",
+        "GET /api/workflows/2/live-progress",
+        "GET /api/workflows/3/live-progress"
+      ]
+    }
+  }
+}
