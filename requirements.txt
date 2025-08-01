@@ -1,0 +1,5 @@
+httpx>=0.25.0
+pyyaml>=6.0
+requests>=2.31.0
+pathlib
+datetime
