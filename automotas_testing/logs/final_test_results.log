@@ -1,4 +1,0 @@
-2025-07-30 22:10:41,611 | workflow_final_api_testing | INFO | 🚀 WORKFLOW STARTED: final_api_testing
-2025-07-30 22:10:41,611 | workflow_final_api_testing | INFO | 📁 Log file: logs/final_test_results.log
-2025-07-30 22:10:41,612 | workflow_final_api_testing | INFO | ⏰ Start time: 2025-07-30 22:10:41.611311
-2025-07-30 22:10:41,878 | workflow_final_api_testing | ERROR | ❌ STEP FAILED: [endpoint_discovery_error] Failed to discover endpoints

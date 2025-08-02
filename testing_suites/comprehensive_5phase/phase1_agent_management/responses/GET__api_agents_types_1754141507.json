@@ -1,0 +1,67 @@
+{
+  "request": {
+    "method": "GET",
+    "endpoint": "/api/agents/types",
+    "full_url": "https://api.automatos.app/api/agents/types",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-type": "application/json",
+      "x-api-key": "test_api_key_for_backend_validation_2025",
+      "authorization": "Bearer test_api_key_for_backend_validation_2025"
+    },
+    "data": null,
+    "expected_status": [
+      200,
+      404
+    ],
+    "timestamp": "2025-08-02T13:31:47.397399"
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "date": "Sat, 02 Aug 2025 13:31:47 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-encoding": "gzip"
+    },
+    "data": {
+      "types": [
+        "code_architect",
+        "security_expert",
+        "performance_optimizer",
+        "data_analyst",
+        "infrastructure_manager",
+        "custom",
+        "system",
+        "specialized"
+      ],
+      "descriptions": {
+        "code_architect": "Designs and reviews code architecture",
+        "security_expert": "Performs security analysis and audits",
+        "performance_optimizer": "Optimizes system performance",
+        "data_analyst": "Analyzes data and generates insights",
+        "infrastructure_manager": "Manages infrastructure and deployments",
+        "custom": "Custom agent configuration",
+        "system": "System-level operations",
+        "specialized": "Specialized domain expertise"
+      }
+    },
+    "raw_text": "{\"types\":[\"code_architect\",\"security_expert\",\"performance_optimizer\",\"data_analyst\",\"infrastructure_manager\",\"custom\",\"system\",\"specialized\"],\"descriptions\":{\"code_architect\":\"Designs and reviews code architecture\",\"security_expert\":\"Performs security analysis and audits\",\"performance_optimizer\":\"Optimizes system performance\",\"data_analyst\":\"Analyzes data and generates insights\",\"infrastructure_manager\":\"Manages infrastructure and deployments\",\"custom\":\"Custom agent configuration\",\"system\":\"System-level operations\",\"specialized\":\"Specialized domain expertise\"}}",
+    "content_length": 567,
+    "response_time_ms": 6.99
+  },
+  "validation": {
+    "is_success": true,
+    "expected_status": [
+      200,
+      404
+    ],
+    "actual_status": 200
+  },
+  "timestamp": "2025-08-02T13:31:47.404535"
+}

@@ -1,0 +1,67 @@
+{
+  "request": {
+    "method": "POST",
+    "endpoint": "/api/agents/7/execute",
+    "full_url": "https://api.automatos.app/api/agents/7/execute",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-type": "application/json",
+      "x-api-key": "test_api_key_for_backend_validation_2025",
+      "authorization": "Bearer test_api_key_for_backend_validation_2025"
+    },
+    "data": {
+      "task": "validation_check",
+      "parameters": {
+        "validation_level": "strict",
+        "timeout": 30
+      }
+    },
+    "expected_status": [
+      200,
+      202
+    ],
+    "timestamp": "2025-08-02T13:31:47.355607"
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "date": "Sat, 02 Aug 2025 13:31:47 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-encoding": "gzip"
+    },
+    "data": {
+      "execution_id": "exec_7_1754141507",
+      "agent_id": 7,
+      "agent_name": "Test Agent Primary 1754141505",
+      "status": "started",
+      "parameters": {
+        "task": "validation_check",
+        "parameters": {
+          "validation_level": "strict",
+          "timeout": 30
+        }
+      },
+      "started_at": "2025-08-01T12:57:03Z",
+      "estimated_duration": "5-10 minutes",
+      "message": "Execution started for agent Test Agent Primary 1754141505"
+    },
+    "raw_text": "{\"execution_id\":\"exec_7_1754141507\",\"agent_id\":7,\"agent_name\":\"Test Agent Primary 1754141505\",\"status\":\"started\",\"parameters\":{\"task\":\"validation_check\",\"parameters\":{\"validation_level\":\"strict\",\"timeout\":30}},\"started_at\":\"2025-08-01T12:57:03Z\",\"estimated_duration\":\"5-10 minutes\",\"message\":\"Execution started for agent Test Agent Primary 1754141505\"}",
+    "content_length": 352,
+    "response_time_ms": 15.45
+  },
+  "validation": {
+    "is_success": true,
+    "expected_status": [
+      200,
+      202
+    ],
+    "actual_status": 200
+  },
+  "timestamp": "2025-08-02T13:31:47.371147"
+}

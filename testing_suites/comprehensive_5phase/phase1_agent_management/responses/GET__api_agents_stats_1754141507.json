@@ -1,0 +1,65 @@
+{
+  "request": {
+    "method": "GET",
+    "endpoint": "/api/agents/stats",
+    "full_url": "https://api.automatos.app/api/agents/stats",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-type": "application/json",
+      "x-api-key": "test_api_key_for_backend_validation_2025",
+      "authorization": "Bearer test_api_key_for_backend_validation_2025"
+    },
+    "data": null,
+    "expected_status": [
+      200,
+      404
+    ],
+    "timestamp": "2025-08-02T13:31:47.372563"
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "date": "Sat, 02 Aug 2025 13:31:47 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-encoding": "gzip"
+    },
+    "data": {
+      "total_agents": 6,
+      "active_agents": 6,
+      "inactive_agents": 0,
+      "agents_by_type": {
+        "code_architect": 5,
+        "security_expert": 1,
+        "performance_optimizer": 0,
+        "data_analyst": 0,
+        "infrastructure_manager": 0,
+        "custom": 0,
+        "system": 0,
+        "specialized": 0
+      },
+      "average_performance": 85.5,
+      "total_executions": 0,
+      "successful_executions": 0,
+      "failed_executions": 0,
+      "timestamp": "2025-08-01T12:57:03Z"
+    },
+    "raw_text": "{\"total_agents\":6,\"active_agents\":6,\"inactive_agents\":0,\"agents_by_type\":{\"code_architect\":5,\"security_expert\":1,\"performance_optimizer\":0,\"data_analyst\":0,\"infrastructure_manager\":0,\"custom\":0,\"system\":0,\"specialized\":0},\"average_performance\":85.5,\"total_executions\":0,\"successful_executions\":0,\"failed_executions\":0,\"timestamp\":\"2025-08-01T12:57:03Z\"}",
+    "content_length": 353,
+    "response_time_ms": 23.7
+  },
+  "validation": {
+    "is_success": true,
+    "expected_status": [
+      200,
+      404
+    ],
+    "actual_status": 200
+  },
+  "timestamp": "2025-08-02T13:31:47.396421"
+}

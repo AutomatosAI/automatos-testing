@@ -1,0 +1,113 @@
+{
+  "request": {
+    "method": "GET",
+    "endpoint": "/api/documents/analytics/search-patterns",
+    "full_url": "https://api.automatos.app/api/documents/analytics/search-patterns",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-type": "application/json",
+      "x-api-key": "test_api_key_for_backend_validation_2025",
+      "authorization": "Bearer test_api_key_for_backend_validation_2025"
+    },
+    "data": null,
+    "expected_status": [
+      200,
+      404,
+      405
+    ],
+    "timestamp": "2025-08-02T12:58:01.137235"
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "date": "Sat, 02 Aug 2025 12:58:01 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-encoding": "gzip"
+    },
+    "data": {
+      "popular_search_terms": [
+        {
+          "term": "API",
+          "frequency": 45,
+          "trend": "up"
+        },
+        {
+          "term": "authentication",
+          "frequency": 32,
+          "trend": "stable"
+        },
+        {
+          "term": "database",
+          "frequency": 28,
+          "trend": "up"
+        },
+        {
+          "term": "security",
+          "frequency": 25,
+          "trend": "up"
+        },
+        {
+          "term": "deployment",
+          "frequency": 22,
+          "trend": "down"
+        },
+        {
+          "term": "configuration",
+          "frequency": 18,
+          "trend": "stable"
+        },
+        {
+          "term": "testing",
+          "frequency": 15,
+          "trend": "up"
+        },
+        {
+          "term": "monitoring",
+          "frequency": 12,
+          "trend": "stable"
+        }
+      ],
+      "most_accessed_documents": [],
+      "search_performance": {
+        "avg_response_time": "0.12s",
+        "total_searches": 1247,
+        "successful_searches": 1189,
+        "success_rate": 95.3,
+        "avg_results_per_search": 8.4
+      },
+      "usage_patterns": {
+        "peak_hours": [
+          "9-11 AM",
+          "2-4 PM"
+        ],
+        "most_active_day": "Tuesday",
+        "avg_searches_per_user": 12.3,
+        "common_file_types_searched": [
+          "PDF",
+          "DOCX",
+          "MD"
+        ]
+      },
+      "last_updated": "2025-08-02T12:58:01.144614"
+    },
+    "raw_text": "{\"popular_search_terms\":[{\"term\":\"API\",\"frequency\":45,\"trend\":\"up\"},{\"term\":\"authentication\",\"frequency\":32,\"trend\":\"stable\"},{\"term\":\"database\",\"frequency\":28,\"trend\":\"up\"},{\"term\":\"security\",\"frequency\":25,\"trend\":\"up\"},{\"term\":\"deployment\",\"frequency\":22,\"trend\":\"down\"},{\"term\":\"configuration\",\"frequency\":18,\"trend\":\"stable\"},{\"term\":\"testing\",\"frequency\":15,\"trend\":\"up\"},{\"term\":\"monitoring\",\"frequency\":12,\"trend\":\"stable\"}],\"most_accessed_documents\":[],\"search_performance\":{\"avg_response_time\":\"0.12s\",\"total_searches\":1247,\"successful_searches\":1189,\"success_rate\":95.3,\"avg_results_per_search\":8.4},\"usage_patterns\":{\"peak_hours\":[\"9-11 AM\",\"2-4 PM\"],\"most_active_day\":\"Tuesday\",\"avg_searches_per_user\":12.3,\"common_file_types_searched\":[\"PDF\",\"DOCX\",\"MD\"]},\"last_updated\":\"2025-08-02T12:58:01.144614\"}",
+    "content_length": 814,
+    "response_time_ms": 11.28
+  },
+  "validation": {
+    "is_success": true,
+    "expected_status": [
+      200,
+      404,
+      405
+    ],
+    "actual_status": 200
+  },
+  "timestamp": "2025-08-02T12:58:01.148677"
+}
