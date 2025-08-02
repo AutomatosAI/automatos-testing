@@ -266,34 +266,14 @@ class DocumentManagementTester:
         
         print(f"✅ Processing testing completed - {self.test_summary['processing_operations']} processing operations tested")
     
-n    def test_document_upload(self):
-        """
-        Test 2: Document Upload Operations
-        """
-        print("📄 PHASE 2: DOCUMENT UPLOAD OPERATIONS")
-        
-        # Test 2.1: Get upload status/info
-        result = self.tester.make_api_call("GET", "/api/documents")
+    
+    def test_document_search(self):
+        """Document Search - Stub Implementation"""
+        print("
+🔍 PHASE 4: DOCUMENT SEARCH OPERATIONS (STUB)")
+        result = self.tester.make_api_call("GET", "/api/documents/search", None, [200])
         self.update_summary(result)
-        
-        # Test 2.2: Check processing pipeline
-        result = self.tester.make_api_call("GET", "/api/documents/processing/pipeline")
-        self.update_summary(result)
-        
-        # Test 2.3: Get live processing status
-        result = self.tester.make_api_call("GET", "/api/documents/processing/live-status")
-        self.update_summary(result)
-        
-        # Test 2.4: Test document upload endpoint (if available)
-        upload_data = {
-            "filename": "test_document.txt",
-            "content": "This is a test document for upload testing",
-            "document_type": "text"
-        }
-        result = self.tester.make_api_call("POST", "/api/documents/upload", upload_data, [200, 201, 404])
-        self.update_summary(result)
-        
-        print("✅ Document upload testing completed")
+        print("✅ Document search testing completed")
 
     def test_document_analytics(self):
         """
@@ -349,27 +329,6 @@ n    def test_document_upload(self):
         
         print(f"✅ Analytics testing completed - {self.test_summary['analytics_operations']} analytics operations tested")
     
-n    def test_document_search(self):
-        """
-        Test 5: Document Search and Retrieval
-        """
-        print("🔍 PHASE 5: DOCUMENT SEARCH & RETRIEVAL")
-        
-        # Test 5.1: Search functionality
-        result = self.tester.make_api_call("GET", "/api/documents/search", expected_status=[200, 404])
-        self.update_summary(result)
-        
-        # Test 5.2: Search with query parameters
-        search_params = {"query": "test", "limit": 10}
-        result = self.tester.make_api_call("GET", "/api/documents/search", search_params, [200, 404])
-        self.update_summary(result)
-        
-        # Test 5.3: Vector search (if available)
-        result = self.tester.make_api_call("GET", "/api/documents/vector-search", expected_status=[200, 404])
-        self.update_summary(result)
-        
-        print("✅ Document search testing completed")
-
     def test_advanced_operations(self):
         """
         Test 5: Advanced Document Operations
@@ -584,3 +543,34 @@ def main():
         return 1
 
 
+    def test_document_upload(self):
+        """
+        Test 2: Document Upload Operations
+        """
+        print("📄 PHASE 2: DOCUMENT UPLOAD OPERATIONS")
+        
+        # Test 2.1: Get upload status/info
+        result = self.tester.make_api_call("GET", "/api/documents")
+        self.update_summary(result)
+        
+        # Test 2.2: Check processing pipeline
+        result = self.tester.make_api_call("GET", "/api/documents/processing/pipeline")
+        self.update_summary(result)
+        
+        # Test 2.3: Get live processing status
+        result = self.tester.make_api_call("GET", "/api/documents/processing/live-status")
+        self.update_summary(result)
+        
+        # Test 2.4: Test document upload endpoint (if available)
+        upload_data = {
+            "filename": "test_document.txt",
+            "content": "This is a test document for upload testing",
+            "document_type": "text"
+        }
+        result = self.tester.make_api_call("POST", "/api/documents/upload", upload_data, [200, 201, 404])
+        self.update_summary(result)
+        
+        print("✅ Document upload testing completed")
+
+if __name__ == "__main__":
+    exit(main())

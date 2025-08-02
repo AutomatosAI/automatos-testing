@@ -1,0 +1,70 @@
+{
+  "request": {
+    "method": "PUT",
+    "endpoint": "/api/agents/7",
+    "full_url": "https://api.automatos.app/api/agents/7",
+    "headers": {
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br",
+      "connection": "keep-alive",
+      "user-agent": "python-httpx/0.28.1",
+      "content-type": "application/json",
+      "x-api-key": "test_api_key_for_backend_validation_2025",
+      "authorization": "Bearer test_api_key_for_backend_validation_2025"
+    },
+    "data": {
+      "description": "Updated comprehensive test agent"
+    },
+    "expected_status": 200,
+    "timestamp": "2025-08-02T13:31:45.173962"
+  },
+  "response": {
+    "status_code": 200,
+    "headers": {
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "date": "Sat, 02 Aug 2025 13:31:45 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "content-encoding": "gzip"
+    },
+    "data": {
+      "id": 7,
+      "name": "Test Agent Primary 1754141505",
+      "description": "Updated comprehensive test agent",
+      "agent_type": "code_architect",
+      "status": "active",
+      "configuration": {
+        "programming_languages": [
+          "python",
+          "javascript"
+        ],
+        "frameworks": [
+          "fastapi",
+          "react"
+        ],
+        "focus_areas": [
+          "testing",
+          "validation"
+        ]
+      },
+      "performance_metrics": null,
+      "priority_level": "medium",
+      "max_concurrent_tasks": 5,
+      "auto_start": false,
+      "created_at": "2025-08-02T13:31:45.133177",
+      "updated_at": "2025-08-02T13:31:45.180540",
+      "created_by": "api",
+      "skills": []
+    },
+    "raw_text": "{\"id\":7,\"name\":\"Test Agent Primary 1754141505\",\"description\":\"Updated comprehensive test agent\",\"agent_type\":\"code_architect\",\"status\":\"active\",\"configuration\":{\"programming_languages\":[\"python\",\"javascript\"],\"frameworks\":[\"fastapi\",\"react\"],\"focus_areas\":[\"testing\",\"validation\"]},\"performance_metrics\":null,\"priority_level\":\"medium\",\"max_concurrent_tasks\":5,\"auto_start\":false,\"created_at\":\"2025-08-02T13:31:45.133177\",\"updated_at\":\"2025-08-02T13:31:45.180540\",\"created_by\":\"api\",\"skills\":[]}",
+    "content_length": 494,
+    "response_time_ms": 18.81
+  },
+  "validation": {
+    "is_success": true,
+    "expected_status": 200,
+    "actual_status": 200
+  },
+  "timestamp": "2025-08-02T13:31:45.192944"
+}
