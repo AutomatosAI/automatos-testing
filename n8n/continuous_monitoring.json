@@ -1,0 +1,287 @@
+
+{
+  "name": "Automotas AI Continuous Monitoring",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 */15 * * * *"
+            }
+          ]
+        }
+      },
+      "id": "schedule_trigger",
+      "name": "Every 15 Minutes",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [140, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://localhost:8002/health",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "health_check",
+      "name": "System Health Check",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [360, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://localhost:8002/api/multi-agent/health",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "multi_agent_health",
+      "name": "Multi-Agent Health",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [360, 420]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://localhost:8002/api/agents/statistics",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "agent_statistics",
+      "name": "Agent Statistics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [360, 540]
+    },
+    {
+      "parameters": {
+        "mode": "multiplex",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "timestamp",
+              "value": "={{ new Date().toISOString() }}"
+            },
+            {
+              "id": "system_status",
+              "value": "={{ $node.health_check.json.status || 'unhealthy' }}"
+            },
+            {
+              "id": "multi_agent_status",
+              "value": "={{ $node.multi_agent_health.json.status || 'unhealthy' }}"
+            },
+            {
+              "id": "total_agents",
+              "value": "={{ $node.agent_statistics.json.data?.total_agents || 0 }}"
+            },
+            {
+              "id": "active_agents",
+              "value": "={{ $node.agent_statistics.json.data?.active_agents || 0 }}"
+            }
+          ]
+        }
+      },
+      "id": "aggregate_metrics",
+      "name": "Aggregate Metrics",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [580, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "system_unhealthy",
+              "leftValue": "={{ $json.system_status }}",
+              "rightValue": "healthy",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "or"
+        }
+      },
+      "id": "check_alerts",
+      "name": "Check for Alerts",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [800, 400]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+        "body": {
+          "text": "🚨 Automotas AI System Alert!",
+          "blocks": [
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "*Automotas AI System Alert* 🚨\n\n❌ *System Status:* {{ $json.system_status }}\n🤖 *Multi-Agent Status:* {{ $json.multi_agent_status }}\n👥 *Total Agents:* {{ $json.total_agents }}\n🟢 *Active Agents:* {{ $json.active_agents }}\n⏰ *Time:* {{ $json.timestamp }}\n\nPlease check the system immediately."
+              }
+            }
+          ]
+        },
+        "options": {
+          "bodyContentType": "json"
+        }
+      },
+      "id": "send_alert",
+      "name": "Send Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [800, 240]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:3001/webhook/monitoring-data",
+        "body": {
+          "timestamp": "={{ $json.timestamp }}",
+          "system_status": "={{ $json.system_status }}",
+          "multi_agent_status": "={{ $json.multi_agent_status }}",
+          "total_agents": "={{ $json.total_agents }}",
+          "active_agents": "={{ $json.active_agents }}",
+          "monitoring_type": "continuous"
+        },
+        "options": {
+          "bodyContentType": "json"
+        }
+      },
+      "id": "log_metrics",
+      "name": "Log Metrics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1020, 400]
+    }
+  ],
+  "connections": {
+    "schedule_trigger": {
+      "main": [
+        [
+          {
+            "node": "health_check",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "multi_agent_health",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "agent_statistics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "health_check": {
+      "main": [
+        [
+          {
+            "node": "aggregate_metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "multi_agent_health": {
+      "main": [
+        [
+          {
+            "node": "aggregate_metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agent_statistics": {
+      "main": [
+        [
+          {
+            "node": "aggregate_metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "aggregate_metrics": {
+      "main": [
+        [
+          {
+            "node": "check_alerts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "check_alerts": {
+      "main": [
+        [
+          {
+            "node": "send_alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "log_metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "send_alert": {
+      "main": [
+        [
+          {
+            "node": "log_metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-08-09T00:00:00.000Z",
+      "updatedAt": "2025-08-09T00:00:00.000Z",
+      "id": "automotas-monitoring",
+      "name": "automotas-monitoring"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-09T00:00:00.000Z",
+  "versionId": "1"
+}

@@ -1,0 +1,91 @@
+
+version: '3.8'
+
+services:
+  # PostgreSQL Test Database
+  postgres-test:
+    image: postgres:15
+    container_name: automotas-test-postgres
+    environment:
+      POSTGRES_DB: automotas_test_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: test_password
+    ports:
+      - "5433:5432"  # Different port to avoid conflicts
+    volumes:
+      - postgres_test_data:/var/lib/postgresql/data
+      - ./init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis for Caching Tests
+  redis-test:
+    image: redis:7-alpine
+    container_name: automotas-test-redis
+    ports:
+      - "6380:6379"  # Different port to avoid conflicts
+    volumes:
+      - redis_test_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  # Test Results Database (Optional - for storing test history)
+  test-results-db:
+    image: postgres:15
+    container_name: automotas-test-results
+    environment:
+      POSTGRES_DB: test_results_db
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: testpass
+    ports:
+      - "5434:5432"
+    volumes:
+      - test_results_data:/var/lib/postgresql/data
+
+  # N8N for Workflow Testing (Optional)
+  n8n-testing:
+    image: n8nio/n8n:latest
+    container_name: automotas-n8n-testing
+    ports:
+      - "5679:5678"  # Different port to avoid conflicts
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=testing123
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - WEBHOOK_URL=http://localhost:5679
+    volumes:
+      - n8n_testing_data:/home/node/.n8n
+      - ./n8n_workflows:/home/node/workflows:ro
+    depends_on:
+      - postgres-test
+      - redis-test
+
+  # Test Report Server (Simple HTTP server for viewing reports)
+  test-reports:
+    image: nginx:alpine
+    container_name: automotas-test-reports
+    ports:
+      - "8080:80"
+    volumes:
+      - ./reports:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - postgres-test
+
+volumes:
+  postgres_test_data:
+  redis_test_data:
+  test_results_data:
+  n8n_testing_data:
+
+networks:
+  default:
+    name: automotas-testing-network

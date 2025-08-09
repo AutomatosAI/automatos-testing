@@ -1,0 +1,666 @@
+{
+  "name": "Automatos AI Comprehensive Testing & Bug Fix Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "value": "0 */4 * * *"
+            }
+          ]
+        }
+      },
+      "id": "scheduler",
+      "name": "Test Scheduler (Every 4 Hours)",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "host": "142.93.49.20",
+        "username": "root",
+        "privateKey": "ttzZzSoAJhfPWARF",
+        "command": "cd /root/automatos-testing && git pull origin main && cd testing_suites/comprehensive_5phase && python3 -u phase1_agent_management/scripts/comprehensive_agent_test.py > /tmp/agent_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"AGENT_EXIT_CODE:$?\"",
+        "options": {}
+      },
+      "id": "agent_test",
+      "name": "Agent Management Tests",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        480,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "host": "142.93.49.20",
+        "username": "root",
+        "privateKey": "ttzZzSoAJhfPWARF",
+        "command": "cd /root/automatos-testing && git pull origin main && cd testing_suites/comprehensive_5phase && python3 -u phase2_workflow_orchestration/scripts/comprehensive_workflow_test.py > /tmp/workflow_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"WORKFLOW_EXIT_CODE:$?\"",
+        "options": {}
+      },
+      "id": "workflow_test",
+      "name": "Workflow Management Tests",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        480,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "host": "142.93.49.20",
+        "username": "root",
+        "privateKey": "ttzZzSoAJhfPWARF",
+        "command": "cd /root/automatos-testing && git pull origin main && cd testing_suites/comprehensive_5phase && python3 -u phase3_document_management/scripts/comprehensive_document_test.py > /tmp/document_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"DOCUMENT_EXIT_CODE:$?\"",
+        "options": {}
+      },
+      "id": "document_test",
+      "name": "Document Management Tests",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        480,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "host": "142.93.49.20",
+        "username": "root",
+        "privateKey": "ttzZzSoAJhfPWARF",
+        "command": "cd /root/automatos-testing && git pull origin main && cd testing_suites/comprehensive_5phase && python3 -u phase4_context_engineering/scripts/comprehensive_context_test.py > /tmp/context_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"CONTEXT_EXIT_CODE:$?\"",
+        "options": {}
+      },
+      "id": "context_test",
+      "name": "Context Engineering Tests",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        480,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "host": "142.93.49.20",
+        "username": "root",
+        "privateKey": "ttzZzSoAJhfPWARF",
+        "command": "cd /root/automatos-testing && git pull origin main && cd testing_suites/comprehensive_5phase && python3 -u phase5_performance_analytics/scripts/comprehensive_performance_test.py > /tmp/performance_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"PERFORMANCE_EXIT_CODE:$?\"",
+        "options": {}
+      },
+      "id": "performance_test",
+      "name": "Performance & Analytics Tests",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        480,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Collect and parse all test results\nconst items = $input.all();\nconst testResults = {\n  timestamp: new Date().toISOString(),\n  tests: [],\n  overallSuccess: true,\n  successCount: 0,\n  totalCount: 5\n};\n\n// Parse each test result\nitems.forEach((item, index) => {\n  const testNames = ['agent', 'workflow', 'document', 'context', 'performance'];\n  const testName = testNames[index] || `test_${index}`;\n  \n  const output = item.json.stdout || '';\n  const exitCode = item.json.exitCode || 1;\n  \n  // Extract success rate from output using regex\n  const successRateMatch = output.match(/Success Rate: ([0-9.]+)%/) || output.match(/success_rate.*?([0-9.]+)/);\n  const successRate = successRateMatch ? parseFloat(successRateMatch[1]) : 0;\n  \n  // Check if test passed (exit code 0 and success rate >= 70%)\n  const testPassed = exitCode === 0 && successRate >= 70;\n  \n  if (testPassed) {\n    testResults.successCount++;\n  } else {\n    testResults.overallSuccess = false;\n  }\n  \n  testResults.tests.push({\n    name: testName,\n    exitCode: exitCode,\n    successRate: successRate,\n    passed: testPassed,\n    output: output,\n    logFile: output.includes('/tmp/') ? output.match(/\\/tmp\\/\\w+_test_results_\\d+\\.log/)?.[0] : null\n  });\n});\n\n// Calculate overall success rate\ntestResults.overallSuccessRate = (testResults.successCount / testResults.totalCount) * 100;\n\nreturn { json: testResults };"
+      },
+      "id": "merge_results",
+      "name": "Merge & Analyze Test Results",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        720,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.overallSuccessRate }}",
+              "operation": "largerEqual",
+              "value2": 85
+            }
+          ]
+        }
+      },
+      "id": "check_success_rate",
+      "name": "Success Rate >= 85%?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        960,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "webhook-success",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "success_webhook",
+      "name": "Tests Passed - Send Success Report",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-3-5-sonnet-20241022",
+        "options": {
+          "temperature": 0.1,
+          "maximumTokens": 4000
+        },
+        "prompt": "=You are an expert software engineer and testing analyst for the Automatos AI platform. Your task is to analyze comprehensive test results and generate detailed, actionable bug reports.\n\n## Test Results Analysis\n\n**Test Execution Timestamp:** {{ $json.timestamp }}\n**Overall Success Rate:** {{ $json.overallSuccessRate }}%\n**Tests Passed:** {{ $json.successCount }}/{{ $json.totalCount }}\n**Overall Status:** {{ $json.overallSuccess ? 'SOME TESTS FAILED' : 'MULTIPLE FAILURES' }}\n\n## Individual Test Results:\n\n{{ $json.tests.map(test => `\n### ${test.name.toUpperCase()} TEST\n- **Status:** ${test.passed ? 'PASSED' : 'FAILED'}\n- **Exit Code:** ${test.exitCode}\n- **Success Rate:** ${test.successRate}%\n- **Log File:** ${test.logFile || 'N/A'}\n- **Output Preview:** ${test.output.substring(0, 500)}...\n`).join('\\n') }}\n\n## Your Analysis Task\n\nAnalyze the above test results and provide:\n\n1. **CRITICAL ISSUES IDENTIFIED:** List the most important failures that need immediate attention\n2. **ROOT CAUSE ANALYSIS:** For each failed test, identify the likely root causes based on:\n   - API response codes and error messages\n   - Network connectivity issues\n   - Authentication/authorization problems\n   - Data validation failures\n   - Performance bottlenecks\n3. **SPECIFIC BUG REPORTS:** For each issue, provide:\n   - Clear title and description\n   - Affected component/endpoint\n   - Steps to reproduce\n   - Expected vs actual behavior\n   - Severity level (Critical/High/Medium/Low)\n4. **RECOMMENDED FIXES:** Specific code changes or configuration updates needed\n5. **TESTING STRATEGY:** How to verify fixes work\n\n## Requirements\n- Base your analysis ONLY on the actual test output provided\n- Do NOT make assumptions or create fake issues\n- Provide specific, actionable recommendations\n- Focus on issues that would prevent reaching 85% success rate\n- Include relevant file paths and line numbers when possible\n\n## Output Format\nProvide your analysis in structured markdown format with clear sections and actionable items."
+      },
+      "id": "ai_bug_analyzer",
+      "name": "AI Bug Analysis Agent",
+      "type": "n8n-nodes-base.anthropic",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        420
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "anthropic_api_key",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "host": "142.93.49.20",
+        "username": "root",
+        "privateKey": "ttzZzSoAJhfPWARF",
+        "command": "=cd /root/automatos-testing && find . -name '*.json' -path '*/results/*' -mtime -1 | head -10 | xargs cat | jq -s '.' > /tmp/detailed_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.json && find . -name '*.log' -path '*/logs/*' -mtime -1 | head -5 | xargs tail -50 > /tmp/detailed_test_logs_{{ $now.format('YYYYMMDDHHmmss') }}.txt && cat /tmp/detailed_test_results_*.json /tmp/detailed_test_logs_*.txt | head -2000",
+        "options": {}
+      },
+      "id": "gather_detailed_results",
+      "name": "Gather Detailed Test Results",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-3-5-sonnet-20241022",
+        "options": {
+          "temperature": 0.2,
+          "maximumTokens": 4000
+        },
+        "prompt": "=You are a senior software engineer tasked with creating precise bug fixes for the Automatos AI platform based on test analysis.\n\n## Bug Analysis Report\n{{ $('ai_bug_analyzer').item.json.response }}\n\n## Detailed Test Data\n{{ $json.stdout }}\n\n## Code Repository Context\nYou have access to the following repositories:\n- **Application Code:** /root/automatos-ai (FastAPI backend, React frontend)\n- **Testing Code:** /root/automatos-testing (comprehensive test suites)\n\n## Your Task\n\nBased on the bug analysis above and detailed test data, create specific, implementable fixes:\n\n1. **PRIORITIZED FIX LIST:** Order fixes by impact on reaching 85% test success rate\n2. **SPECIFIC CODE CHANGES:** For each fix provide:\n   - Exact file path to modify\n   - Specific lines to change\n   - Complete code implementation\n   - Configuration changes needed\n3. **API ENDPOINT FIXES:** Address issues with:\n   - Missing endpoints returning 404\n   - Authentication/authorization failures\n   - Data validation errors\n   - Performance issues\n4. **TESTING IMPROVEMENTS:** Fix test-related issues:\n   - Test configuration problems\n   - Test data issues\n   - Environment setup problems\n\n## Implementation Requirements\n- Provide complete, working code snippets\n- Include error handling and logging\n- Follow existing code patterns and standards\n- Ensure backwards compatibility\n- Include any database migrations needed\n\n## Output Format\nStructure your response as:\n```\n## FIX #1: [Title]\n**Priority:** Critical/High/Medium\n**File:** /path/to/file.py\n**Lines:** 45-67\n**Description:** [What this fixes]\n\n**Code Changes:**\n```python\n[Complete implementation]\n```\n\n**Testing:** [How to verify the fix]\n---\n```\n\nFocus on fixes that will have the highest impact on test success rates. Be specific and actionable."
+      },
+      "id": "ai_fix_generator",
+      "name": "AI Fix Generation Agent",
+      "type": "n8n-nodes-base.anthropic",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        420
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "anthropic_api_key",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "// Parse the AI-generated fixes and structure them for implementation\nconst fixResponse = $('ai_fix_generator').item.json.response;\nconst timestamp = new Date().toISOString().replace(/[:.]/g, '-');\n\n// Extract individual fixes using regex\nconst fixRegex = /## FIX #(\\d+): (.+?)\\n\\*\\*Priority:\\*\\* (.+?)\\n\\*\\*File:\\*\\* (.+?)\\n\\*\\*Lines:\\*\\* (.+?)\\n\\*\\*Description:\\*\\* (.+?)\\n\\n\\*\\*Code Changes:\\*\\*\\n```(?:python|javascript|yaml|json)?\\n([\\s\\S]+?)\\n```\\n\\n\\*\\*Testing:\\*\\* (.+?)\\n---/g;\n\nconst fixes = [];\nlet match;\n\nwhile ((match = fixRegex.exec(fixResponse)) !== null) {\n  fixes.push({\n    id: match[1],\n    title: match[2].trim(),\n    priority: match[3].trim(),\n    file: match[4].trim(),\n    lines: match[5].trim(),\n    description: match[6].trim(),\n    code: match[7].trim(),\n    testing: match[8].trim()\n  });\n}\n\n// If regex parsing fails, try alternative parsing\nif (fixes.length === 0) {\n  const lines = fixResponse.split('\\n');\n  let currentFix = null;\n  let inCodeBlock = false;\n  let codeContent = [];\n  \n  for (const line of lines) {\n    if (line.startsWith('## FIX #')) {\n      if (currentFix) {\n        currentFix.code = codeContent.join('\\n').trim();\n        fixes.push(currentFix);\n        codeContent = [];\n      }\n      currentFix = {\n        id: line.match(/#(\\d+)/)?.[1] || fixes.length + 1,\n        title: line.replace(/## FIX #\\d+: /, '').trim(),\n        priority: 'Medium',\n        file: '',\n        lines: '',\n        description: '',\n        code: '',\n        testing: ''\n      };\n    } else if (currentFix && line.startsWith('**Priority:**')) {\n      currentFix.priority = line.replace('**Priority:**', '').trim();\n    } else if (currentFix && line.startsWith('**File:**')) {\n      currentFix.file = line.replace('**File:**', '').trim();\n    } else if (currentFix && line.startsWith('**Lines:**')) {\n      currentFix.lines = line.replace('**Lines:**', '').trim();\n    } else if (currentFix && line.startsWith('**Description:**')) {\n      currentFix.description = line.replace('**Description:**', '').trim();\n    } else if (currentFix && line.startsWith('**Testing:**')) {\n      currentFix.testing = line.replace('**Testing:**', '').trim();\n    } else if (line.startsWith('```')) {\n      inCodeBlock = !inCodeBlock;\n    } else if (inCodeBlock && currentFix) {\n      codeContent.push(line);\n    }\n  }\n  \n  if (currentFix) {\n    currentFix.code = codeContent.join('\\n').trim();\n    fixes.push(currentFix);\n  }\n}\n\n// Sort fixes by priority\nconst priorityOrder = { 'Critical': 1, 'High': 2, 'Medium': 3, 'Low': 4 };\nfixes.sort((a, b) => (priorityOrder[a.priority] || 5) - (priorityOrder[b.priority] || 5));\n\nreturn {\n  json: {\n    timestamp: timestamp,\n    totalFixes: fixes.length,\n    fixes: fixes,\n    branchName: `bugfix/automated-fixes-${timestamp}`,\n    rawResponse: fixResponse\n  }\n};"
+      },
+      "id": "parse_fixes",
+      "name": "Parse & Structure Fixes",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-3-5-sonnet-20241022",
+        "options": {
+          "temperature": 0.1,
+          "maximumTokens": 4000
+        },
+        "prompt": "=You are an expert DevOps engineer responsible for implementing bug fixes in the Automatos AI codebase. You will apply the fixes systematically and safely.\n\n## Fixes to Implement\n**Branch Name:** {{ $json.branchName }}\n**Total Fixes:** {{ $json.totalFixes }}\n\n{{ $json.fixes.map((fix, index) => `\n### Fix ${parseInt(fix.id) || index + 1}: ${fix.title}\n**Priority:** ${fix.priority}\n**Target File:** ${fix.file}\n**Target Lines:** ${fix.lines}\n**Description:** ${fix.description}\n\n**Code to Apply:**\n\\`\\`\\`\n${fix.code}\n\\`\\`\\`\n\n**Testing Instructions:** ${fix.testing}\n`).join('\\n---\\n') }}\n\n## Your Implementation Task\n\nGenerate the exact shell commands needed to:\n\n1. **CREATE NEW BRANCH:** Create and switch to the bugfix branch\n2. **APPLY EACH FIX:** For each fix, provide the complete implementation commands\n3. **VALIDATE CHANGES:** Commands to verify each fix was applied correctly\n4. **COMMIT CHANGES:** Git commands to commit with descriptive messages\n5. **PUSH BRANCH:** Push the branch for review\n\n## Implementation Strategy\n- Work in /root/automatos-ai directory\n- Create backup of files before modification\n- Apply fixes one by one with individual commits\n- Test each fix where possible\n- Use precise file editing commands (sed, awk, or direct file writes)\n\n## Output Format\nProvide a complete shell script with:\n```bash\n#!/bin/bash\nset -e  # Exit on error\n\n# Implementation commands here\n```\n\nEnsure all commands are safe, precise, and include error checking. The script should be ready to execute immediately."
+      },
+      "id": "ai_fix_implementer",
+      "name": "AI Fix Implementation Agent",
+      "type": "n8n-nodes-base.anthropic",
+      "typeVersion": 1,
+      "position": [
+        2160,
+        420
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "anthropic_api_key",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "host": "142.93.49.20",
+        "username": "root",
+        "privateKey": "ttzZzSoAJhfPWARF",
+        "command": "={{ $json.response }}",
+        "options": {}
+      },
+      "id": "execute_fixes",
+      "name": "Execute Fix Implementation",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        2400,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "seconds"
+      },
+      "id": "wait_before_retest",
+      "name": "Wait 30s Before Re-testing",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        2640,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "host": "142.93.49.20",
+        "username": "root",
+        "privateKey": "ttzZzSoAJhfPWARF",
+        "command": "cd /root/automatos-testing/testing_suites/comprehensive_5phase && python3 -u run_all_tests.py > /tmp/retest_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"RETEST_EXIT_CODE:$?\"; tail -50 /tmp/retest_results_*.log",
+        "options": {}
+      },
+      "id": "rerun_all_tests",
+      "name": "Re-run All Tests",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        2880,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Parse retest results and determine if we should continue fixing\nconst output = $json.stdout || '';\nconst exitCode = $json.exitCode || 1;\n\n// Extract overall success rate from the retest output\nconst successRateMatch = output.match(/Success Rate: ([0-9.]+)%/) || \n                        output.match(/success_rate.*?([0-9.]+)/) ||\n                        output.match(/([0-9.]+)% success/);\n\nconst successRate = successRateMatch ? parseFloat(successRateMatch[1]) : 0;\n\n// Extract individual test results\nconst testResults = [];\nconst testMatches = output.matchAll(/(\\w+) TEST.*?([0-9.]+)% success/gi);\nfor (const match of testMatches) {\n  testResults.push({\n    name: match[1],\n    successRate: parseFloat(match[2])\n  });\n}\n\n// Determine if we should continue (success rate < 85% and we haven't exceeded max iterations)\nconst shouldContinue = successRate < 85;\nconst maxIterations = 5;  // Prevent infinite loops\nconst currentIteration = $workflow.execution.data?.iteration || 1;\n\n// Find major issues that need manual intervention\nconst majorIssues = [];\nif (output.includes('Connection refused') || output.includes('Service unavailable')) {\n  majorIssues.push('Service connectivity issues detected');\n}\nif (output.includes('Authentication failed') || output.includes('Unauthorized')) {\n  majorIssues.push('Authentication/authorization problems');\n}\nif (successRate < 30) {\n  majorIssues.push('Critical system failure - success rate too low');\n}\n\nreturn {\n  json: {\n    timestamp: new Date().toISOString(),\n    successRate: successRate,\n    exitCode: exitCode,\n    shouldContinue: shouldContinue && currentIteration < maxIterations && majorIssues.length === 0,\n    currentIteration: currentIteration,\n    maxIterations: maxIterations,\n    testResults: testResults,\n    majorIssues: majorIssues,\n    output: output,\n    status: successRate >= 85 ? 'SUCCESS' : 'NEEDS_MORE_FIXES'\n  }\n};"
+      },
+      "id": "analyze_retest",
+      "name": "Analyze Re-test Results",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        3120,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.shouldContinue }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "should_continue_fixing",
+      "name": "Continue Fixing?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3360,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "webhook",
+        "webhook": "={{ $('scheduler').item.json.webhook_url || 'http://localhost:5678/webhook/test-complete' }}",
+        "method": "POST",
+        "body": {
+          "status": "COMPLETED",
+          "timestamp": "={{ $json.timestamp }}",
+          "finalSuccessRate": "={{ $json.successRate }}",
+          "totalIterations": "={{ $json.currentIteration }}",
+          "testResults": "={{ $json.testResults }}",
+          "majorIssues": "={{ $json.majorIssues }}"
+        }
+      },
+      "id": "final_completion_report",
+      "name": "Send Final Completion Report",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        3600,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "webhook",
+        "webhook": "={{ $('scheduler').item.json.webhook_url || 'http://localhost:5678/webhook/need-manual-review' }}",
+        "method": "POST",
+        "body": {
+          "status": "REQUIRES_MANUAL_INTERVENTION",
+          "timestamp": "={{ $json.timestamp }}",
+          "successRate": "={{ $json.successRate }}",
+          "iteration": "={{ $json.currentIteration }}",
+          "majorIssues": "={{ $json.majorIssues }}",
+          "output": "={{ $json.output.substring(0, 1000) }}"
+        }
+      },
+      "id": "manual_intervention_alert",
+      "name": "Alert: Manual Intervention Required",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        3600,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 120,
+        "unit": "seconds"
+      },
+      "id": "wait_before_next_iteration",
+      "name": "Wait 2min Before Next Iteration",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        3600,
+        420
+      ]
+    }
+  ],
+  "connections": {
+    "scheduler": {
+      "main": [
+        [
+          {
+            "node": "agent_test",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "workflow_test",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "document_test",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "context_test",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "performance_test",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agent_test": {
+      "main": [
+        [
+          {
+            "node": "merge_results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "workflow_test": {
+      "main": [
+        [
+          {
+            "node": "merge_results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "document_test": {
+      "main": [
+        [
+          {
+            "node": "merge_results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "context_test": {
+      "main": [
+        [
+          {
+            "node": "merge_results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "performance_test": {
+      "main": [
+        [
+          {
+            "node": "merge_results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "merge_results": {
+      "main": [
+        [
+          {
+            "node": "check_success_rate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "check_success_rate": {
+      "main": [
+        [
+          {
+            "node": "success_webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ai_bug_analyzer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ai_bug_analyzer": {
+      "main": [
+        [
+          {
+            "node": "gather_detailed_results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "gather_detailed_results": {
+      "main": [
+        [
+          {
+            "node": "ai_fix_generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ai_fix_generator": {
+      "main": [
+        [
+          {
+            "node": "parse_fixes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "parse_fixes": {
+      "main": [
+        [
+          {
+            "node": "ai_fix_implementer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ai_fix_implementer": {
+      "main": [
+        [
+          {
+            "node": "execute_fixes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "execute_fixes": {
+      "main": [
+        [
+          {
+            "node": "wait_before_retest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "wait_before_retest": {
+      "main": [
+        [
+          {
+            "node": "rerun_all_tests",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "rerun_all_tests": {
+      "main": [
+        [
+          {
+            "node": "analyze_retest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "analyze_retest": {
+      "main": [
+        [
+          {
+            "node": "should_continue_fixing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "should_continue_fixing": {
+      "main": [
+        [
+          {
+            "node": "final_completion_report",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "wait_before_next_iteration",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "wait_before_next_iteration": {
+      "main": [
+        [
+          {
+            "node": "ai_bug_analyzer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveManualExecutions": true,
+    "executionTimeout": 7200,
+    "maxExecutionTimeout": 7200
+  },
+  "staticData": {},
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-23T12:00:00.000Z",
+  "versionId": "1"
+}
