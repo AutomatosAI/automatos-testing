@@ -26,7 +26,7 @@
         "authentication": "privateKey",
         "host": "142.93.49.20",
         "username": "root",
-        "privateKey": "ttzZzSoAJhfPWARF",
+        "privateKey": "${{CREDENTIAL:SSH_PRIVATE_KEY}}",
         "command": "cd /root/automatos-testing && git pull origin main && cd testing_suites/comprehensive_5phase && python3 -u phase1_agent_management/scripts/comprehensive_agent_test.py > /tmp/agent_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"AGENT_EXIT_CODE:$?\"",
         "options": {}
       },
@@ -44,7 +44,7 @@
         "authentication": "privateKey",
         "host": "142.93.49.20",
         "username": "root",
-        "privateKey": "ttzZzSoAJhfPWARF",
+        "privateKey": "${{CREDENTIAL:SSH_PRIVATE_KEY}}",
         "command": "cd /root/automatos-testing && git pull origin main && cd testing_suites/comprehensive_5phase && python3 -u phase2_workflow_orchestration/scripts/comprehensive_workflow_test.py > /tmp/workflow_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"WORKFLOW_EXIT_CODE:$?\"",
         "options": {}
       },
@@ -62,7 +62,7 @@
         "authentication": "privateKey",
         "host": "142.93.49.20",
         "username": "root",
-        "privateKey": "ttzZzSoAJhfPWARF",
+        "privateKey": "${{CREDENTIAL:SSH_PRIVATE_KEY}}",
         "command": "cd /root/automatos-testing && git pull origin main && cd testing_suites/comprehensive_5phase && python3 -u phase3_document_management/scripts/comprehensive_document_test.py > /tmp/document_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"DOCUMENT_EXIT_CODE:$?\"",
         "options": {}
       },
@@ -80,7 +80,7 @@
         "authentication": "privateKey",
         "host": "142.93.49.20",
         "username": "root",
-        "privateKey": "ttzZzSoAJhfPWARF",
+        "privateKey": "${{CREDENTIAL:SSH_PRIVATE_KEY}}",
         "command": "cd /root/automatos-testing && git pull origin main && cd testing_suites/comprehensive_5phase && python3 -u phase4_context_engineering/scripts/comprehensive_context_test.py > /tmp/context_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"CONTEXT_EXIT_CODE:$?\"",
         "options": {}
       },
@@ -98,7 +98,7 @@
         "authentication": "privateKey",
         "host": "142.93.49.20",
         "username": "root",
-        "privateKey": "ttzZzSoAJhfPWARF",
+        "privateKey": "${{CREDENTIAL:SSH_PRIVATE_KEY}}",
         "command": "cd /root/automatos-testing && git pull origin main && cd testing_suites/comprehensive_5phase && python3 -u phase5_performance_analytics/scripts/comprehensive_performance_test.py > /tmp/performance_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.log 2>&1; echo \"PERFORMANCE_EXIT_CODE:$?\"",
         "options": {}
       },
@@ -190,7 +190,7 @@
         "authentication": "privateKey",
         "host": "142.93.49.20",
         "username": "root",
-        "privateKey": "ttzZzSoAJhfPWARF",
+        "privateKey": "${{CREDENTIAL:SSH_PRIVATE_KEY}}",
         "command": "=cd /root/automatos-testing && find . -name '*.json' -path '*/results/*' -mtime -1 | head -10 | xargs cat | jq -s '.' > /tmp/detailed_test_results_{{ $now.format('YYYYMMDDHHmmss') }}.json && find . -name '*.log' -path '*/logs/*' -mtime -1 | head -5 | xargs tail -50 > /tmp/detailed_test_logs_{{ $now.format('YYYYMMDDHHmmss') }}.txt && cat /tmp/detailed_test_results_*.json /tmp/detailed_test_logs_*.txt | head -2000",
         "options": {}
       },

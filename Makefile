@@ -160,7 +160,7 @@ validate: format lint
 # Monitoring and maintenance
 health-check:
 	@echo "🏥 Checking system health..."
-	@if curl -s http://localhost:8002/health >/dev/null 2>&1; then \
+	@if curl -s http://localhost:8000/health >/dev/null 2>&1; then \
 		echo "✅ Automotas AI backend is healthy"; \
 	else \
 		echo "❌ Automotas AI backend is not responding"; \

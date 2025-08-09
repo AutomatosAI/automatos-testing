@@ -91,8 +91,8 @@ class DocumentManagementTester:
             success_threshold = 0.7
             success_rate = successful_calls / total_calls if total_calls > 0 else 0
             
-            print(f"📈 Success Rate: {success_rate * 100:.1f}%")
-            print(f"�� Required Threshold: {success_threshold * 100:.1f}%")
+        print(f"📈 Success Rate: {success_rate * 100:.1f}%")
+        print(f"🎯 Required Threshold: {success_threshold * 100:.1f}%")
             
             is_successful = success_rate >= success_threshold
             
@@ -266,7 +266,7 @@ class DocumentManagementTester:
         
         print(f"✅ Processing testing completed - {self.test_summary['processing_operations']} processing operations tested")
     
-n    def test_document_upload(self):
+    def test_document_upload(self):
         """
         Test 2: Document Upload Operations
         """
@@ -349,7 +349,7 @@ n    def test_document_upload(self):
         
         print(f"✅ Analytics testing completed - {self.test_summary['analytics_operations']} analytics operations tested")
     
-n    def test_document_search(self):
+    def test_document_search(self):
         """
         Test 5: Document Search and Retrieval
         """

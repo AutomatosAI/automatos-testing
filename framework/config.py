@@ -64,7 +64,7 @@ class TestConfiguration:
         env = TestEnvironment(os.getenv("TEST_ENVIRONMENT", "development"))
         
         api_config = APITestConfig(
-            base_url=os.getenv("API_BASE_URL", "http://localhost:8002"),
+            base_url=os.getenv("API_BASE_URL", "http://localhost:8000"),
             timeout=int(os.getenv("API_TIMEOUT", "30")),
             retry_count=int(os.getenv("API_RETRY_COUNT", "3")),
             api_key=os.getenv("API_KEY"),

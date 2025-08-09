@@ -22,7 +22,7 @@
     {
       "parameters": {
         "method": "GET",
-        "url": "http://localhost:8002/health",
+        "url": "={{ $env.API_BASE_URL || 'http://localhost:8000' }}/health",
         "options": {
           "timeout": 10000
         }
@@ -36,7 +36,7 @@
     {
       "parameters": {
         "method": "GET",
-        "url": "http://localhost:8002/api/multi-agent/health",
+        "url": "={{ $env.API_BASE_URL || 'http://localhost:8000' }}/api/multi-agent/health",
         "options": {
           "timeout": 10000
         }
@@ -50,7 +50,7 @@
     {
       "parameters": {
         "method": "GET",
-        "url": "http://localhost:8002/api/agents/statistics",
+        "url": "={{ $env.API_BASE_URL || 'http://localhost:8000' }}/api/agents/statistics",
         "options": {
           "timeout": 10000
         }

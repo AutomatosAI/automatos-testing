@@ -82,6 +82,8 @@ Examples:
     if args.api_url:
         import os
         os.environ["API_BASE_URL"] = args.api_url
+        # Ensure OpenAPI discovery path alignment
+        os.environ.setdefault("OPENAPI_PATH", "/openapi.json")
         
     if args.parallel:
         import os
