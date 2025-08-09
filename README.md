@@ -89,7 +89,7 @@ automatos-testing/
 ### Installation
 ```bash
 # Clone the testing framework
-git clone git@github.com:Gerard161-Site/automatos-testing.git
+git clone git@github.com:AutomatosAI/automatos-testing.git
 cd automatos-testing
 
 # Install dependencies
@@ -558,8 +558,8 @@ This testing framework is part of the Automatos AI project and is licensed under
 ## 🆘 Support
 
 ### Community Support
-- **GitHub Issues**: [Report bugs and request features](https://github.com/Gerard161-Site/automatos-testing/issues)
-- **Discussions**: [Community discussions and Q&A](https://github.com/Gerard161-Site/automatos-testing/discussions)
+- **GitHub Issues**: [Report bugs and request features](https://github.com/AutomatosAI/automatos-testing/issues)
+- **Discussions**: [Community discussions and Q&A](https://github.com/AutomatosAI/automatos-testing/discussions)
 - **Documentation**: [Comprehensive guides and tutorials](https://docs.automatos.app/testing)
 
 ### Enterprise Support
