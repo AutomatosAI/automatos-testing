@@ -10,6 +10,8 @@ Command-line interface for running the comprehensive testing framework.
 import asyncio
 import argparse
 import sys
+import json
+import os
 from pathlib import Path
 
 # Add framework to path
@@ -60,6 +62,20 @@ Examples:
         action="store_true",
         help="Generate test reports"
     )
+    parser.add_argument(
+        "--json",
+        help="Write summary JSON to this path"
+    )
+    parser.add_argument(
+        "--module-sequence",
+        action="store_true",
+        help="Run modules in sequence and write per-module artifacts to reports/<module>.json"
+    )
+    parser.add_argument(
+        "--fail-fast",
+        action="store_true",
+        help="Stop sequence on first failure"
+    )
     
     parser.add_argument(
         "--api-url",
@@ -76,21 +92,17 @@ Examples:
     
     # Override configuration based on arguments
     if args.environment:
-        import os
         os.environ["TEST_ENVIRONMENT"] = args.environment
         
     if args.api_url:
-        import os
         os.environ["API_BASE_URL"] = args.api_url
         # Ensure OpenAPI discovery path alignment
         os.environ.setdefault("OPENAPI_PATH", "/openapi.json")
         
     if args.parallel:
-        import os
         os.environ["PARALLEL_TESTS"] = "true"
         
     if args.reports:
-        import os
         os.environ["GENERATE_REPORTS"] = "true"
         
     # Set logging level
@@ -108,17 +120,50 @@ Examples:
     if args.level:
         test_level = TestLevel(args.level)
     
+    MODULES_ORDER = [
+        "dashboard","agents","workflows","context","analytics","knowledge","playbooks","settings"
+    ]
+
     try:
-        summary = await runner.run_tests(
-            test_filter=args.filter,
-            test_level=test_level
-        )
-        
-        # Exit with error code if tests failed
-        if summary["status"] == "failed":
-            sys.exit(1)
+        if args.module_sequence:
+            reports_dir = Path(os.environ.get("REPORTS_DIR", "reports"))
+            reports_dir.mkdir(parents=True, exist_ok=True)
+
+            combined = {"ok": True, "modules": {}}
+            any_failed = False
+            for module in MODULES_ORDER:
+                summary = await runner.run_tests(test_filter=module, test_level=test_level)
+                combined["modules"][module] = summary
+                # Write per-module JSON
+                with open(reports_dir / f"{module}.json", "w") as f:
+                    json.dump(summary, f, indent=2)
+                # Determine failure state
+                if summary.get("status") == "failed":
+                    any_failed = True
+                    if args.fail_fast:
+                        break
+            overall = {
+                "ok": not any_failed,
+                "focus": "sequence",
+                "modules": combined["modules"]
+            }
+            if args.json:
+                with open(args.json, "w") as f:
+                    json.dump(overall, f, indent=2)
+            sys.exit(0 if overall["ok"] else 1)
         else:
-            sys.exit(0)
+            summary = await runner.run_tests(
+                test_filter=args.filter,
+                test_level=test_level
+            )
+            if args.json:
+                with open(args.json, "w") as f:
+                    json.dump(summary, f, indent=2)
+            # Exit with error code if tests failed
+            if summary["status"] == "failed":
+                sys.exit(1)
+            else:
+                sys.exit(0)
             
     except KeyboardInterrupt:
         print("\n⚠️ Testing interrupted by user")

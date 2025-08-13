@@ -1,0 +1,436 @@
+{
+  "name": "Automatos Backend-First CI (Parallel A → Gate → Parallel B → Review/Fix/Deploy)",
+  "nodes": [
+    {
+      "id": "cron",
+      "name": "Start (Cron)",
+      "type": "n8n-nodes-base.cron",
+      "parameters": {
+        "rule": "0 */2 * * *"
+      }
+    },
+    {
+      "id": "A_agents",
+      "name": "A: agents",
+      "type": "n8n-nodes-base.executeCommand",
+      "parameters": {
+        "command": "python3 automatos-testing/run_tests.py --focus agents --json reports/agents.json || true"
+      }
+    },
+    {
+      "id": "A_workflows",
+      "name": "A: workflows",
+      "type": "n8n-nodes-base.executeCommand",
+      "parameters": {
+        "command": "python3 automatos-testing/run_tests.py --focus workflows --json reports/workflows.json || true"
+      }
+    },
+    {
+      "id": "A_context",
+      "name": "A: context",
+      "type": "n8n-nodes-base.executeCommand",
+      "parameters": {
+        "command": "python3 automatos-testing/run_tests.py --focus context --json reports/context.json || true"
+      }
+    },
+    {
+      "id": "A_knowledge",
+      "name": "A: knowledge",
+      "type": "n8n-nodes-base.executeCommand",
+      "parameters": {
+        "command": "python3 automatos-testing/run_tests.py --focus knowledge --json reports/knowledge.json || true"
+      }
+    },
+    {
+      "id": "A_playbooks",
+      "name": "A: playbooks",
+      "type": "n8n-nodes-base.executeCommand",
+      "parameters": {
+        "command": "python3 automatos-testing/run_tests.py --focus playbooks --json reports/playbooks.json || true"
+      }
+    },
+    {
+      "id": "A_settings",
+      "name": "A: settings",
+      "type": "n8n-nodes-base.executeCommand",
+      "parameters": {
+        "command": "python3 automatos-testing/run_tests.py --focus settings --json reports/settings.json || true"
+      }
+    },
+    {
+      "id": "A_analytics",
+      "name": "A: analytics",
+      "type": "n8n-nodes-base.executeCommand",
+      "parameters": {
+        "command": "python3 automatos-testing/run_tests.py --focus analytics --json reports/analytics.json || true"
+      }
+    },
+    {
+      "id": "A_collect",
+      "name": "A: collect",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "const fs = require('fs');\nfunction readJSON(p){ try { return JSON.parse(fs.readFileSync(p,'utf8')); } catch(e){ return { ok:false, missing:p }; } }\nreturn [ { agents: readJSON('reports/agents.json'), workflows: readJSON('reports/workflows.json'), context: readJSON('reports/context.json'), knowledge: readJSON('reports/knowledge.json'), playbooks: readJSON('reports/playbooks.json'), settings: readJSON('reports/settings.json'), analytics: readJSON('reports/analytics.json') } ];"
+      }
+    },
+    {
+      "id": "A_gate",
+      "name": "A: gate (all ok?)",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "const a=$json; const groups=[\"agents\", \"workflows\", \"context\", \"knowledge\", \"playbooks\", \"settings\", \"analytics\"]; const fails=[]; for (const g of groups){ if(!a[g] || a[g].ok===false){ fails.push(g); } } return [{ ok: fails.length===0, fails }];"
+      }
+    },
+    {
+      "id": "B_dashboard",
+      "name": "B: dashboard-ui",
+      "type": "n8n-nodes-base.executeCommand",
+      "parameters": {
+        "command": "python3 automatos-testing/run_tests.py --focus dashboard --json reports/dashboard.json || true"
+      }
+    },
+    {
+      "id": "collect_all",
+      "name": "Collect all",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "const fs = require('fs');\nfunction readJSON(p){ try { return JSON.parse(fs.readFileSync(p,'utf8')); } catch(e){ return { ok:false, missing:p }; } }\nreturn [ { agents: readJSON('reports/agents.json'), workflows: readJSON('reports/workflows.json'), context: readJSON('reports/context.json'), knowledge: readJSON('reports/knowledge.json'), playbooks: readJSON('reports/playbooks.json'), settings: readJSON('reports/settings.json'), analytics: readJSON('reports/analytics.json'), dashboard: readJSON('reports/dashboard.json') } ];"
+      }
+    },
+    {
+      "id": "review",
+      "name": "AI Reviewer (priority)",
+      "type": "n8n-nodes-base.openAi",
+      "parameters": {
+        "operation": "chat",
+        "model": "gpt-4o-mini",
+        "systemMessage": "={{$env.REVIEWER_PROMPT || ''}}",
+        "messages": "=Build a prioritized backend-first report from these JSON artifacts: {{$json}}"
+      }
+    },
+    {
+      "id": "fixable",
+      "name": "Fixable?",
+      "type": "n8n-nodes-base.switch",
+      "parameters": {
+        "value1": "={{$json.review && $json.review.includes('Fix Plan')}}"
+      }
+    },
+    {
+      "id": "fixer",
+      "name": "Bug-Fixer Agent",
+      "type": "n8n-nodes-base.openAi",
+      "parameters": {
+        "operation": "chat",
+        "model": "gpt-4o-mini",
+        "systemMessage": "You are a senior engineer. Output a unified diff ONLY.",
+        "messages": "=Propose the smallest patch from the prioritized report: {{$json.review}}"
+      }
+    },
+    {
+      "id": "apply",
+      "name": "Apply Patch",
+      "type": "n8n-nodes-base.executeCommand",
+      "parameters": {
+        "command": "echo \"$BUG_PATCH\" | git apply -p0 --index && git commit -m 'AI hotfix' || true"
+      }
+    },
+    {
+      "id": "deploy",
+      "name": "Redeploy (SSH)",
+      "type": "n8n-nodes-base.ssh",
+      "parameters": {
+        "command": "bash -lc \"APP_DIR=$APP_DIR API_BASE=$API_BASE ./deploy/deploy.sh\"",
+        "workingDirectory": ""
+      },
+      "credentials": {
+        "ssh": {
+          "id": "ttzZzSoAJhfPWARF"
+        }
+      }
+    },
+    {
+      "id": "health",
+      "name": "Post-Deploy Health",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "={{$env.API_BASE}}/api/system/health",
+        "options": {
+          "responseFormat": "json"
+        }
+      }
+    },
+    {
+      "id": "canary",
+      "name": "Canary Workflow Run",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "url": "={{$env.API_BASE}}/api/workflows/{{ $env.CANARY_WORKFLOW_ID || 'wf_canary' }}/run",
+        "method": "POST",
+        "jsonParameters": true,
+        "sendBody": true,
+        "options": {
+          "responseFormat": "json"
+        },
+        "bodyParametersJson": "{ \"input\": { \"query\": \"canary\" } }"
+      }
+    },
+    {
+      "id": "blocker",
+      "name": "Blocker Report",
+      "type": "n8n-nodes-base.openAi",
+      "parameters": {
+        "operation": "chat",
+        "model": "gpt-4o-mini",
+        "systemMessage": "You document blockers crisply; provide reproduction, observed logs, and minimal next steps.",
+        "messages": "=Draft a blocker report for backend failures: {{$json}}"
+      }
+    }
+  ],
+  "connections": {
+    "cron": {
+      "main": [
+        [
+          {
+            "node": "A_agents",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "A_workflows",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "A_context",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "A_knowledge",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "A_playbooks",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "A_settings",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "A_analytics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A_agents": {
+      "main": [
+        [
+          {
+            "node": "A_collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A_workflows": {
+      "main": [
+        [
+          {
+            "node": "A_collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A_context": {
+      "main": [
+        [
+          {
+            "node": "A_collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A_knowledge": {
+      "main": [
+        [
+          {
+            "node": "A_collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A_playbooks": {
+      "main": [
+        [
+          {
+            "node": "A_collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A_settings": {
+      "main": [
+        [
+          {
+            "node": "A_collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A_analytics": {
+      "main": [
+        [
+          {
+            "node": "A_collect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A_collect": {
+      "main": [
+        [
+          {
+            "node": "A_gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "A_gate": {
+      "main": [
+        [
+          {
+            "node": "B_dashboard",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "blocker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "B_dashboard": {
+      "main": [
+        [
+          {
+            "node": "collect_all",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "collect_all": {
+      "main": [
+        [
+          {
+            "node": "review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "review": {
+      "main": [
+        [
+          {
+            "node": "fixable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fixable": {
+      "main": [
+        [
+          {
+            "node": "fixer",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "blocker",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "fixer": {
+      "main": [
+        [
+          {
+            "node": "apply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "apply": {
+      "main": [
+        [
+          {
+            "node": "deploy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deploy": {
+      "main": [
+        [
+          {
+            "node": "health",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "health": {
+      "main": [
+        [
+          {
+            "node": "canary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
+
+

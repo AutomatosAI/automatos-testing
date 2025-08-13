@@ -126,6 +126,28 @@ python run_tests.py --environment production
 python run_tests.py --reports --parallel
 ```
 
+### v2 Runner Flags (module sequencing and artifacts)
+
+```bash
+# Run modules in fixed order and write per-module JSON to reports/<module>.json
+python3 run_tests.py --module-sequence --json reports/sequence.json
+
+# Stop on first module failure
+python3 run_tests.py --module-sequence --fail-fast
+
+# Point runner at a different API base
+python3 run_tests.py --api-url https://api.automatos.app --reports
+```
+
+### n8n CI Workflows
+
+- Import JSONs from `n8n/`:
+  - `n8n/workflow_backend_first.json` (backend-first, gate, review/fix/deploy)
+  - `n8n/workflow_parallel.json` (parallel module tests → single review/fix/deploy)
+
+Set environment variables in n8n:
+- `APP_DIR`, `API_BASE`, `CANARY_WORKFLOW_ID`, and (optionally) `REVIEWER_PROMPT`.
+
 ### Run Individual Phase Tests
 ```bash
 # Agent Management

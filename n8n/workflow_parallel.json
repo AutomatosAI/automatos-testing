@@ -1,0 +1,38 @@
+{
+  "name": "Automatos Hardcore CI — Parallel Test (Single Framework)",
+  "nodes": [
+    {"id": "cron", "name": "Start (Cron)", "type": "n8n-nodes-base.cron", "parameters": {"rule": "0 */2 * * *"}},
+    {"id": "run_dashboard", "name": "Run Dashboard", "type": "n8n-nodes-base.executeCommand", "parameters": {"command": "python3 automatos-testing/run_tests.py --focus dashboard --json reports/dashboard.json || true"}},
+    {"id": "run_agents", "name": "Run Agents", "type": "n8n-nodes-base.executeCommand", "parameters": {"command": "python3 automatos-testing/run_tests.py --focus agents --json reports/agents.json || true"}},
+    {"id": "run_workflows", "name": "Run Workflows", "type": "n8n-nodes-base.executeCommand", "parameters": {"command": "python3 automatos-testing/run_tests.py --focus workflows --json reports/workflows.json || true"}},
+    {"id": "run_context", "name": "Run Context", "type": "n8n-nodes-base.executeCommand", "parameters": {"command": "python3 automatos-testing/run_tests.py --focus context --json reports/context.json || true"}},
+    {"id": "run_analytics", "name": "Run Analytics", "type": "n8n-nodes-base.executeCommand", "parameters": {"command": "python3 automatos-testing/run_tests.py --focus analytics --json reports/analytics.json || true"}},
+    {"id": "run_knowledge", "name": "Run Knowledge", "type": "n8n-nodes-base.executeCommand", "parameters": {"command": "python3 automatos-testing/run_tests.py --focus knowledge --json reports/knowledge.json || true"}},
+    {"id": "run_playbooks", "name": "Run Playbooks", "type": "n8n-nodes-base.executeCommand", "parameters": {"command": "python3 automatos-testing/run_tests.py --focus playbooks --json reports/playbooks.json || true"}},
+    {"id": "run_settings", "name": "Run Settings", "type": "n8n-nodes-base.executeCommand", "parameters": {"command": "python3 automatos-testing/run_tests.py --focus settings --json reports/settings.json || true"}},
+    {"id": "collect", "name": "Collect Reports", "type": "n8n-nodes-base.function", "parameters": {"functionCode": "const fs=require('fs'); const path='reports'; const mods=[\"dashboard\", \"agents\", \"workflows\", \"context\", \"analytics\", \"knowledge\", \"playbooks\", \"settings\"]; const out={}; for (const m of mods){try{out[m]=JSON.parse(fs.readFileSync(`${path}/${m}.json`,'utf8'));}catch(e){out[m]={error:`missing ${m}.json`}}} return [out];"}},
+    {"id": "review", "name": "AI Reviewer", "type": "n8n-nodes-base.openAi", "parameters": {"operation": "chat", "model": "gpt-4o-mini", "systemMessage": "You are a merciless QA lead. Use STRICT evidence only. Produce a module-scoped bug report.", "messages": "=Create a module-scoped bug report from these JSON results (one object with module keys). {{$json}}"}},
+    {"id": "fix", "name": "Bug-Fixer Agent", "type": "n8n-nodes-base.openAi", "parameters": {"operation": "chat", "model": "gpt-4o-mini", "systemMessage": "You are a senior engineer. Output a single unified diff that addresses the highest-priority failures first.", "messages": "=Propose the smallest patch based on the reviewer output. {{$json}}"}},
+    {"id": "apply", "name": "Apply Patch", "type": "n8n-nodes-base.executeCommand", "parameters": {"command": "echo \"$BUG_PATCH\" | git apply -p0 --index && git commit -m 'AI hotfix' || true"}},
+    {"id": "deploy", "name": "Redeploy (SSH)", "type": "n8n-nodes-base.ssh", "parameters": {"command": "bash -lc \"APP_DIR=$APP_DIR API_BASE=$API_BASE ./deploy/deploy.sh\"", "workingDirectory": ""}, "credentials": {"ssh": {"id": "ttzZzSoAJhfPWARF"}}},
+    {"id": "health", "name": "Post-Deploy Health", "type": "n8n-nodes-base.httpRequest", "parameters": {"url": "={{$env.API_BASE}}/api/system/health", "options": {"responseFormat": "json"}}}
+  ],
+  "connections": {
+    "cron": {"main": [[{"node": "run_dashboard", "type": "main", "index": 0}, {"node": "run_agents", "type": "main", "index": 0}, {"node": "run_workflows", "type": "main", "index": 0}, {"node": "run_context", "type": "main", "index": 0}, {"node": "run_analytics", "type": "main", "index": 0}, {"node": "run_knowledge", "type": "main", "index": 0}, {"node": "run_playbooks", "type": "main", "index": 0}, {"node": "run_settings", "type": "main", "index": 0}]]},
+    "run_dashboard": {"main": [[{"node": "collect", "type": "main", "index": 0}]]},
+    "run_agents": {"main": [[{"node": "collect", "type": "main", "index": 0}]]},
+    "run_workflows": {"main": [[{"node": "collect", "type": "main", "index": 0}]]},
+    "run_context": {"main": [[{"node": "collect", "type": "main", "index": 0}]]},
+    "run_analytics": {"main": [[{"node": "collect", "type": "main", "index": 0}]]},
+    "run_knowledge": {"main": [[{"node": "collect", "type": "main", "index": 0}]]},
+    "run_playbooks": {"main": [[{"node": "collect", "type": "main", "index": 0}]]},
+    "run_settings": {"main": [[{"node": "collect", "type": "main", "index": 0}]]},
+    "collect": {"main": [[{"node": "review", "type": "main", "index": 0}]]},
+    "review": {"main": [[{"node": "fix", "type": "main", "index": 0}]]},
+    "fix": {"main": [[{"node": "apply", "type": "main", "index": 0}]]},
+    "apply": {"main": [[{"node": "deploy", "type": "main", "index": 0}]]},
+    "deploy": {"main": [[{"node": "health", "type": "main", "index": 0}]]}
+  }
+}
+
+
