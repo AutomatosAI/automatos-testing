@@ -1,0 +1,2492 @@
+[
+  {
+    "id": "3fa17c71-c535-4856-86f7-cea3182093b4",
+    "name": "Tenant_1",
+    "tier": "professional",
+    "limits": {
+      "max_agents": 100,
+      "max_workflows": -1,
+      "storage_gb": 1,
+      "api_calls_per_minute": -1
+    },
+    "features": {
+      "neural_fields": true,
+      "custom_agents": true,
+      "advanced_analytics": true,
+      "priority_support": true
+    },
+    "users": [
+      {
+        "id": "5527ba6d-7d56-47a5-b45c-a8eca405cfb4",
+        "email": "user0@tenant0.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "36fcc94e-e394-487e-8055-58864a50b60a",
+        "email": "user1@tenant0.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "4acd91a5-d757-4844-bc79-f1eeddba82cb",
+        "email": "user2@tenant0.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "b5174789-5aec-4bea-8a1c-bebe1c93480e",
+        "email": "user3@tenant0.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2025-08-13T02:58:23.490709"
+  },
+  {
+    "id": "e3eba1f3-5fda-4d20-8ddd-b6a42524f3e7",
+    "name": "Tenant_2",
+    "tier": "free",
+    "limits": {
+      "max_agents": 5,
+      "max_workflows": 10,
+      "storage_gb": 1,
+      "api_calls_per_minute": 60
+    },
+    "features": {
+      "neural_fields": false,
+      "custom_agents": false,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "d0b6d287-c9df-4ea4-a0b1-a757506f92fe",
+        "email": "user0@tenant1.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "4162aeeb-343c-4afd-89c4-d4df1bf6c5c0",
+        "email": "user1@tenant1.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "531c2a29-641a-4919-98ee-eadbbac1ab4f",
+        "email": "user2@tenant1.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "58011c87-9cee-48c6-b833-53ca6f3adf1d",
+        "email": "user3@tenant1.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "a77d13fe-39ad-4764-8c73-fad7fcd2459f",
+        "email": "user4@tenant1.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "ad8a391b-d9c8-4ef5-bbb6-b8dc3b1c6f99",
+        "email": "user5@tenant1.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "3876a0c6-28f7-4a69-8780-b6c6c22a2a89",
+        "email": "user6@tenant1.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "3d657f67-8285-4665-beb6-ee9ca9da6120",
+        "email": "user7@tenant1.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2024-02-13T02:58:23.490709"
+  },
+  {
+    "id": "7179000b-17fb-40a7-b159-0cb200405af8",
+    "name": "Tenant_3",
+    "tier": "professional",
+    "limits": {
+      "max_agents": 100,
+      "max_workflows": 10,
+      "storage_gb": 1,
+      "api_calls_per_minute": 300
+    },
+    "features": {
+      "neural_fields": true,
+      "custom_agents": false,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "bdf1b39d-dc1d-4f43-b945-60f48f30b43b",
+        "email": "user0@tenant2.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "2756fe78-5fa2-4988-b046-00e96c8f2bcf",
+        "email": "user1@tenant2.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "5eedd89a-d953-4376-9647-7386a952abd6",
+        "email": "user2@tenant2.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "aa076e5e-03de-4003-9602-46db62ce2706",
+        "email": "user3@tenant2.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "72b80e31-db6d-4f70-a22a-d4b15754265d",
+        "email": "user4@tenant2.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      }
+    ],
+    "created_at": "2024-01-02T02:58:23.490709"
+  },
+  {
+    "id": "ddff045f-196c-4d36-8a84-f9009eaf8278",
+    "name": "Tenant_4",
+    "tier": "enterprise",
+    "limits": {
+      "max_agents": 100,
+      "max_workflows": 200,
+      "storage_gb": 10,
+      "api_calls_per_minute": 60
+    },
+    "features": {
+      "neural_fields": false,
+      "custom_agents": true,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "e1212532-b80a-481b-a29d-81ab587b8959",
+        "email": "user0@tenant3.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "71f9b0b3-41c0-47a5-862a-3be0cb82c3fa",
+        "email": "user1@tenant3.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "cbf4d455-4855-4e35-a1ca-e61d0ca27584",
+        "email": "user2@tenant3.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2024-10-29T02:58:23.490709"
+  },
+  {
+    "id": "a4d942ac-f1d7-44ed-aa15-9749af39ca7b",
+    "name": "Tenant_5",
+    "tier": "professional",
+    "limits": {
+      "max_agents": 100,
+      "max_workflows": -1,
+      "storage_gb": 1,
+      "api_calls_per_minute": 60
+    },
+    "features": {
+      "neural_fields": true,
+      "custom_agents": false,
+      "advanced_analytics": true,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "5e3af2c0-3ede-4be2-ad7a-9d7a0e673960",
+        "email": "user0@tenant4.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "d6347283-d555-47a8-ae07-2787eda8e251",
+        "email": "user1@tenant4.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "a92fa4cd-be8a-4a18-856b-712c992c0f4a",
+        "email": "user2@tenant4.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "64ceeebd-ea17-4fc0-bd6f-4951ee074e6e",
+        "email": "user3@tenant4.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "37343951-14ec-44b1-84a0-fb505b676d43",
+        "email": "user4@tenant4.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "42269908-12b2-4562-a975-aaeeefefdfd9",
+        "email": "user5@tenant4.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "0e85f8d8-5886-45ad-a374-4086bf7b392a",
+        "email": "user6@tenant4.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "7351d18f-ff2c-4304-ba9f-5cf3f7d08d9b",
+        "email": "user7@tenant4.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "7592c76d-62dc-4fa0-be79-7dbafb19c92c",
+        "email": "user8@tenant4.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2024-10-24T02:58:23.490709"
+  },
+  {
+    "id": "84b6d72c-a7c8-4b27-aa14-1000aec27782",
+    "name": "Tenant_6",
+    "tier": "free",
+    "limits": {
+      "max_agents": 20,
+      "max_workflows": 200,
+      "storage_gb": 10,
+      "api_calls_per_minute": 60
+    },
+    "features": {
+      "neural_fields": false,
+      "custom_agents": false,
+      "advanced_analytics": false,
+      "priority_support": true
+    },
+    "users": [
+      {
+        "id": "b1d1026c-adb7-4e71-b6f5-34314b2f98d0",
+        "email": "user0@tenant5.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "21a167b9-1c3e-4706-a1f1-827ad259528e",
+        "email": "user1@tenant5.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "f966c6d6-19d0-430b-918c-22ceb513f626",
+        "email": "user2@tenant5.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2025-07-21T02:58:23.490709"
+  },
+  {
+    "id": "b64254f3-3753-4375-859e-e52436e64fe3",
+    "name": "Tenant_7",
+    "tier": "professional",
+    "limits": {
+      "max_agents": 20,
+      "max_workflows": 200,
+      "storage_gb": 100,
+      "api_calls_per_minute": 1000
+    },
+    "features": {
+      "neural_fields": true,
+      "custom_agents": true,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "88524f4c-5cb6-4928-8325-b18b95d7323b",
+        "email": "user0@tenant6.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "52421589-4908-4b4f-a20a-3993948391fd",
+        "email": "user1@tenant6.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2024-08-14T02:58:23.490709"
+  },
+  {
+    "id": "adae86f6-c0da-46de-a939-971c14823e34",
+    "name": "Tenant_8",
+    "tier": "professional",
+    "limits": {
+      "max_agents": -1,
+      "max_workflows": -1,
+      "storage_gb": 1000,
+      "api_calls_per_minute": 60
+    },
+    "features": {
+      "neural_fields": false,
+      "custom_agents": false,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "51e29462-30e9-49b9-a5a9-1b920c562494",
+        "email": "user0@tenant7.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "773db3cd-0e36-4440-b6dd-229090e27a8b",
+        "email": "user1@tenant7.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      }
+    ],
+    "created_at": "2024-04-12T02:58:23.490709"
+  },
+  {
+    "id": "57877a5c-2728-4e9a-b93b-5fddc71a6d10",
+    "name": "Tenant_9",
+    "tier": "starter",
+    "limits": {
+      "max_agents": -1,
+      "max_workflows": -1,
+      "storage_gb": 10,
+      "api_calls_per_minute": 300
+    },
+    "features": {
+      "neural_fields": true,
+      "custom_agents": false,
+      "advanced_analytics": true,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "f2ef3413-db15-4b62-85f3-66ecb9f1a146",
+        "email": "user0@tenant8.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2024-08-31T02:58:23.490709"
+  },
+  {
+    "id": "f3d42dcb-a27d-40d1-b861-aa680f59d6a8",
+    "name": "Tenant_10",
+    "tier": "starter",
+    "limits": {
+      "max_agents": 100,
+      "max_workflows": 10,
+      "storage_gb": 1000,
+      "api_calls_per_minute": 300
+    },
+    "features": {
+      "neural_fields": false,
+      "custom_agents": true,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "58a25238-024f-4f64-a0de-233ff50135d4",
+        "email": "user0@tenant9.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "7ca553c4-ab8f-4641-8ee3-60569a31044a",
+        "email": "user1@tenant9.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "43866047-120d-4347-b82f-3f0166c1a134",
+        "email": "user2@tenant9.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "4658e30c-b2a4-417c-bee3-c9f4903ac26d",
+        "email": "user3@tenant9.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "28c7e346-1aa8-4eec-934b-2d9007a64fd2",
+        "email": "user4@tenant9.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "a2b81734-f123-4d13-be25-d3f28f070a73",
+        "email": "user5@tenant9.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "28085f1e-fc4a-43b7-9bea-488802ab76a9",
+        "email": "user6@tenant9.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "690eb339-cac1-469b-94b4-5aed1db52d9e",
+        "email": "user7@tenant9.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      }
+    ],
+    "created_at": "2025-06-23T02:58:23.490709"
+  },
+  {
+    "id": "a9c35e50-190c-4887-9544-a44727a8700e",
+    "name": "Tenant_11",
+    "tier": "starter",
+    "limits": {
+      "max_agents": -1,
+      "max_workflows": 200,
+      "storage_gb": 100,
+      "api_calls_per_minute": 300
+    },
+    "features": {
+      "neural_fields": true,
+      "custom_agents": false,
+      "advanced_analytics": false,
+      "priority_support": true
+    },
+    "users": [
+      {
+        "id": "2ed37183-9d48-4fd8-a6dc-4bb1856ea22c",
+        "email": "user0@tenant10.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "b72a942f-820e-4d5a-b8cb-5ed1c662f3c7",
+        "email": "user1@tenant10.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "64612bd0-a0f6-43d3-9445-2a1188da51ac",
+        "email": "user2@tenant10.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "e6d9d0fe-c55a-460c-8214-cc923946680b",
+        "email": "user3@tenant10.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "dd770b1d-907c-403e-8ce3-41fb387c8b13",
+        "email": "user4@tenant10.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2024-04-08T02:58:23.490709"
+  },
+  {
+    "id": "8a5f7b3a-58af-4a7e-b3ed-7024f15be542",
+    "name": "Tenant_12",
+    "tier": "free",
+    "limits": {
+      "max_agents": 20,
+      "max_workflows": -1,
+      "storage_gb": 1000,
+      "api_calls_per_minute": 1000
+    },
+    "features": {
+      "neural_fields": false,
+      "custom_agents": false,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "e5cdcc41-c117-4a1f-a530-46b2467fa356",
+        "email": "user0@tenant11.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "b2e7721d-a63c-4a24-8bf0-bdb5f350b398",
+        "email": "user1@tenant11.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "c78239ea-deaf-4f47-8c14-66170ef9ba05",
+        "email": "user2@tenant11.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "f7ee351b-ad9f-43a2-a932-91da1426f95d",
+        "email": "user3@tenant11.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "9607f849-0951-48a8-9cb9-a4e7198a3e29",
+        "email": "user4@tenant11.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "c87dba60-137d-4a9e-9415-114aabd8f8a9",
+        "email": "user5@tenant11.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "b9fb3af9-5174-4e74-8df6-c329d41cb88a",
+        "email": "user6@tenant11.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "2634dd47-9dc5-4db6-919a-ab10557f29aa",
+        "email": "user7@tenant11.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      }
+    ],
+    "created_at": "2025-07-07T02:58:23.490709"
+  },
+  {
+    "id": "f762b4a9-3c03-4980-b767-af448881ddb4",
+    "name": "Tenant_13",
+    "tier": "starter",
+    "limits": {
+      "max_agents": 5,
+      "max_workflows": 50,
+      "storage_gb": 100,
+      "api_calls_per_minute": -1
+    },
+    "features": {
+      "neural_fields": true,
+      "custom_agents": true,
+      "advanced_analytics": true,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "d9eeb7b5-1fed-4771-ae63-264c793305c8",
+        "email": "user0@tenant12.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "9c2415ab-0a22-4bd9-8352-79e3116863e6",
+        "email": "user1@tenant12.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "bf1f3e33-dbe7-47c6-a208-16c3e3932e33",
+        "email": "user2@tenant12.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "4bee8d81-0357-44dc-bcd7-3a6206f78fff",
+        "email": "user3@tenant12.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "a2612cab-0da5-4cf1-b79e-f97cbbd4120e",
+        "email": "user4@tenant12.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "04249c43-f02e-428b-903c-44be42b51468",
+        "email": "user5@tenant12.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "99c5646d-ff9e-4e82-97a0-be0e49b974f2",
+        "email": "user6@tenant12.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "acb8a10e-d3c9-4cad-9155-78dfcb437e00",
+        "email": "user7@tenant12.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "6e9caa7b-b019-479f-a7fb-dba05ce720d8",
+        "email": "user8@tenant12.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2025-07-08T02:58:23.490709"
+  },
+  {
+    "id": "4aae34c5-2748-4c40-8601-4ac2cf5aa69c",
+    "name": "Tenant_14",
+    "tier": "professional",
+    "limits": {
+      "max_agents": 5,
+      "max_workflows": 10,
+      "storage_gb": 100,
+      "api_calls_per_minute": -1
+    },
+    "features": {
+      "neural_fields": false,
+      "custom_agents": false,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "333717f3-c4ad-4d62-bf48-9b9e670d6ca0",
+        "email": "user0@tenant13.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "bc46ed78-75d5-44d4-a58f-1ede58c62edc",
+        "email": "user1@tenant13.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "069708a9-9b2b-4300-adb4-8194b6bd88c8",
+        "email": "user2@tenant13.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "e77be599-9064-4b2b-81a1-d31c2b262b11",
+        "email": "user3@tenant13.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "349f83b3-b5ac-49cb-8194-b18793dec66a",
+        "email": "user4@tenant13.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "da84cdc9-bae2-4c26-99ce-3883e5e9205a",
+        "email": "user5@tenant13.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "5302d040-9785-4b2d-9d17-6114d9bfd118",
+        "email": "user6@tenant13.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "e7e557c6-b396-4baf-b3c7-bc377900fe41",
+        "email": "user7@tenant13.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "28853b5a-4f2e-4469-a74f-3c8f942f2c50",
+        "email": "user8@tenant13.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2024-06-22T02:58:23.490709"
+  },
+  {
+    "id": "9d5ea822-baca-4866-a17f-680e398145a3",
+    "name": "Tenant_15",
+    "tier": "starter",
+    "limits": {
+      "max_agents": 20,
+      "max_workflows": 50,
+      "storage_gb": 100,
+      "api_calls_per_minute": -1
+    },
+    "features": {
+      "neural_fields": true,
+      "custom_agents": false,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "89b0a38f-0884-428b-8001-3bf99ab075e8",
+        "email": "user0@tenant14.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      }
+    ],
+    "created_at": "2024-09-13T02:58:23.490709"
+  },
+  {
+    "id": "ecd43a5a-5f28-47a7-b703-0b3d24d60f6c",
+    "name": "Tenant_16",
+    "tier": "enterprise",
+    "limits": {
+      "max_agents": -1,
+      "max_workflows": -1,
+      "storage_gb": 1,
+      "api_calls_per_minute": 300
+    },
+    "features": {
+      "neural_fields": false,
+      "custom_agents": true,
+      "advanced_analytics": false,
+      "priority_support": true
+    },
+    "users": [
+      {
+        "id": "c3474fd6-e37f-4919-8973-23dcb94463c3",
+        "email": "user0@tenant15.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "247b30aa-b918-4cea-852d-fef2a6fd4c35",
+        "email": "user1@tenant15.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "032caabb-5b87-4c7a-987c-561fa24d1343",
+        "email": "user2@tenant15.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "d0cd83fc-b147-4dbe-826f-2ae83bf148e8",
+        "email": "user3@tenant15.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "28eb84e6-b4c3-4589-a2bd-540f39820785",
+        "email": "user4@tenant15.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "16d86617-daf0-4747-87a5-0c08f246fcfe",
+        "email": "user5@tenant15.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "2f396706-9da3-48fb-bc1d-b28c6bd8daeb",
+        "email": "user6@tenant15.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "89049052-370b-4df6-9015-f4bd0db0cc97",
+        "email": "user7@tenant15.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "e41a1fa3-7c56-434b-b8f3-2551f1b55b2c",
+        "email": "user8@tenant15.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": true,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2024-09-12T02:58:23.490709"
+  },
+  {
+    "id": "9baf3d58-b8f8-4afd-b3de-79cf09941933",
+    "name": "Tenant_17",
+    "tier": "free",
+    "limits": {
+      "max_agents": -1,
+      "max_workflows": 10,
+      "storage_gb": 10,
+      "api_calls_per_minute": 60
+    },
+    "features": {
+      "neural_fields": true,
+      "custom_agents": false,
+      "advanced_analytics": true,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "ca8393cf-7c04-423e-8356-8ea7d7935cae",
+        "email": "user0@tenant16.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "d003ac0f-469c-4cbd-9201-bf39b2e336b0",
+        "email": "user1@tenant16.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "1691ca03-0f25-4454-b245-6af8dcb8d9d3",
+        "email": "user2@tenant16.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "f26d7c83-c437-484b-a977-626582dd087f",
+        "email": "user3@tenant16.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "ab6150c0-0117-40e8-ad02-690cea6ea2e0",
+        "email": "user4@tenant16.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "3eb1507b-63db-424d-a6a5-323d37784407",
+        "email": "user5@tenant16.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "2968a7d4-fee1-433b-a5ca-36f8bb846a9f",
+        "email": "user6@tenant16.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "592ffd4e-d36c-4039-ad0c-b1aa7bf0c0aa",
+        "email": "user7@tenant16.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "b68e4e5b-a2c7-4b3d-9726-82b6951beb9b",
+        "email": "user8@tenant16.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2025-04-11T02:58:23.490709"
+  },
+  {
+    "id": "791f1c9f-c606-4f60-be23-0817424d4578",
+    "name": "Tenant_18",
+    "tier": "enterprise",
+    "limits": {
+      "max_agents": 20,
+      "max_workflows": 200,
+      "storage_gb": 10,
+      "api_calls_per_minute": 300
+    },
+    "features": {
+      "neural_fields": false,
+      "custom_agents": false,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "a3a47575-b4fc-4ed0-b872-67102df10514",
+        "email": "user0@tenant17.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2025-08-13T02:58:23.490709"
+  },
+  {
+    "id": "6a4d5b70-a472-4bda-9ee1-b1f4f9bbd218",
+    "name": "Tenant_19",
+    "tier": "free",
+    "limits": {
+      "max_agents": 5,
+      "max_workflows": 200,
+      "storage_gb": 100,
+      "api_calls_per_minute": 60
+    },
+    "features": {
+      "neural_fields": true,
+      "custom_agents": true,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "392b37f0-602e-4813-a0da-fac2832d63ea",
+        "email": "user0@tenant18.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "e670d390-d7a2-4538-8771-5c2e92cce10d",
+        "email": "user1@tenant18.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "b3ac29dc-b606-47cd-a40c-edee627ca104",
+        "email": "user2@tenant18.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "1c02b823-07cc-449e-9f78-4c8c2a15e8b8",
+        "email": "user3@tenant18.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "f673efc9-6527-44cf-bfd2-0bd8c7fbc0b7",
+        "email": "user4@tenant18.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "2a1ca6fb-50c4-4568-b76c-09f0acd265cc",
+        "email": "user5@tenant18.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": true,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "5a4d0288-b3da-4c81-9306-9f1fc0b8aa34",
+        "email": "user6@tenant18.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": true,
+          "create_workflows": true,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": false,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2023-11-05T02:58:23.490709"
+  },
+  {
+    "id": "68a8754b-58cb-407a-8ff0-6ffd3861c21d",
+    "name": "Tenant_20",
+    "tier": "free",
+    "limits": {
+      "max_agents": 5,
+      "max_workflows": 200,
+      "storage_gb": 1,
+      "api_calls_per_minute": -1
+    },
+    "features": {
+      "neural_fields": false,
+      "custom_agents": false,
+      "advanced_analytics": false,
+      "priority_support": false
+    },
+    "users": [
+      {
+        "id": "56f08445-1208-4581-82f8-325fbf82180a",
+        "email": "user0@tenant19.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "f35b466b-b545-474d-893c-2c1da140f742",
+        "email": "user1@tenant19.com",
+        "role": "developer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": false,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "87459e31-3e32-409d-8f49-cd4be731254b",
+        "email": "user2@tenant19.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": false
+        }
+      },
+      {
+        "id": "e8518359-42f5-4dee-9054-f65a1437d211",
+        "email": "user3@tenant19.com",
+        "role": "admin",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": false,
+          "delete_workflows": true,
+          "view_analytics": false,
+          "export_data": false,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "cebc394c-9129-4ffe-b490-d0b2b7a94e0c",
+        "email": "user4@tenant19.com",
+        "role": "analyst",
+        "permissions": {
+          "create_agents": true,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": true,
+          "export_data": false,
+          "manage_users": true,
+          "configure_neural_fields": false,
+          "access_api": false,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "48f535ef-f956-4a2b-83a7-e3661b3dceb4",
+        "email": "user5@tenant19.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": true,
+          "modify_agents": false,
+          "create_workflows": true,
+          "execute_workflows": false,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": false,
+          "access_api": true,
+          "manage_billing": true
+        }
+      },
+      {
+        "id": "1e16ab97-be76-443e-aefc-b4b40ee959c0",
+        "email": "user6@tenant19.com",
+        "role": "viewer",
+        "permissions": {
+          "create_agents": false,
+          "delete_agents": false,
+          "modify_agents": true,
+          "create_workflows": false,
+          "execute_workflows": true,
+          "delete_workflows": false,
+          "view_analytics": false,
+          "export_data": true,
+          "manage_users": false,
+          "configure_neural_fields": true,
+          "access_api": true,
+          "manage_billing": false
+        }
+      }
+    ],
+    "created_at": "2023-10-17T02:58:23.490709"
+  }
+]

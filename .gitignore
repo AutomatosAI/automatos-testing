@@ -54,3 +54,26 @@ Thumbs.db
 *.backup
 *.bak
 *.orig
+# Generated test artifacts
+reports/
+logs/
+testing_suites/**/responses/**
+
+# OS/editor junk
+.DS_Store
+
+# Generated test artifacts
+reports/
+logs/
+testing_suites/**/responses/**
+
+# OS/editor junk
+.DS_Store
+
+# Generated test artifacts
+reports/
+logs/
+testing_suites/**/responses/**
+
+# OS/editor junk
+.DS_Store

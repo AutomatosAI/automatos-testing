@@ -1,0 +1,2497 @@
+[
+  {
+    "id": "6347e5a6-2239-4170-93ef-321c2522f455",
+    "name": "BaseNeuralField_17cf23c4",
+    "type": "BaseNeuralField",
+    "configuration": {
+      "dimensions": 512,
+      "learning_rate": 0.025213904773539363,
+      "decay_rate": 0.9165497347659138,
+      "threshold": 0.5841997338455658,
+      "max_iterations": 225,
+      "batch_size": 32,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.8235469278808804,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 101,
+      "energy": 0.5185452893088064,
+      "resonance": 0.6470939117109974,
+      "stability": 0.6741939103236232,
+      "active_nodes": 36,
+      "memory_usage_mb": 588
+    },
+    "metrics": {
+      "convergence_rate": 0.9142444235993192,
+      "accuracy": 0.8765414579119589,
+      "processing_time_ms": 686,
+      "memory_efficiency": 0.9018054103142457
+    },
+    "connections": [
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.9790738262948773,
+        "bidirectional": true
+      },
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.6254724361898996,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "26f5ab12-1185-4954-a10d-3faae749ba00",
+    "name": "AgentAssignmentField_9954e3fd",
+    "type": "AgentAssignmentField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.018298444710899107,
+      "decay_rate": 0.9893258487518088,
+      "threshold": 0.7147539606538056,
+      "max_iterations": 289,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.819748271206109,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 429,
+      "energy": 3.8936929031845042,
+      "resonance": 0.3767249696468419,
+      "stability": 0.9003577585567321,
+      "active_nodes": 13,
+      "memory_usage_mb": 1282
+    },
+    "metrics": {
+      "convergence_rate": 0.9351274415551255,
+      "accuracy": 0.8829725930916792,
+      "processing_time_ms": 10,
+      "memory_efficiency": 0.8025479313851052
+    },
+    "connections": [
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.8928859133952246,
+        "bidirectional": true
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.3194238308899132,
+        "bidirectional": true
+      },
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.5688169883871665,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "a09db050-1b24-4d56-8c79-d1aec0fdce68",
+    "name": "ContextResonanceField_9130be1b",
+    "type": "ContextResonanceField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.04046283599567286,
+      "decay_rate": 0.9424398212616825,
+      "threshold": 0.6212705709148905,
+      "max_iterations": 104,
+      "batch_size": 32,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.9332305554111707,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 335,
+      "energy": 1.657139923253073,
+      "resonance": 0.2553312597145827,
+      "stability": 0.6783143906399416,
+      "active_nodes": 28,
+      "memory_usage_mb": 867
+    },
+    "metrics": {
+      "convergence_rate": 0.8904158029027425,
+      "accuracy": 0.9219805888745158,
+      "processing_time_ms": 107,
+      "memory_efficiency": 0.8229816607117391
+    },
+    "connections": [
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.5415983555548585,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "96dc384d-85ba-4a6d-bf27-9cdd80969379",
+    "name": "CollectiveMemoryField_c2f14ba2",
+    "type": "CollectiveMemoryField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.056633721707456446,
+      "decay_rate": 0.9898269312320126,
+      "threshold": 0.524071406034229,
+      "max_iterations": 677,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.9060990580853802,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 354,
+      "energy": 0.1895559448286261,
+      "resonance": 0.3828737815298109,
+      "stability": 0.8998341393183287,
+      "active_nodes": 90,
+      "memory_usage_mb": 1970
+    },
+    "metrics": {
+      "convergence_rate": 0.9012827713225502,
+      "accuracy": 0.9265838853140989,
+      "processing_time_ms": 470,
+      "memory_efficiency": 0.9470272502318953
+    },
+    "connections": [
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.7712596288671792,
+        "bidirectional": false
+      },
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.3309200988121398,
+        "bidirectional": false
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.3743718325873526,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "b10a2be7-7f32-488b-9dd7-0156789f7a46",
+    "name": "MultiAgentSyncField_051ef607",
+    "type": "MultiAgentSyncField",
+    "configuration": {
+      "dimensions": 512,
+      "learning_rate": 0.03324059885738439,
+      "decay_rate": 0.9417648477933247,
+      "threshold": 0.7640071579542664,
+      "max_iterations": 145,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.9656171551869037,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 233,
+      "energy": 9.983123204360115,
+      "resonance": 0.00943075730662657,
+      "stability": 0.7432443277731553,
+      "active_nodes": 54,
+      "memory_usage_mb": 1607
+    },
+    "metrics": {
+      "convergence_rate": 0.9376066342450367,
+      "accuracy": 0.9552238590924524,
+      "processing_time_ms": 155,
+      "memory_efficiency": 0.9444020135807544
+    },
+    "connections": [
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.14902171171494288,
+        "bidirectional": false
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.5833349764573983,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "674ba5b5-c49f-4bca-b358-aa34d8961b09",
+    "name": "PredictiveSystemField_8efd48ec",
+    "type": "PredictiveSystemField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.032030140906799794,
+      "decay_rate": 0.914230803243503,
+      "threshold": 0.7359613761688493,
+      "max_iterations": 998,
+      "batch_size": 64,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.8483124448950395,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 292,
+      "energy": 9.662414719103117,
+      "resonance": 0.9538545118204531,
+      "stability": 0.7549738047709009,
+      "active_nodes": 46,
+      "memory_usage_mb": 646
+    },
+    "metrics": {
+      "convergence_rate": 0.884976753030245,
+      "accuracy": 0.9049986929747724,
+      "processing_time_ms": 649,
+      "memory_efficiency": 0.8897601711704578
+    },
+    "connections": [
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.221266483208081,
+        "bidirectional": true
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.29366697820894033,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "1c9cf985-fd9a-497d-8bfa-ea0a45c1f0a6",
+    "name": "BaseNeuralField_f44182e3",
+    "type": "BaseNeuralField",
+    "configuration": {
+      "dimensions": 512,
+      "learning_rate": 0.07283620746202048,
+      "decay_rate": 0.9287983514311963,
+      "threshold": 0.5722143894823826,
+      "max_iterations": 442,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.8462120590999235,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 232,
+      "energy": 7.8178808464837735,
+      "resonance": 0.4434794009948009,
+      "stability": 0.7120516177479046,
+      "active_nodes": 66,
+      "memory_usage_mb": 1450
+    },
+    "metrics": {
+      "convergence_rate": 0.921953584537558,
+      "accuracy": 0.9199347861043248,
+      "processing_time_ms": 120,
+      "memory_efficiency": 0.7068923191590653
+    },
+    "connections": [
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.8687559571767478,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "cd86a252-e63a-4e96-80fb-7f1a16dbb1ec",
+    "name": "AgentAssignmentField_c2f4f0ce",
+    "type": "AgentAssignmentField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.05542745678881539,
+      "decay_rate": 0.9074164683798696,
+      "threshold": 0.5348712512353544,
+      "max_iterations": 648,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.9860130715618791,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 333,
+      "energy": 0.57019373072936,
+      "resonance": 0.808818609747864,
+      "stability": 0.7300542803174599,
+      "active_nodes": 82,
+      "memory_usage_mb": 134
+    },
+    "metrics": {
+      "convergence_rate": 0.8300128254141601,
+      "accuracy": 0.9798991562340118,
+      "processing_time_ms": 229,
+      "memory_efficiency": 0.8019919580501117
+    },
+    "connections": [
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.40865259301492884,
+        "bidirectional": false
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.9387584336048433,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "b8b22b3e-f8ca-41e9-b530-583d08bbb022",
+    "name": "ContextResonanceField_149029ca",
+    "type": "ContextResonanceField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.021624292986885587,
+      "decay_rate": 0.9171992675961657,
+      "threshold": 0.8915970195623106,
+      "max_iterations": 383,
+      "batch_size": 32,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.9799442811827961,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 315,
+      "energy": 1.0642286990595011,
+      "resonance": 0.8749054431319131,
+      "stability": 0.836651547036082,
+      "active_nodes": 68,
+      "memory_usage_mb": 1472
+    },
+    "metrics": {
+      "convergence_rate": 0.8075946583463984,
+      "accuracy": 0.858450227627011,
+      "processing_time_ms": 591,
+      "memory_efficiency": 0.8533271754452847
+    },
+    "connections": [
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.6856380462267954,
+        "bidirectional": true
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.5003117034318765,
+        "bidirectional": true
+      },
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.9238533612226516,
+        "bidirectional": false
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.8146583877095569,
+        "bidirectional": false
+      },
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.4620088072559123,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "d1e48845-be78-4cfb-87d4-388f67a9c906",
+    "name": "CollectiveMemoryField_a237b36e",
+    "type": "CollectiveMemoryField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.06675915781952449,
+      "decay_rate": 0.904978136589219,
+      "threshold": 0.5977839668849342,
+      "max_iterations": 215,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.8342738844748938,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 382,
+      "energy": 7.169822605694062,
+      "resonance": 0.749648538087636,
+      "stability": 0.9214171561646876,
+      "active_nodes": 81,
+      "memory_usage_mb": 752
+    },
+    "metrics": {
+      "convergence_rate": 0.8150041006704294,
+      "accuracy": 0.9776153107240657,
+      "processing_time_ms": 307,
+      "memory_efficiency": 0.7761165164676148
+    },
+    "connections": [
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.671958457643955,
+        "bidirectional": false
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.5069160183279529,
+        "bidirectional": true
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.8687064307803247,
+        "bidirectional": true
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.7738523221208039,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "784939cd-8f9f-4569-b002-f0f267e1f202",
+    "name": "MultiAgentSyncField_81b50807",
+    "type": "MultiAgentSyncField",
+    "configuration": {
+      "dimensions": 512,
+      "learning_rate": 0.08981521640492687,
+      "decay_rate": 0.9161369009436436,
+      "threshold": 0.8110287876788715,
+      "max_iterations": 426,
+      "batch_size": 32,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.9144006215003446,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 52,
+      "energy": 5.159114881669852,
+      "resonance": 0.011547630233632589,
+      "stability": 0.6749872343089924,
+      "active_nodes": 91,
+      "memory_usage_mb": 915
+    },
+    "metrics": {
+      "convergence_rate": 0.8728875876111863,
+      "accuracy": 0.8769786009826968,
+      "processing_time_ms": 688,
+      "memory_efficiency": 0.8031912308632503
+    },
+    "connections": [
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.20252579668255322,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "6621d6ae-d959-451e-9b25-21ba7322eef1",
+    "name": "PredictiveSystemField_7c5c9d93",
+    "type": "PredictiveSystemField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.029572718091998962,
+      "decay_rate": 0.978932586840877,
+      "threshold": 0.7532953801388971,
+      "max_iterations": 644,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.8370527269112736,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 368,
+      "energy": 1.060263687415488,
+      "resonance": 0.7772754006535373,
+      "stability": 0.7322531019499856,
+      "active_nodes": 42,
+      "memory_usage_mb": 1000
+    },
+    "metrics": {
+      "convergence_rate": 0.981836776199609,
+      "accuracy": 0.9363390154904332,
+      "processing_time_ms": 276,
+      "memory_efficiency": 0.9435219056936149
+    },
+    "connections": [
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.11949762644994635,
+        "bidirectional": false
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.6646526359075362,
+        "bidirectional": false
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.16643593740483742,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.5129167394723549,
+        "bidirectional": true
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.4170119147081591,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "6c11a0db-dc08-474a-a1b9-07cd67aa45aa",
+    "name": "BaseNeuralField_fbb26c8a",
+    "type": "BaseNeuralField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.0387438943221812,
+      "decay_rate": 0.9148822411597982,
+      "threshold": 0.7992455173698656,
+      "max_iterations": 233,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.8353120231496667,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 116,
+      "energy": 6.373517464061384,
+      "resonance": 0.2488726600818556,
+      "stability": 0.5486486731548066,
+      "active_nodes": 37,
+      "memory_usage_mb": 424
+    },
+    "metrics": {
+      "convergence_rate": 0.835008327418657,
+      "accuracy": 0.8911213292518587,
+      "processing_time_ms": 814,
+      "memory_efficiency": 0.8522861070120765
+    },
+    "connections": [
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.808895370480621,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.8616185095040262,
+        "bidirectional": false
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.22114432093165953,
+        "bidirectional": false
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.5184739086368797,
+        "bidirectional": true
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.7108350740666299,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "9504d698-85ce-4236-bdd5-fc9b1f6e87b4",
+    "name": "AgentAssignmentField_176055ae",
+    "type": "AgentAssignmentField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.05365465164729734,
+      "decay_rate": 0.9554200942789769,
+      "threshold": 0.5906504819173778,
+      "max_iterations": 802,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.8433499674264522,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 376,
+      "energy": 9.103939509417772,
+      "resonance": 0.9117466359867714,
+      "stability": 0.7336157386242722,
+      "active_nodes": 43,
+      "memory_usage_mb": 1851
+    },
+    "metrics": {
+      "convergence_rate": 0.8936596634349966,
+      "accuracy": 0.8880342490726889,
+      "processing_time_ms": 505,
+      "memory_efficiency": 0.9172115430406056
+    },
+    "connections": [
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.8921129487040682,
+        "bidirectional": true
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.6392185166024954,
+        "bidirectional": false
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.14177736751097667,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "37a2cd9b-a12b-45de-aaee-56ed97cc027e",
+    "name": "ContextResonanceField_1f79eb86",
+    "type": "ContextResonanceField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.004632220979562467,
+      "decay_rate": 0.9471558852078028,
+      "threshold": 0.7923460688833717,
+      "max_iterations": 145,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.8016368779922992,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 263,
+      "energy": 2.656250449280247,
+      "resonance": 0.4665108256196222,
+      "stability": 0.9512013290910084,
+      "active_nodes": 93,
+      "memory_usage_mb": 1157
+    },
+    "metrics": {
+      "convergence_rate": 0.825132759140392,
+      "accuracy": 0.9486444061533104,
+      "processing_time_ms": 499,
+      "memory_efficiency": 0.9363921846437133
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.48971192057946755,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.21138627629209938,
+        "bidirectional": false
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.9766370330743609,
+        "bidirectional": true
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.7682528555744154,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "e3611e6f-5c76-473e-942a-c5f779b96768",
+    "name": "CollectiveMemoryField_df8c0c32",
+    "type": "CollectiveMemoryField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.029272612763769072,
+      "decay_rate": 0.9298184939070568,
+      "threshold": 0.7688135235988041,
+      "max_iterations": 571,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.8240510961302543,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 199,
+      "energy": 6.425354489159659,
+      "resonance": 0.3407710509759083,
+      "stability": 0.7946428966278163,
+      "active_nodes": 18,
+      "memory_usage_mb": 346
+    },
+    "metrics": {
+      "convergence_rate": 0.8097824943395134,
+      "accuracy": 0.8555674635743874,
+      "processing_time_ms": 781,
+      "memory_efficiency": 0.9258679236845359
+    },
+    "connections": [
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.9187634690636933,
+        "bidirectional": true
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.8947332928283647,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.15132806440080873,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "4dacd1b7-1b5c-4c7c-8fad-9b1754e058d3",
+    "name": "MultiAgentSyncField_e7efab0b",
+    "type": "MultiAgentSyncField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.05419821409413429,
+      "decay_rate": 0.9073667394616578,
+      "threshold": 0.5084188403522918,
+      "max_iterations": 470,
+      "batch_size": 32,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.8823683720441469,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 98,
+      "energy": 8.184512687797277,
+      "resonance": 0.10472842346994449,
+      "stability": 0.6318651482233372,
+      "active_nodes": 63,
+      "memory_usage_mb": 1648
+    },
+    "metrics": {
+      "convergence_rate": 0.8737750205600645,
+      "accuracy": 0.9428081090389795,
+      "processing_time_ms": 467,
+      "memory_efficiency": 0.9057122144495637
+    },
+    "connections": [
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.45982322275198384,
+        "bidirectional": true
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.5487208603825939,
+        "bidirectional": true
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.5568265512015979,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "bd6456aa-c2f2-4c4e-9aaa-c7131b17b611",
+    "name": "PredictiveSystemField_076c677e",
+    "type": "PredictiveSystemField",
+    "configuration": {
+      "dimensions": 512,
+      "learning_rate": 0.06525813143040123,
+      "decay_rate": 0.9102912219573542,
+      "threshold": 0.66302676831104,
+      "max_iterations": 535,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.8890941167433066,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 447,
+      "energy": 3.3965604783535546,
+      "resonance": 0.4885955484317598,
+      "stability": 0.908520226757501,
+      "active_nodes": 50,
+      "memory_usage_mb": 1982
+    },
+    "metrics": {
+      "convergence_rate": 0.9209898063917307,
+      "accuracy": 0.8995901412103262,
+      "processing_time_ms": 134,
+      "memory_efficiency": 0.9203601462514952
+    },
+    "connections": [
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.8027456035822427,
+        "bidirectional": true
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.9558115740269896,
+        "bidirectional": false
+      },
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.5717545104687388,
+        "bidirectional": false
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.5325086983882947,
+        "bidirectional": true
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.42940990678861624,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "d4732971-6d07-45eb-9e50-36ad38802961",
+    "name": "BaseNeuralField_83fd6e61",
+    "type": "BaseNeuralField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.0882463227296191,
+      "decay_rate": 0.9834757124466942,
+      "threshold": 0.7258239036631651,
+      "max_iterations": 832,
+      "batch_size": 64,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.9625579687411707,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 67,
+      "energy": 0.249379057956258,
+      "resonance": 0.5643325977884388,
+      "stability": 0.6346980041727923,
+      "active_nodes": 18,
+      "memory_usage_mb": 1788
+    },
+    "metrics": {
+      "convergence_rate": 0.8205031663290087,
+      "accuracy": 0.9383156728664551,
+      "processing_time_ms": 975,
+      "memory_efficiency": 0.8349992560878582
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.7297025287945009,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "084d3a5d-4ed6-472c-8d53-a8fd22844e0c",
+    "name": "AgentAssignmentField_7cc205de",
+    "type": "AgentAssignmentField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.05731098283330132,
+      "decay_rate": 0.9101221440801734,
+      "threshold": 0.6224045145379624,
+      "max_iterations": 873,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.852250951568152,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 178,
+      "energy": 7.9543084761027325,
+      "resonance": 0.5597014207468213,
+      "stability": 0.881086119047434,
+      "active_nodes": 89,
+      "memory_usage_mb": 159
+    },
+    "metrics": {
+      "convergence_rate": 0.9676265395796683,
+      "accuracy": 0.9035127622341466,
+      "processing_time_ms": 32,
+      "memory_efficiency": 0.7547663904251206
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.8155716509764936,
+        "bidirectional": false
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.4703108460026373,
+        "bidirectional": true
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.30001467609203203,
+        "bidirectional": true
+      },
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.8410206595309682,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "d3ee36b9-4245-4c53-a5f5-cdb5e1adaca1",
+    "name": "ContextResonanceField_de845d20",
+    "type": "ContextResonanceField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.017437681960174773,
+      "decay_rate": 0.9336845676296893,
+      "threshold": 0.8376722863465951,
+      "max_iterations": 743,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.951993268747332,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 183,
+      "energy": 3.3589400527307762,
+      "resonance": 0.10811423279844246,
+      "stability": 0.6125976507447262,
+      "active_nodes": 98,
+      "memory_usage_mb": 1112
+    },
+    "metrics": {
+      "convergence_rate": 0.8794160966822312,
+      "accuracy": 0.9371907545670002,
+      "processing_time_ms": 813,
+      "memory_efficiency": 0.8825134617854141
+    },
+    "connections": [
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.754023170903983,
+        "bidirectional": false
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.5411273905283629,
+        "bidirectional": true
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.8124089027836637,
+        "bidirectional": true
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.8712239184185347,
+        "bidirectional": false
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.13947428891560257,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "895c299a-cf19-482b-bf4f-d97450627091",
+    "name": "CollectiveMemoryField_eadf048a",
+    "type": "CollectiveMemoryField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.06432425423474865,
+      "decay_rate": 0.9042417938438343,
+      "threshold": 0.6812354132877053,
+      "max_iterations": 114,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.856933127802362,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 94,
+      "energy": 8.936036697919269,
+      "resonance": 0.8467183498476907,
+      "stability": 0.6360164258309364,
+      "active_nodes": 12,
+      "memory_usage_mb": 1708
+    },
+    "metrics": {
+      "convergence_rate": 0.839983458301192,
+      "accuracy": 0.8778882990731265,
+      "processing_time_ms": 130,
+      "memory_efficiency": 0.9227257406192374
+    },
+    "connections": [
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.5541447064554049,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "f14ee0d7-684f-4d46-921b-2fa2d77cbe62",
+    "name": "MultiAgentSyncField_5823f965",
+    "type": "MultiAgentSyncField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.04467224938715104,
+      "decay_rate": 0.9751488784878974,
+      "threshold": 0.7275092877634386,
+      "max_iterations": 760,
+      "batch_size": 64,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.8996929729716066,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 139,
+      "energy": 1.7975597963038334,
+      "resonance": 0.7995797883951278,
+      "stability": 0.7186390753959222,
+      "active_nodes": 32,
+      "memory_usage_mb": 1770
+    },
+    "metrics": {
+      "convergence_rate": 0.9752570962231788,
+      "accuracy": 0.980238628753283,
+      "processing_time_ms": 330,
+      "memory_efficiency": 0.7067428866223274
+    },
+    "connections": [
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.5154530683572958,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.9705776442184105,
+        "bidirectional": false
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.9914856707995079,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "5cc731f8-67b1-4361-9445-c43d7c726f03",
+    "name": "PredictiveSystemField_c4c6bfea",
+    "type": "PredictiveSystemField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.013584763043203104,
+      "decay_rate": 0.9393157880353709,
+      "threshold": 0.6014146136336327,
+      "max_iterations": 749,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.8050762768253467,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 122,
+      "energy": 7.182327439588215,
+      "resonance": 0.15873957198570976,
+      "stability": 0.8110127070914506,
+      "active_nodes": 52,
+      "memory_usage_mb": 1069
+    },
+    "metrics": {
+      "convergence_rate": 0.9240603762402627,
+      "accuracy": 0.854044188794783,
+      "processing_time_ms": 281,
+      "memory_efficiency": 0.9288758551914642
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.15558913590385445,
+        "bidirectional": true
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.18525121531835081,
+        "bidirectional": true
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.3058009930098843,
+        "bidirectional": true
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.1743755217939409,
+        "bidirectional": true
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.2673144112711962,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "7abd5a11-cb8b-4578-b394-4daf5b7ac048",
+    "name": "BaseNeuralField_9c7bf6d9",
+    "type": "BaseNeuralField",
+    "configuration": {
+      "dimensions": 512,
+      "learning_rate": 0.08366084594668771,
+      "decay_rate": 0.908240236947285,
+      "threshold": 0.594689943720445,
+      "max_iterations": 372,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.8467530883988693,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 150,
+      "energy": 0.6671459298111705,
+      "resonance": 0.1775720410502445,
+      "stability": 0.8033178378858599,
+      "active_nodes": 100,
+      "memory_usage_mb": 1061
+    },
+    "metrics": {
+      "convergence_rate": 0.9817260322134033,
+      "accuracy": 0.9225684293683618,
+      "processing_time_ms": 553,
+      "memory_efficiency": 0.8314171073990981
+    },
+    "connections": [
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.9593116958182111,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "d9d3c7ce-266a-44c4-a682-717e3a1cc111",
+    "name": "AgentAssignmentField_0ce84f8a",
+    "type": "AgentAssignmentField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.06723762959766078,
+      "decay_rate": 0.9464803880927998,
+      "threshold": 0.8757185144418462,
+      "max_iterations": 474,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.8601704746727222,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 427,
+      "energy": 6.36243679922576,
+      "resonance": 0.1073909305396672,
+      "stability": 0.9340154127565969,
+      "active_nodes": 46,
+      "memory_usage_mb": 1108
+    },
+    "metrics": {
+      "convergence_rate": 0.9864251113405954,
+      "accuracy": 0.9021371033396426,
+      "processing_time_ms": 678,
+      "memory_efficiency": 0.8049585442431438
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.7076163996795859,
+        "bidirectional": false
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.9920181213654466,
+        "bidirectional": true
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.5311312719388467,
+        "bidirectional": false
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.6730069256843111,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "6bbbb9fe-ea84-469b-a3a0-788b4879ffad",
+    "name": "ContextResonanceField_ed5326ec",
+    "type": "ContextResonanceField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.006347795638584198,
+      "decay_rate": 0.9706033200448752,
+      "threshold": 0.7664375855951737,
+      "max_iterations": 783,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.8998749122249015,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 38,
+      "energy": 7.411683467294988,
+      "resonance": 0.2423923311011391,
+      "stability": 0.5712611092104838,
+      "active_nodes": 46,
+      "memory_usage_mb": 1326
+    },
+    "metrics": {
+      "convergence_rate": 0.9130000870671388,
+      "accuracy": 0.9262006384100753,
+      "processing_time_ms": 295,
+      "memory_efficiency": 0.8716141987154598
+    },
+    "connections": [
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.8085779584034533,
+        "bidirectional": false
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.5632756063691512,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "ae627b8b-8d22-4aae-ad49-b093032cf2d7",
+    "name": "CollectiveMemoryField_1a694b33",
+    "type": "CollectiveMemoryField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.08216317949473415,
+      "decay_rate": 0.9298363130184448,
+      "threshold": 0.6531699153597035,
+      "max_iterations": 518,
+      "batch_size": 32,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.9064739011936168,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 309,
+      "energy": 4.806080222193598,
+      "resonance": 0.09648908696047653,
+      "stability": 0.7575128314536126,
+      "active_nodes": 35,
+      "memory_usage_mb": 293
+    },
+    "metrics": {
+      "convergence_rate": 0.8445630469281593,
+      "accuracy": 0.9280543803411611,
+      "processing_time_ms": 658,
+      "memory_efficiency": 0.8000432407335721
+    },
+    "connections": [
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.7428557286677111,
+        "bidirectional": false
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.28155230831105216,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.8282931727025509,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "8f6404be-e196-439a-ba65-6205433af4c1",
+    "name": "MultiAgentSyncField_899191e5",
+    "type": "MultiAgentSyncField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.08826284517356385,
+      "decay_rate": 0.9371876698414724,
+      "threshold": 0.8578216361271269,
+      "max_iterations": 168,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.9728705155160866,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 44,
+      "energy": 3.098047885822395,
+      "resonance": 0.862199550440324,
+      "stability": 0.7845403980160363,
+      "active_nodes": 29,
+      "memory_usage_mb": 230
+    },
+    "metrics": {
+      "convergence_rate": 0.8990671926179866,
+      "accuracy": 0.869750956673198,
+      "processing_time_ms": 648,
+      "memory_efficiency": 0.8730365858892443
+    },
+    "connections": [
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.5227561305059736,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.3875441544359981,
+        "bidirectional": true
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.618052917565941,
+        "bidirectional": false
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.38874781313623796,
+        "bidirectional": true
+      },
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.7103896433074148,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "ca098fae-005f-4066-8eeb-dfb0640000d4",
+    "name": "PredictiveSystemField_a611ac83",
+    "type": "PredictiveSystemField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.004192014517578382,
+      "decay_rate": 0.9778250211747315,
+      "threshold": 0.8454136301329168,
+      "max_iterations": 538,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.9224998481712676,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 6,
+      "energy": 3.2848045270630246,
+      "resonance": 0.7183770502136289,
+      "stability": 0.6439075496086708,
+      "active_nodes": 50,
+      "memory_usage_mb": 1126
+    },
+    "metrics": {
+      "convergence_rate": 0.9666605217643773,
+      "accuracy": 0.9049679064061739,
+      "processing_time_ms": 514,
+      "memory_efficiency": 0.9087081456523269
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.12892817882466245,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "101a8bc9-cb83-4f40-b37e-7d847e887fc9",
+    "name": "BaseNeuralField_eb61c106",
+    "type": "BaseNeuralField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.09910242431728913,
+      "decay_rate": 0.9812785156904218,
+      "threshold": 0.8617025388796151,
+      "max_iterations": 716,
+      "batch_size": 64,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.9066613828290814,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 338,
+      "energy": 0.853190040477788,
+      "resonance": 0.8804419760530746,
+      "stability": 0.6808322566789624,
+      "active_nodes": 59,
+      "memory_usage_mb": 1397
+    },
+    "metrics": {
+      "convergence_rate": 0.9669059864116716,
+      "accuracy": 0.9147947684369466,
+      "processing_time_ms": 475,
+      "memory_efficiency": 0.7843210199013024
+    },
+    "connections": [
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.4100648478211182,
+        "bidirectional": true
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.7752448274186566,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "4cb5e116-3bf9-42a9-8b7a-f9b4d6376629",
+    "name": "AgentAssignmentField_43002fe3",
+    "type": "AgentAssignmentField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.08102432428090851,
+      "decay_rate": 0.9835145948894818,
+      "threshold": 0.6633026420678325,
+      "max_iterations": 171,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.835251264228291,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 190,
+      "energy": 9.509823138708315,
+      "resonance": 0.5672798466585631,
+      "stability": 0.6113095327461453,
+      "active_nodes": 23,
+      "memory_usage_mb": 345
+    },
+    "metrics": {
+      "convergence_rate": 0.8580672538293328,
+      "accuracy": 0.9314737302265031,
+      "processing_time_ms": 278,
+      "memory_efficiency": 0.7334622178598496
+    },
+    "connections": [
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.8961407717150506,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "46690a83-3162-4c35-b4bc-9fac5795b08c",
+    "name": "ContextResonanceField_7f0ec009",
+    "type": "ContextResonanceField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.08349315448696042,
+      "decay_rate": 0.9478295978576793,
+      "threshold": 0.5246493898461407,
+      "max_iterations": 340,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.9876457073793056,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 311,
+      "energy": 9.51438657172985,
+      "resonance": 0.35547673456466433,
+      "stability": 0.6823915269769212,
+      "active_nodes": 59,
+      "memory_usage_mb": 1868
+    },
+    "metrics": {
+      "convergence_rate": 0.889842355787244,
+      "accuracy": 0.9377423422985113,
+      "processing_time_ms": 884,
+      "memory_efficiency": 0.8222018765581566
+    },
+    "connections": [
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.9003590663940261,
+        "bidirectional": true
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.7969930160430554,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "4905e863-6084-4ae1-a291-597a38dd93ee",
+    "name": "CollectiveMemoryField_3960db82",
+    "type": "CollectiveMemoryField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.04968068040933637,
+      "decay_rate": 0.9322543849095707,
+      "threshold": 0.6045412414040999,
+      "max_iterations": 988,
+      "batch_size": 64,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.9634496797522147,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 239,
+      "energy": 4.086916418209501,
+      "resonance": 0.065617331746883,
+      "stability": 0.8838953578422157,
+      "active_nodes": 54,
+      "memory_usage_mb": 1493
+    },
+    "metrics": {
+      "convergence_rate": 0.8657877282312564,
+      "accuracy": 0.9312668539120446,
+      "processing_time_ms": 884,
+      "memory_efficiency": 0.7097657141635869
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.5028337301570485,
+        "bidirectional": false
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.11342444272091196,
+        "bidirectional": true
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.3897164665332342,
+        "bidirectional": true
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.713020299282113,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.6968269203975989,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "075ebc6e-6fec-46d5-af10-7a9d4fe95e4a",
+    "name": "MultiAgentSyncField_7c89f291",
+    "type": "MultiAgentSyncField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.021163348070798574,
+      "decay_rate": 0.924943361743091,
+      "threshold": 0.789674112533796,
+      "max_iterations": 313,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.9390013153180516,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 7,
+      "energy": 5.021988801135561,
+      "resonance": 0.8082873941296952,
+      "stability": 0.5634896734946728,
+      "active_nodes": 36,
+      "memory_usage_mb": 1950
+    },
+    "metrics": {
+      "convergence_rate": 0.944385572102654,
+      "accuracy": 0.8848841965789332,
+      "processing_time_ms": 12,
+      "memory_efficiency": 0.8299677491307197
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.21577220495083627,
+        "bidirectional": false
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.7429889012993536,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.3954556066055446,
+        "bidirectional": true
+      },
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.3555777529402855,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "8f71266b-9da5-4df6-baf6-be9319d54395",
+    "name": "PredictiveSystemField_fcb4113f",
+    "type": "PredictiveSystemField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.07986993317710066,
+      "decay_rate": 0.9053605947744591,
+      "threshold": 0.8086967320374983,
+      "max_iterations": 936,
+      "batch_size": 64,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.8174507013050141,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 12,
+      "energy": 1.4005021552479038,
+      "resonance": 0.7932263807603496,
+      "stability": 0.5001203803263251,
+      "active_nodes": 48,
+      "memory_usage_mb": 1872
+    },
+    "metrics": {
+      "convergence_rate": 0.9289229592935541,
+      "accuracy": 0.9876511669078838,
+      "processing_time_ms": 35,
+      "memory_efficiency": 0.7117388952941792
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.4082600634516885,
+        "bidirectional": true
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.6385307128071608,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "93d7c055-4cea-4bb7-aa1a-a41cedda3702",
+    "name": "BaseNeuralField_d67106d8",
+    "type": "BaseNeuralField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.007472246440168703,
+      "decay_rate": 0.9359144429581616,
+      "threshold": 0.831625998883192,
+      "max_iterations": 523,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.8314467874912679,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 294,
+      "energy": 2.3690605929228368,
+      "resonance": 0.14876128395418442,
+      "stability": 0.6421015802029917,
+      "active_nodes": 77,
+      "memory_usage_mb": 162
+    },
+    "metrics": {
+      "convergence_rate": 0.92020642848779,
+      "accuracy": 0.917861745049046,
+      "processing_time_ms": 577,
+      "memory_efficiency": 0.8518480007938558
+    },
+    "connections": [
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.26219592151265053,
+        "bidirectional": true
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.416953967134188,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "dd08caa7-0ac0-455f-a2f9-95aa2a32a319",
+    "name": "AgentAssignmentField_b38b2f1f",
+    "type": "AgentAssignmentField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.029039289050644502,
+      "decay_rate": 0.9821576747297112,
+      "threshold": 0.8576026515616573,
+      "max_iterations": 319,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.960760805053996,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 152,
+      "energy": 2.7108674417220606,
+      "resonance": 0.32281004488248255,
+      "stability": 0.6310204004091551,
+      "active_nodes": 73,
+      "memory_usage_mb": 881
+    },
+    "metrics": {
+      "convergence_rate": 0.9423322844674229,
+      "accuracy": 0.9111298527026852,
+      "processing_time_ms": 125,
+      "memory_efficiency": 0.8123257637531314
+    },
+    "connections": [
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.2555718129643576,
+        "bidirectional": false
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.678833394648039,
+        "bidirectional": true
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.4772090436180627,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "6de2c924-86e5-4894-9c12-e5ab03a39132",
+    "name": "ContextResonanceField_581708c4",
+    "type": "ContextResonanceField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.048276564526719405,
+      "decay_rate": 0.9007163184797847,
+      "threshold": 0.5685423179848355,
+      "max_iterations": 257,
+      "batch_size": 64,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.9811978521091594,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 162,
+      "energy": 8.715778656867545,
+      "resonance": 0.6345898950503535,
+      "stability": 0.6123104939270063,
+      "active_nodes": 73,
+      "memory_usage_mb": 1486
+    },
+    "metrics": {
+      "convergence_rate": 0.8973433523575204,
+      "accuracy": 0.9710397314008226,
+      "processing_time_ms": 265,
+      "memory_efficiency": 0.8132927406281071
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.6199613909774158,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "adb833a2-5f5b-4f39-9f12-7eed2ea72da5",
+    "name": "CollectiveMemoryField_053e5b54",
+    "type": "CollectiveMemoryField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.07456768357061759,
+      "decay_rate": 0.9642960442267943,
+      "threshold": 0.6604179745577341,
+      "max_iterations": 276,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.8686474876972166,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 37,
+      "energy": 4.167205134018999,
+      "resonance": 0.8239261152991381,
+      "stability": 0.885417533068805,
+      "active_nodes": 52,
+      "memory_usage_mb": 1385
+    },
+    "metrics": {
+      "convergence_rate": 0.9353416529706685,
+      "accuracy": 0.9819837490633896,
+      "processing_time_ms": 280,
+      "memory_efficiency": 0.9242737050971854
+    },
+    "connections": [
+      {
+        "target_field": "AgentAssignmentField",
+        "weight": 0.6017426480971608,
+        "bidirectional": false
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.8515568159650381,
+        "bidirectional": true
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.12593481865192788,
+        "bidirectional": false
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.7317113467430523,
+        "bidirectional": false
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.740868271884657,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "4ae338b7-5ed7-4d53-b8a7-1bf5e3ed0767",
+    "name": "MultiAgentSyncField_1803133f",
+    "type": "MultiAgentSyncField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.002157539012545025,
+      "decay_rate": 0.9022483053844474,
+      "threshold": 0.8622498746397729,
+      "max_iterations": 546,
+      "batch_size": 64,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.9584209095973169,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 136,
+      "energy": 7.388356457102268,
+      "resonance": 0.4455976531433703,
+      "stability": 0.5386881667262662,
+      "active_nodes": 65,
+      "memory_usage_mb": 179
+    },
+    "metrics": {
+      "convergence_rate": 0.8918053435692159,
+      "accuracy": 0.8852276453833916,
+      "processing_time_ms": 95,
+      "memory_efficiency": 0.8468590957764839
+    },
+    "connections": [
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.8606630271461526,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "56e59f48-78e0-49d6-a2a7-8249bb7a1458",
+    "name": "PredictiveSystemField_749b2122",
+    "type": "PredictiveSystemField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.025361132979597863,
+      "decay_rate": 0.9271702568796129,
+      "threshold": 0.7229426106586749,
+      "max_iterations": 689,
+      "batch_size": 32,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.9660890989970016,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 493,
+      "energy": 2.8877801431216286,
+      "resonance": 0.16442922316579967,
+      "stability": 0.5301014673800177,
+      "active_nodes": 38,
+      "memory_usage_mb": 688
+    },
+    "metrics": {
+      "convergence_rate": 0.9683254779149901,
+      "accuracy": 0.8553225347445955,
+      "processing_time_ms": 63,
+      "memory_efficiency": 0.9389986882232649
+    },
+    "connections": [
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.2905660810175279,
+        "bidirectional": true
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.21038893394768454,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "43e71fbf-68db-40a1-9b36-22f29233a8eb",
+    "name": "BaseNeuralField_4d14b96d",
+    "type": "BaseNeuralField",
+    "configuration": {
+      "dimensions": 512,
+      "learning_rate": 0.03111461944860694,
+      "decay_rate": 0.9895837440042756,
+      "threshold": 0.8964505257785487,
+      "max_iterations": 427,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.8684180558069867,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 190,
+      "energy": 7.118006995694285,
+      "resonance": 0.8302306093177053,
+      "stability": 0.9292145479251341,
+      "active_nodes": 32,
+      "memory_usage_mb": 607
+    },
+    "metrics": {
+      "convergence_rate": 0.8749217739227019,
+      "accuracy": 0.962676932696768,
+      "processing_time_ms": 322,
+      "memory_efficiency": 0.7488774573033892
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.8145224165565913,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "1a88bb67-892b-4887-9126-1ded28eff929",
+    "name": "AgentAssignmentField_808c35f7",
+    "type": "AgentAssignmentField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.020326753262976217,
+      "decay_rate": 0.9784988779250534,
+      "threshold": 0.625255514743898,
+      "max_iterations": 175,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.9075653808431395,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 206,
+      "energy": 1.3683515682125333,
+      "resonance": 0.8276972439117054,
+      "stability": 0.874120162228734,
+      "active_nodes": 47,
+      "memory_usage_mb": 688
+    },
+    "metrics": {
+      "convergence_rate": 0.9840352042213698,
+      "accuracy": 0.9539050514785066,
+      "processing_time_ms": 739,
+      "memory_efficiency": 0.7674084546159006
+    },
+    "connections": [
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.6639227029338637,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "5b9a42cc-33d2-42c6-a5e9-2a0c2942e84c",
+    "name": "ContextResonanceField_fae16f88",
+    "type": "ContextResonanceField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.013425127101424808,
+      "decay_rate": 0.9796250435010021,
+      "threshold": 0.7405029391789487,
+      "max_iterations": 920,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.9848652223923954,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 308,
+      "energy": 9.050692436382466,
+      "resonance": 0.86269745467217,
+      "stability": 0.9830422601459678,
+      "active_nodes": 57,
+      "memory_usage_mb": 1360
+    },
+    "metrics": {
+      "convergence_rate": 0.9084444579236143,
+      "accuracy": 0.9347814015444386,
+      "processing_time_ms": 720,
+      "memory_efficiency": 0.7044976283270503
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.2651011028777668,
+        "bidirectional": false
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.9516227972932778,
+        "bidirectional": false
+      },
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.6687942367098227,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "76c0a602-1e8a-4ea5-9c65-db9011f310bd",
+    "name": "CollectiveMemoryField_0f81c9f7",
+    "type": "CollectiveMemoryField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.03366862724301779,
+      "decay_rate": 0.9748747660523618,
+      "threshold": 0.6997609920069082,
+      "max_iterations": 907,
+      "batch_size": 32,
+      "optimization": {
+        "algorithm": "sgd",
+        "momentum": 0.9244240619906116,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 207,
+      "energy": 1.4943564308044053,
+      "resonance": 0.7695205267258596,
+      "stability": 0.604511606817429,
+      "active_nodes": 40,
+      "memory_usage_mb": 702
+    },
+    "metrics": {
+      "convergence_rate": 0.8006016730368378,
+      "accuracy": 0.9623310300160886,
+      "processing_time_ms": 420,
+      "memory_efficiency": 0.9188422134175144
+    },
+    "connections": [
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.15864221697305803,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "b7d850c9-757c-4fcc-bbdf-9da64c15b93c",
+    "name": "MultiAgentSyncField_0887be28",
+    "type": "MultiAgentSyncField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.033810030430464266,
+      "decay_rate": 0.9318536345594749,
+      "threshold": 0.882102656035316,
+      "max_iterations": 161,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.8274470406964498,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 188,
+      "energy": 6.428782283880863,
+      "resonance": 0.6572704717995002,
+      "stability": 0.7437470024209619,
+      "active_nodes": 29,
+      "memory_usage_mb": 1971
+    },
+    "metrics": {
+      "convergence_rate": 0.8153808739513568,
+      "accuracy": 0.8522734180477047,
+      "processing_time_ms": 10,
+      "memory_efficiency": 0.8918712901040681
+    },
+    "connections": [
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.48107924235838395,
+        "bidirectional": true
+      },
+      {
+        "target_field": "BaseNeuralField",
+        "weight": 0.9529631240049949,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.9711403150832244,
+        "bidirectional": false
+      },
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.636144813431508,
+        "bidirectional": false
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.15273339943376912,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "430d99f0-db6f-4c91-8a64-1d69b26c7d53",
+    "name": "PredictiveSystemField_a722c603",
+    "type": "PredictiveSystemField",
+    "configuration": {
+      "dimensions": 256,
+      "learning_rate": 0.08223818543422787,
+      "decay_rate": 0.9723423897745168,
+      "threshold": 0.5035711145679873,
+      "max_iterations": 428,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.9873219943129145,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 364,
+      "energy": 1.182594068257782,
+      "resonance": 0.9473597109603422,
+      "stability": 0.5769777079483416,
+      "active_nodes": 90,
+      "memory_usage_mb": 240
+    },
+    "metrics": {
+      "convergence_rate": 0.988806047249114,
+      "accuracy": 0.9223953851264692,
+      "processing_time_ms": 843,
+      "memory_efficiency": 0.8636322878236399
+    },
+    "connections": [
+      {
+        "target_field": "PredictiveSystemField",
+        "weight": 0.9694794296641464,
+        "bidirectional": true
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.44814081695214913,
+        "bidirectional": false
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.27438223880993445,
+        "bidirectional": true
+      },
+      {
+        "target_field": "ContextResonanceField",
+        "weight": 0.3506670328152002,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "4e7e5ae1-5671-4231-8bc8-207650871d09",
+    "name": "BaseNeuralField_fc26cece",
+    "type": "BaseNeuralField",
+    "configuration": {
+      "dimensions": 768,
+      "learning_rate": 0.0767709208920419,
+      "decay_rate": 0.9002439036782067,
+      "threshold": 0.722213558759387,
+      "max_iterations": 494,
+      "batch_size": 128,
+      "optimization": {
+        "algorithm": "adam",
+        "momentum": 0.9109843085274172,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 144,
+      "energy": 3.9131307481896105,
+      "resonance": 0.8927850316728719,
+      "stability": 0.9081707396704974,
+      "active_nodes": 24,
+      "memory_usage_mb": 399
+    },
+    "metrics": {
+      "convergence_rate": 0.9153058275961528,
+      "accuracy": 0.9771676133917649,
+      "processing_time_ms": 650,
+      "memory_efficiency": 0.7004516917892148
+    },
+    "connections": [
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.5550621119282776,
+        "bidirectional": true
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "5a3b2476-bf2d-4d02-8154-ff884c52716b",
+    "name": "AgentAssignmentField_0e23ccba",
+    "type": "AgentAssignmentField",
+    "configuration": {
+      "dimensions": 128,
+      "learning_rate": 0.02741513268411247,
+      "decay_rate": 0.9224205330968749,
+      "threshold": 0.8026920736257996,
+      "max_iterations": 293,
+      "batch_size": 16,
+      "optimization": {
+        "algorithm": "rmsprop",
+        "momentum": 0.9563573102446097,
+        "epsilon": 1e-08
+      }
+    },
+    "state": {
+      "initialized": true,
+      "current_iteration": 239,
+      "energy": 3.067662524658224,
+      "resonance": 0.8745412540936977,
+      "stability": 0.933375994752069,
+      "active_nodes": 26,
+      "memory_usage_mb": 585
+    },
+    "metrics": {
+      "convergence_rate": 0.9205204848479104,
+      "accuracy": 0.9671979421182723,
+      "processing_time_ms": 573,
+      "memory_efficiency": 0.9376206034966346
+    },
+    "connections": [
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.9922853970902584,
+        "bidirectional": true
+      },
+      {
+        "target_field": "CollectiveMemoryField",
+        "weight": 0.34793316254647616,
+        "bidirectional": true
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.5080677061510441,
+        "bidirectional": false
+      },
+      {
+        "target_field": "MultiAgentSyncField",
+        "weight": 0.7022639019357138,
+        "bidirectional": false
+      }
+    ],
+    "created_at": "2025-08-30T02:58:23.490709"
+  }
+]

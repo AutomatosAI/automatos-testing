@@ -13,6 +13,25 @@ import sys
 import json
 import os
 from pathlib import Path
+try:
+    from dotenv import load_dotenv, find_dotenv  # type: ignore
+except Exception:  # pragma: no cover - optional dependency
+    load_dotenv = None  # type: ignore
+    find_dotenv = None  # type: ignore
+
+# Load .env BEFORE importing framework so config picks it up at import-time
+if 'PYTEST_CURRENT_TEST' not in os.environ:  # avoid side-effects during pytest collection
+    if load_dotenv is not None:
+        try:
+            # Local .env next to this script
+            load_dotenv(dotenv_path=Path(__file__).parent / ".env", override=False)
+            # And search upward from CWD
+            if find_dotenv is not None:
+                env_path = find_dotenv(usecwd=True)
+                if env_path:
+                    load_dotenv(env_path, override=False)
+        except Exception:
+            pass
 
 # Add framework to path
 sys.path.insert(0, str(Path(__file__).parent / "framework"))
@@ -21,6 +40,21 @@ from framework.test_runner import TestRunner
 from framework.config import TestLevel, TestEnvironment
 
 async def main():
+    # Load environment variables from a .env file if present (repo root or CWD)
+    # Does not override existing environment variables
+    # Load from .env if python-dotenv is available
+    if load_dotenv is not None:
+        try:
+            # Explicit repo-local .env next to this file
+            load_dotenv(dotenv_path=Path(__file__).parent / ".env", override=False)
+            # And a generic search starting from CWD upward
+            if find_dotenv is not None:
+                env_path = find_dotenv(usecwd=True)
+                if env_path:
+                    load_dotenv(env_path, override=False)
+        except Exception:
+            # Safe to ignore any load error
+            pass
     parser = argparse.ArgumentParser(
         description="Automotas AI Comprehensive Testing Framework",
         formatter_class=argparse.RawDescriptionHelpFormatter,

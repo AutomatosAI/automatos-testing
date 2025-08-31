@@ -1,4 +1,7 @@
 
+from dotenv import load_dotenv
+load_dotenv()
+
 """
 Automotas AI Testing Framework Configuration
 ===========================================

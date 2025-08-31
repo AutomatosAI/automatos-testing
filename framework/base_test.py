@@ -113,6 +113,9 @@ class APITest(BaseTest):
         if not self.session:
             await self.setup_session()
             
+        # Add trailing slash for endpoints that need it (FastAPI requirement)
+        if endpoint.startswith('/api/') and not endpoint.endswith('/') and '?' not in endpoint and '{' not in endpoint:
+            endpoint = endpoint + '/'
         url = f"{self.config.api.base_url}{endpoint}"
         
         for attempt in range(self.config.api.retry_count):

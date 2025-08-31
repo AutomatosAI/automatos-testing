@@ -1,0 +1,1518 @@
+[
+  {
+    "id": "95dcbe56-94a9-493a-bfc0-6b5cfd519850",
+    "name": "Agent_code_architect_228984b7",
+    "type": "code_architect",
+    "description": "Production-grade code_architect agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 4,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 113,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "refactoring",
+      "monitoring",
+      "dependency_analysis",
+      "error_handling",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 270,
+      "success_rate": 0.9629683716394225,
+      "tasks_completed": 371
+    },
+    "created_at": "2025-05-26T02:58:23.490709"
+  },
+  {
+    "id": "60fd63e3-c76e-462b-9359-225369b88e35",
+    "name": "Agent_security_expert_1554756b",
+    "type": "security_expert",
+    "description": "Production-grade security_expert agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 5,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 173,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "task_execution",
+      "vulnerability_scanning",
+      "error_handling"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 282,
+      "success_rate": 0.9680981490926064,
+      "tasks_completed": 869
+    },
+    "created_at": "2024-12-12T02:58:23.490709"
+  },
+  {
+    "id": "90489a0f-56a6-4ab4-bba7-0f21f46f02ab",
+    "name": "Agent_performance_optimizer_8d8d4c1c",
+    "type": "performance_optimizer",
+    "description": "Production-grade performance_optimizer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "critical",
+      "max_concurrent_tasks": 18,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 176,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "task_execution",
+      "profiling",
+      "bottleneck_detection",
+      "monitoring"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 394,
+      "success_rate": 0.9553848982073676,
+      "tasks_completed": 7119
+    },
+    "created_at": "2025-08-08T02:58:23.490709"
+  },
+  {
+    "id": "2ac6aa29-4cb5-42d2-9556-bb252bf4e8c7",
+    "name": "Agent_data_analyst_540d8a53",
+    "type": "data_analyst",
+    "description": "Production-grade data_analyst agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "critical",
+      "max_concurrent_tasks": 8,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 216,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "general_processing",
+      "monitoring",
+      "logging",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 322,
+      "success_rate": 0.9625244563861833,
+      "tasks_completed": 3714
+    },
+    "created_at": "2025-01-26T02:58:23.490709"
+  },
+  {
+    "id": "63c01a83-1c50-43ba-937b-2d933e9115c5",
+    "name": "Agent_infrastructure_manager_1649250b",
+    "type": "infrastructure_manager",
+    "description": "Production-grade infrastructure_manager agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "critical",
+      "max_concurrent_tasks": 20,
+      "memory_limit_mb": 512,
+      "timeout_seconds": 57,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "error_handling",
+      "general_processing",
+      "task_execution",
+      "logging"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 482,
+      "success_rate": 0.9793690017507065,
+      "tasks_completed": 7158
+    },
+    "created_at": "2024-09-04T02:58:23.490709"
+  },
+  {
+    "id": "dbf7884f-0820-4476-8629-2d113593540f",
+    "name": "Agent_ml_engineer_7d29bac3",
+    "type": "ml_engineer",
+    "description": "Production-grade ml_engineer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 8,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 251,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 2048
+    },
+    "capabilities": [
+      "general_processing",
+      "logging",
+      "error_handling",
+      "monitoring"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 296,
+      "success_rate": 0.9650066185358787,
+      "tasks_completed": 8161
+    },
+    "created_at": "2025-08-22T02:58:23.490709"
+  },
+  {
+    "id": "79dc271e-c79a-4114-a961-4c17389c49a4",
+    "name": "Agent_devops_specialist_27f72d86",
+    "type": "devops_specialist",
+    "description": "Production-grade devops_specialist agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 16,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 249,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "monitoring",
+      "error_handling",
+      "logging",
+      "task_execution",
+      "general_processing"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 470,
+      "success_rate": 0.9568813023119876,
+      "tasks_completed": 7410
+    },
+    "created_at": "2025-08-10T02:58:23.490709"
+  },
+  {
+    "id": "1a011915-fe36-4870-a1d6-810392330d77",
+    "name": "Agent_database_architect_e9b7d2d9",
+    "type": "database_architect",
+    "description": "Production-grade database_architect agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 8,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 273,
+      "retry_policy": {
+        "max_retries": 5,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "general_processing",
+      "monitoring",
+      "error_handling"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 306,
+      "success_rate": 0.9729837729917871,
+      "tasks_completed": 1332
+    },
+    "created_at": "2024-12-10T02:58:23.490709"
+  },
+  {
+    "id": "e53129fc-8ae6-4a67-8f26-fe9338befad9",
+    "name": "Agent_api_designer_a6926cc1",
+    "type": "api_designer",
+    "description": "Production-grade api_designer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 5,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 75,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "general_processing",
+      "error_handling",
+      "monitoring",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 317,
+      "success_rate": 0.9556303806776252,
+      "tasks_completed": 9357
+    },
+    "created_at": "2024-12-22T02:58:23.490709"
+  },
+  {
+    "id": "cee9c8bc-8b5e-4020-a224-37479510b8e8",
+    "name": "Agent_test_automation_engineer_198d79d3",
+    "type": "test_automation_engineer",
+    "description": "Production-grade test_automation_engineer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 9,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 116,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "task_execution",
+      "error_handling",
+      "monitoring",
+      "general_processing"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 94,
+      "success_rate": 0.9746977195097772,
+      "tasks_completed": 4410
+    },
+    "created_at": "2024-10-05T02:58:23.490709"
+  },
+  {
+    "id": "06405ffb-97c8-420f-be9a-88d9e17609ea",
+    "name": "Agent_neural_field_specialist_2c1221e9",
+    "type": "neural_field_specialist",
+    "description": "Production-grade neural_field_specialist agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 4,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 57,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "pattern_extraction",
+      "error_handling",
+      "monitoring",
+      "task_execution",
+      "logging",
+      "field_configuration"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 239,
+      "success_rate": 0.9635757589189018,
+      "tasks_completed": 6675
+    },
+    "created_at": "2025-06-02T02:58:23.490709"
+  },
+  {
+    "id": "dc7dc37c-686a-43d4-b340-49adcf2b53d4",
+    "name": "Agent_context_engineer_8be10a51",
+    "type": "context_engineer",
+    "description": "Production-grade context_engineer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 1,
+      "memory_limit_mb": 512,
+      "timeout_seconds": 255,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "logging",
+      "relevance_scoring",
+      "monitoring",
+      "knowledge_extraction",
+      "semantic_analysis",
+      "context_building"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 231,
+      "success_rate": 0.968847645489454,
+      "tasks_completed": 5047
+    },
+    "created_at": "2025-04-27T02:58:23.490709"
+  },
+  {
+    "id": "23b0d0bf-dbb9-47f1-964c-97b6eefc15ae",
+    "name": "Agent_memory_optimizer_7c0fdbc4",
+    "type": "memory_optimizer",
+    "description": "Production-grade memory_optimizer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 17,
+      "memory_limit_mb": 512,
+      "timeout_seconds": 193,
+      "retry_policy": {
+        "max_retries": 5,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "task_execution",
+      "error_handling",
+      "monitoring",
+      "general_processing",
+      "logging"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 450,
+      "success_rate": 0.9681707795866462,
+      "tasks_completed": 2292
+    },
+    "created_at": "2025-02-07T02:58:23.490709"
+  },
+  {
+    "id": "4caa67a1-c5be-4ed7-886c-d90928d046da",
+    "name": "Agent_pattern_recognizer_f5a38e56",
+    "type": "pattern_recognizer",
+    "description": "Production-grade pattern_recognizer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 14,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 223,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "error_handling",
+      "monitoring",
+      "logging",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 333,
+      "success_rate": 0.9552396161143071,
+      "tasks_completed": 1786
+    },
+    "created_at": "2024-09-15T02:58:23.490709"
+  },
+  {
+    "id": "64ee4760-1f15-4334-b14f-fe0e475bb0b0",
+    "name": "Agent_code_architect_87bdc22d",
+    "type": "code_architect",
+    "description": "Production-grade code_architect agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 4,
+      "memory_limit_mb": 512,
+      "timeout_seconds": 94,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "code_analysis",
+      "error_handling",
+      "task_execution",
+      "design_patterns"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 87,
+      "success_rate": 0.9865562797194437,
+      "tasks_completed": 3120
+    },
+    "created_at": "2025-07-19T02:58:23.490709"
+  },
+  {
+    "id": "a6a390c1-8602-4159-9ddb-4a12e37aacb8",
+    "name": "Agent_security_expert_21eff8b3",
+    "type": "security_expert",
+    "description": "Production-grade security_expert agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 16,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 245,
+      "retry_policy": {
+        "max_retries": 5,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 2048
+    },
+    "capabilities": [
+      "threat_modeling",
+      "logging",
+      "vulnerability_scanning",
+      "compliance_checking",
+      "penetration_testing",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 330,
+      "success_rate": 0.9648699272023098,
+      "tasks_completed": 4601
+    },
+    "created_at": "2025-08-16T02:58:23.490709"
+  },
+  {
+    "id": "23cb55b6-6c93-4d7e-ac74-1254546bd7d9",
+    "name": "Agent_performance_optimizer_8a5c70ef",
+    "type": "performance_optimizer",
+    "description": "Production-grade performance_optimizer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 19,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 200,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "task_execution",
+      "load_balancing",
+      "monitoring",
+      "bottleneck_detection",
+      "error_handling"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 432,
+      "success_rate": 0.9701214490129786,
+      "tasks_completed": 9098
+    },
+    "created_at": "2025-01-18T02:58:23.490709"
+  },
+  {
+    "id": "9a140694-2c2f-4375-968d-e0b31da89e70",
+    "name": "Agent_data_analyst_296ddbcd",
+    "type": "data_analyst",
+    "description": "Production-grade data_analyst agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "critical",
+      "max_concurrent_tasks": 4,
+      "memory_limit_mb": 512,
+      "timeout_seconds": 100,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "task_execution",
+      "general_processing",
+      "logging",
+      "error_handling",
+      "monitoring"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 223,
+      "success_rate": 0.954741082848638,
+      "tasks_completed": 5700
+    },
+    "created_at": "2024-11-16T02:58:23.490709"
+  },
+  {
+    "id": "ed2096b9-7564-4a5e-8b07-bc33baa9f825",
+    "name": "Agent_infrastructure_manager_5fc42232",
+    "type": "infrastructure_manager",
+    "description": "Production-grade infrastructure_manager agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "critical",
+      "max_concurrent_tasks": 14,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 123,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "logging",
+      "general_processing",
+      "monitoring",
+      "error_handling",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 444,
+      "success_rate": 0.9796936758572312,
+      "tasks_completed": 4375
+    },
+    "created_at": "2025-06-03T02:58:23.490709"
+  },
+  {
+    "id": "7e17c373-6564-432a-a786-9effa82cabc1",
+    "name": "Agent_ml_engineer_d00a2685",
+    "type": "ml_engineer",
+    "description": "Production-grade ml_engineer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 5,
+      "memory_limit_mb": 512,
+      "timeout_seconds": 285,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "error_handling",
+      "monitoring",
+      "general_processing",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 125,
+      "success_rate": 0.9754258539611099,
+      "tasks_completed": 9621
+    },
+    "created_at": "2025-04-02T02:58:23.490709"
+  },
+  {
+    "id": "f27aac66-1f8b-4d02-90a8-87579197c126",
+    "name": "Agent_devops_specialist_3776f40f",
+    "type": "devops_specialist",
+    "description": "Production-grade devops_specialist agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 10,
+      "memory_limit_mb": 512,
+      "timeout_seconds": 87,
+      "retry_policy": {
+        "max_retries": 5,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 2048
+    },
+    "capabilities": [
+      "general_processing",
+      "task_execution",
+      "error_handling",
+      "monitoring",
+      "logging"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 147,
+      "success_rate": 0.9652161444382975,
+      "tasks_completed": 901
+    },
+    "created_at": "2025-05-16T02:58:23.490709"
+  },
+  {
+    "id": "48945121-aa78-4e9b-ad2f-a41ec5792858",
+    "name": "Agent_database_architect_1b929929",
+    "type": "database_architect",
+    "description": "Production-grade database_architect agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 17,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 48,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "logging",
+      "general_processing",
+      "error_handling",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 371,
+      "success_rate": 0.9893897701055094,
+      "tasks_completed": 1362
+    },
+    "created_at": "2025-08-02T02:58:23.490709"
+  },
+  {
+    "id": "81060f8a-200d-4113-a293-0a168ae69151",
+    "name": "Agent_api_designer_5001505c",
+    "type": "api_designer",
+    "description": "Production-grade api_designer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 4,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 295,
+      "retry_policy": {
+        "max_retries": 5,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 2048
+    },
+    "capabilities": [
+      "general_processing",
+      "monitoring",
+      "error_handling"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 325,
+      "success_rate": 0.9591996695715493,
+      "tasks_completed": 7504
+    },
+    "created_at": "2025-04-06T02:58:23.490709"
+  },
+  {
+    "id": "bd28fa10-641c-46df-a2fd-66d4f242f2ec",
+    "name": "Agent_test_automation_engineer_f6a8fdbd",
+    "type": "test_automation_engineer",
+    "description": "Production-grade test_automation_engineer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "critical",
+      "max_concurrent_tasks": 2,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 154,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "monitoring",
+      "logging",
+      "error_handling",
+      "general_processing"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 199,
+      "success_rate": 0.9714460675039686,
+      "tasks_completed": 7676
+    },
+    "created_at": "2025-05-05T02:58:23.490709"
+  },
+  {
+    "id": "d7ff7c10-0ecf-4113-a09b-67dd43f33e12",
+    "name": "Agent_neural_field_specialist_421b6ec2",
+    "type": "neural_field_specialist",
+    "description": "Production-grade neural_field_specialist agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 19,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 109,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "pattern_extraction",
+      "error_handling",
+      "task_execution",
+      "memory_consolidation"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 318,
+      "success_rate": 0.9771146309120285,
+      "tasks_completed": 6215
+    },
+    "created_at": "2025-04-21T02:58:23.490709"
+  },
+  {
+    "id": "c9235cfc-e139-4022-8a6f-cdf6fbf6e95a",
+    "name": "Agent_context_engineer_e8002c2b",
+    "type": "context_engineer",
+    "description": "Production-grade context_engineer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 8,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 254,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "error_handling",
+      "semantic_analysis",
+      "relevance_scoring"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 242,
+      "success_rate": 0.971766273746145,
+      "tasks_completed": 6496
+    },
+    "created_at": "2025-04-01T02:58:23.490709"
+  },
+  {
+    "id": "d51caa72-2866-4819-91ce-cf8baddcb572",
+    "name": "Agent_memory_optimizer_44a29d4c",
+    "type": "memory_optimizer",
+    "description": "Production-grade memory_optimizer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 9,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 250,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "error_handling",
+      "monitoring",
+      "task_execution",
+      "general_processing",
+      "logging"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 286,
+      "success_rate": 0.9621786502921132,
+      "tasks_completed": 687
+    },
+    "created_at": "2024-11-23T02:58:23.490709"
+  },
+  {
+    "id": "f591a591-ceac-46d2-877a-94745ad2e953",
+    "name": "Agent_pattern_recognizer_3b800d27",
+    "type": "pattern_recognizer",
+    "description": "Production-grade pattern_recognizer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 13,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 126,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "task_execution",
+      "logging",
+      "monitoring",
+      "error_handling",
+      "general_processing"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 428,
+      "success_rate": 0.9518446363443422,
+      "tasks_completed": 7659
+    },
+    "created_at": "2025-07-18T02:58:23.490709"
+  },
+  {
+    "id": "e8a961c1-343c-4a8b-ac1f-4779669dbe0a",
+    "name": "Agent_code_architect_aae10ce0",
+    "type": "code_architect",
+    "description": "Production-grade code_architect agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 8,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 221,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "error_handling",
+      "dependency_analysis",
+      "monitoring"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 280,
+      "success_rate": 0.9869852233670979,
+      "tasks_completed": 3088
+    },
+    "created_at": "2024-10-28T02:58:23.490709"
+  },
+  {
+    "id": "6ca9b3f0-865d-435d-9957-7cd1a5a4d7cc",
+    "name": "Agent_security_expert_6c7bef85",
+    "type": "security_expert",
+    "description": "Production-grade security_expert agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 18,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 68,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "monitoring",
+      "vulnerability_scanning",
+      "task_execution",
+      "threat_modeling",
+      "penetration_testing"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 159,
+      "success_rate": 0.9807811712685793,
+      "tasks_completed": 5221
+    },
+    "created_at": "2025-03-11T02:58:23.490709"
+  },
+  {
+    "id": "bb704f72-24a2-4a6e-8944-305e12b1d897",
+    "name": "Agent_performance_optimizer_75fe2c99",
+    "type": "performance_optimizer",
+    "description": "Production-grade performance_optimizer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 15,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 129,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "resource_optimization",
+      "bottleneck_detection",
+      "monitoring",
+      "error_handling",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 414,
+      "success_rate": 0.952626098953653,
+      "tasks_completed": 220
+    },
+    "created_at": "2025-01-22T02:58:23.490709"
+  },
+  {
+    "id": "4ad8f2ce-3355-4e63-b5de-8a5d695e320a",
+    "name": "Agent_data_analyst_84e5b08b",
+    "type": "data_analyst",
+    "description": "Production-grade data_analyst agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 6,
+      "memory_limit_mb": 512,
+      "timeout_seconds": 227,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "logging",
+      "error_handling",
+      "task_execution",
+      "general_processing"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 232,
+      "success_rate": 0.979009353246893,
+      "tasks_completed": 7765
+    },
+    "created_at": "2025-01-17T02:58:23.490709"
+  },
+  {
+    "id": "068d0859-a506-40de-be53-fd108c32a4c6",
+    "name": "Agent_infrastructure_manager_1cb498d9",
+    "type": "infrastructure_manager",
+    "description": "Production-grade infrastructure_manager agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 8,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 40,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "general_processing",
+      "logging",
+      "monitoring",
+      "error_handling",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 400,
+      "success_rate": 0.9808296661317697,
+      "tasks_completed": 3011
+    },
+    "created_at": "2025-01-10T02:58:23.490709"
+  },
+  {
+    "id": "13ff50de-077d-4fd3-90a8-55d9fcfd40a5",
+    "name": "Agent_ml_engineer_f669b50b",
+    "type": "ml_engineer",
+    "description": "Production-grade ml_engineer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 8,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 77,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "general_processing",
+      "error_handling",
+      "logging",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 330,
+      "success_rate": 0.9861607212280111,
+      "tasks_completed": 9083
+    },
+    "created_at": "2024-12-03T02:58:23.490709"
+  },
+  {
+    "id": "d62f99b8-45ab-4d79-a4c6-71ba1d76e909",
+    "name": "Agent_devops_specialist_ea9db775",
+    "type": "devops_specialist",
+    "description": "Production-grade devops_specialist agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "critical",
+      "max_concurrent_tasks": 11,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 144,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "general_processing",
+      "monitoring",
+      "error_handling",
+      "logging",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 341,
+      "success_rate": 0.9710966997583661,
+      "tasks_completed": 6314
+    },
+    "created_at": "2025-07-26T02:58:23.490709"
+  },
+  {
+    "id": "3098b2ff-fc28-47e2-915f-6047b4b3cd08",
+    "name": "Agent_database_architect_cc5d67aa",
+    "type": "database_architect",
+    "description": "Production-grade database_architect agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "critical",
+      "max_concurrent_tasks": 5,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 300,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "general_processing",
+      "monitoring",
+      "logging",
+      "error_handling"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 116,
+      "success_rate": 0.9889805442019249,
+      "tasks_completed": 7935
+    },
+    "created_at": "2025-03-25T02:58:23.490709"
+  },
+  {
+    "id": "752a8b18-089d-41fb-9056-56ef807b4c60",
+    "name": "Agent_api_designer_58b060f5",
+    "type": "api_designer",
+    "description": "Production-grade api_designer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 9,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 238,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "logging",
+      "monitoring",
+      "error_handling",
+      "general_processing",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 407,
+      "success_rate": 0.9739514219665002,
+      "tasks_completed": 4110
+    },
+    "created_at": "2025-05-21T02:58:23.490709"
+  },
+  {
+    "id": "c631e0d0-41e2-47db-b6f5-3e03351caf68",
+    "name": "Agent_test_automation_engineer_15718d51",
+    "type": "test_automation_engineer",
+    "description": "Production-grade test_automation_engineer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 14,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 32,
+      "retry_policy": {
+        "max_retries": 5,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "general_processing",
+      "task_execution",
+      "monitoring",
+      "error_handling",
+      "logging"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 329,
+      "success_rate": 0.9544303997369695,
+      "tasks_completed": 4426
+    },
+    "created_at": "2024-10-24T02:58:23.490709"
+  },
+  {
+    "id": "c9517239-affa-489b-bbc5-218ea44020ab",
+    "name": "Agent_neural_field_specialist_9e2ae380",
+    "type": "neural_field_specialist",
+    "description": "Production-grade neural_field_specialist agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 10,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 199,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "logging",
+      "resonance_tuning",
+      "monitoring",
+      "field_configuration"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 493,
+      "success_rate": 0.9889508488169912,
+      "tasks_completed": 4197
+    },
+    "created_at": "2025-04-08T02:58:23.490709"
+  },
+  {
+    "id": "ce5fa195-20df-477a-bb07-69070fd1e56b",
+    "name": "Agent_context_engineer_ab42c7ac",
+    "type": "context_engineer",
+    "description": "Production-grade context_engineer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 16,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 65,
+      "retry_policy": {
+        "max_retries": 5,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "monitoring",
+      "knowledge_extraction",
+      "logging",
+      "task_execution",
+      "semantic_analysis"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 79,
+      "success_rate": 0.9737573160807117,
+      "tasks_completed": 908
+    },
+    "created_at": "2024-10-13T02:58:23.490709"
+  },
+  {
+    "id": "278325f9-ea81-41fb-be42-c7b292593eb4",
+    "name": "Agent_memory_optimizer_e382cbc7",
+    "type": "memory_optimizer",
+    "description": "Production-grade memory_optimizer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "critical",
+      "max_concurrent_tasks": 8,
+      "memory_limit_mb": 512,
+      "timeout_seconds": 109,
+      "retry_policy": {
+        "max_retries": 2,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "general_processing",
+      "error_handling",
+      "task_execution",
+      "monitoring",
+      "logging"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 111,
+      "success_rate": 0.9731867391877371,
+      "tasks_completed": 6127
+    },
+    "created_at": "2025-06-23T02:58:23.490709"
+  },
+  {
+    "id": "b603e4e4-74a2-4182-b7f5-3ba230c039f4",
+    "name": "Agent_pattern_recognizer_f16f8a55",
+    "type": "pattern_recognizer",
+    "description": "Production-grade pattern_recognizer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "critical",
+      "max_concurrent_tasks": 18,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 90,
+      "retry_policy": {
+        "max_retries": 5,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "task_execution",
+      "monitoring",
+      "error_handling"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 148,
+      "success_rate": 0.9756228010464838,
+      "tasks_completed": 3655
+    },
+    "created_at": "2024-09-17T02:58:23.490709"
+  },
+  {
+    "id": "3b578c7e-9a02-4353-883d-130b5244bf8e",
+    "name": "Agent_code_architect_04a51a49",
+    "type": "code_architect",
+    "description": "Production-grade code_architect agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 14,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 270,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "refactoring",
+      "design_patterns",
+      "code_analysis"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 149,
+      "success_rate": 0.9748902472489267,
+      "tasks_completed": 9417
+    },
+    "created_at": "2024-09-25T02:58:23.490709"
+  },
+  {
+    "id": "a611fba6-f719-4b9f-a368-543ce6d7f16e",
+    "name": "Agent_security_expert_9eae654c",
+    "type": "security_expert",
+    "description": "Production-grade security_expert agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 18,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 95,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "threat_modeling",
+      "compliance_checking",
+      "penetration_testing",
+      "monitoring"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 375,
+      "success_rate": 0.9835003572724947,
+      "tasks_completed": 318
+    },
+    "created_at": "2024-12-22T02:58:23.490709"
+  },
+  {
+    "id": "87cc3c70-51c4-412a-abcd-500daf35410b",
+    "name": "Agent_performance_optimizer_3953fcdc",
+    "type": "performance_optimizer",
+    "description": "Production-grade performance_optimizer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 19,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 279,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "error_handling",
+      "resource_optimization",
+      "bottleneck_detection",
+      "profiling",
+      "load_balancing",
+      "logging"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 201,
+      "success_rate": 0.982521856591555,
+      "tasks_completed": 5652
+    },
+    "created_at": "2025-07-14T02:58:23.490709"
+  },
+  {
+    "id": "0cf397ca-4514-49ca-8d5e-1cdc79816b98",
+    "name": "Agent_data_analyst_48504031",
+    "type": "data_analyst",
+    "description": "Production-grade data_analyst agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 16,
+      "memory_limit_mb": 4096,
+      "timeout_seconds": 240,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 16384
+    },
+    "capabilities": [
+      "error_handling",
+      "general_processing",
+      "logging",
+      "task_execution"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 354,
+      "success_rate": 0.9777578267969291,
+      "tasks_completed": 8982
+    },
+    "created_at": "2025-07-15T02:58:23.490709"
+  },
+  {
+    "id": "a2c89a83-45fc-4509-8271-4af6c359db9a",
+    "name": "Agent_infrastructure_manager_e2c82348",
+    "type": "infrastructure_manager",
+    "description": "Production-grade infrastructure_manager agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "normal",
+      "max_concurrent_tasks": 13,
+      "memory_limit_mb": 1024,
+      "timeout_seconds": 186,
+      "retry_policy": {
+        "max_retries": 1,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 4096
+    },
+    "capabilities": [
+      "monitoring",
+      "logging",
+      "error_handling"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 333,
+      "success_rate": 0.964282790271147,
+      "tasks_completed": 1410
+    },
+    "created_at": "2025-01-17T02:58:23.490709"
+  },
+  {
+    "id": "82173413-53ec-44aa-ba73-598d708bcfca",
+    "name": "Agent_ml_engineer_74d6106b",
+    "type": "ml_engineer",
+    "description": "Production-grade ml_engineer agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 9,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 69,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 3.0
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "general_processing",
+      "monitoring",
+      "error_handling"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 206,
+      "success_rate": 0.9638645052730604,
+      "tasks_completed": 5394
+    },
+    "created_at": "2025-04-11T02:58:23.490709"
+  },
+  {
+    "id": "b50af091-7ad4-43d3-ae6c-287f17cba2ad",
+    "name": "Agent_devops_specialist_4542816c",
+    "type": "devops_specialist",
+    "description": "Production-grade devops_specialist agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "low",
+      "max_concurrent_tasks": 14,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 173,
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_multiplier": 1.5
+      },
+      "neural_field_enabled": false,
+      "context_window_size": 8192
+    },
+    "capabilities": [
+      "general_processing",
+      "logging",
+      "monitoring"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 374,
+      "success_rate": 0.9822689076882287,
+      "tasks_completed": 5731
+    },
+    "created_at": "2025-02-16T02:58:23.490709"
+  },
+  {
+    "id": "9ef443a6-9942-4b18-9480-1f30fb036778",
+    "name": "Agent_database_architect_18dcb9fb",
+    "type": "database_architect",
+    "description": "Production-grade database_architect agent for comprehensive testing",
+    "configuration": {
+      "priority_level": "high",
+      "max_concurrent_tasks": 10,
+      "memory_limit_mb": 2048,
+      "timeout_seconds": 271,
+      "retry_policy": {
+        "max_retries": 4,
+        "backoff_multiplier": 2.0
+      },
+      "neural_field_enabled": true,
+      "context_window_size": 2048
+    },
+    "capabilities": [
+      "error_handling",
+      "task_execution",
+      "general_processing",
+      "monitoring",
+      "logging"
+    ],
+    "performance_metrics": {
+      "avg_response_time_ms": 401,
+      "success_rate": 0.9615317018802187,
+      "tasks_completed": 912
+    },
+    "created_at": "2024-10-30T02:58:23.490709"
+  }
+]

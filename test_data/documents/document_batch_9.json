@@ -1,0 +1,1620 @@
+[
+  {
+    "id": "3a3512e7-6a26-40b5-8b09-0ae59deada57",
+    "title": "Technical Specification - b5cc81ea",
+    "type": "technical_specification",
+    "content": "\n            # Technical Specification: AgentManager\n            \n            ## Overview\n            This specification defines the implementation requirements for AgentManager.\n            \n            ## Requirements\n            - Performance: 5257 requests per second\n            - Latency: < 14ms p99\n            - Availability: 99.9%\n            \n            ## Implementation Details\n            The system utilizes Custom Neural Engine for optimal performance. Key features include:\n            1. Automatic scaling\n            2. Real-time monitoring\n            3. Self-healing capabilities\n            \n            ## Neural Field Integration\n            Resonance threshold: 0.7122767730441557\n            Memory consolidation rate: 0.7047675089412603\n            ",
+    "metadata": {
+      "author": "TestAuthor_3",
+      "version": "3.2",
+      "tags": [
+        "production",
+        "context_engineering",
+        "performance"
+      ],
+      "language": "en",
+      "word_count": 2271,
+      "complexity_score": 0.5711844800871543
+    },
+    "embeddings": [
+      -0.21200673959016236,
+      -0.581274651159704,
+      -0.6354445105600912,
+      0.6896239806735271,
+      0.01889562317964999,
+      -0.360366414668323,
+      0.26398308452425856,
+      0.9974620855461629,
+      0.04465047101375741,
+      -0.15918194181599032
+    ],
+    "created_at": "2025-08-25T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "1746c58d-5ce0-4faf-9c3e-5c7d75049067",
+    "title": "Api Documentation - ee1c7c68",
+    "type": "api_documentation",
+    "content": "\n            # API Endpoint: /api/agents\n            \n            ## Description\n            Production-grade endpoint for enterprise operations\n            \n            ## Request\n            ```\n            GET /api/v1/workflows/{id}\n            Content-Type: application/json\n            \n            {\n  \"example\": \"data\"\n}\n            ```\n            \n            ## Response\n            ```json\n            {\n  \"status\": \"success\",\n  \"data\": {}\n}\n            ```\n            \n            ## Error Codes\n            - 400: Invalid request\n            - 401: Unauthorized\n            - 500: Internal server error\n            ",
+    "metadata": {
+      "author": "TestAuthor_7",
+      "version": "2.0",
+      "tags": [
+        "documentation",
+        "neural_fields",
+        "testing",
+        "context_engineering",
+        "performance"
+      ],
+      "language": "es",
+      "word_count": 4599,
+      "complexity_score": 0.5964445694479384
+    },
+    "embeddings": [
+      0.33247944538527396,
+      -0.2519583431752277,
+      -0.18554198893654927,
+      0.9351319673189076,
+      -0.9060972058603793,
+      0.5536944026068098,
+      0.08236927719244203,
+      0.8256814831180166,
+      0.5835171133113244,
+      0.11687972974655003
+    ],
+    "created_at": "2025-07-06T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "b96fc07d-b4f0-4bd2-b6c4-b407048ec918",
+    "title": "Code Review - 3cbe9a1e",
+    "type": "code_review",
+    "content": "Generic document content for code_review",
+    "metadata": {
+      "author": "TestAuthor_5",
+      "version": "1.2",
+      "tags": [
+        "context_engineering",
+        "performance",
+        "testing",
+        "analysis",
+        "neural_fields"
+      ],
+      "language": "es",
+      "word_count": 1532,
+      "complexity_score": 0.2097352746985374
+    },
+    "embeddings": [
+      0.4444434894446787,
+      0.36902192191525574,
+      -0.9385430691604302,
+      0.547240211278819,
+      0.428749387949396,
+      0.07282860022086601,
+      0.6721312732868792,
+      0.8548822080301366,
+      -0.7164801663057665,
+      0.32669216934982503
+    ],
+    "created_at": "2025-07-23T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "4677d954-4206-4ef4-8df2-6dbd95e92533",
+    "title": "Architecture Design - 86368cb9",
+    "type": "architecture_design",
+    "content": "Generic document content for architecture_design",
+    "metadata": {
+      "author": "TestAuthor_10",
+      "version": "3.6",
+      "tags": [
+        "performance",
+        "neural_fields",
+        "documentation"
+      ],
+      "language": "ja",
+      "word_count": 4541,
+      "complexity_score": 0.12776026394753573
+    },
+    "embeddings": [
+      -0.6781322046662215,
+      0.03775321798010722,
+      0.7178120467529787,
+      -0.09261497145196396,
+      -0.7424167581689862,
+      -0.06246675862001849,
+      -0.1370122249476875,
+      -0.9390563630038171,
+      0.46575761397965776,
+      -0.9534000976780366
+    ],
+    "created_at": "2025-08-13T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "8d1937c5-a4a9-484d-ad20-f528ae0b4c2f",
+    "title": "Test Report - dbf883a4",
+    "type": "test_report",
+    "content": "Generic document content for test_report",
+    "metadata": {
+      "author": "TestAuthor_8",
+      "version": "1.6",
+      "tags": [
+        "testing",
+        "production",
+        "context_engineering"
+      ],
+      "language": "en",
+      "word_count": 4548,
+      "complexity_score": 0.5955167465135803
+    },
+    "embeddings": [
+      0.1960800223767145,
+      -0.6372458666808578,
+      0.6112511502053932,
+      0.7806993523864729,
+      -0.2749113674152579,
+      -0.9159831962724054,
+      0.6935333869352647,
+      0.8906702190406963,
+      0.848470056340688,
+      0.208059477494823
+    ],
+    "created_at": "2025-07-19T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "e43df5fe-9a87-4927-9002-f02ec30d5cb8",
+    "title": "Performance Analysis - a4fc0b92",
+    "type": "performance_analysis",
+    "content": "Generic document content for performance_analysis",
+    "metadata": {
+      "author": "TestAuthor_18",
+      "version": "3.2",
+      "tags": [
+        "analysis",
+        "testing",
+        "documentation"
+      ],
+      "language": "de",
+      "word_count": 3861,
+      "complexity_score": 0.8526948042009347
+    },
+    "embeddings": [
+      0.7094267518999069,
+      -0.1810590454011891,
+      0.3910039596952646,
+      -0.11127253081451838,
+      0.2312380669377916,
+      0.603266608434454,
+      0.7307296992732333,
+      -0.30838185295491316,
+      -0.22512145728875677,
+      -0.7009425532123559
+    ],
+    "created_at": "2025-06-18T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "f7d6b77f-ef3d-4c14-bebd-96d5025fff46",
+    "title": "Security Assessment - 4e3ce5f6",
+    "type": "security_assessment",
+    "content": "Generic document content for security_assessment",
+    "metadata": {
+      "author": "TestAuthor_4",
+      "version": "2.2",
+      "tags": [
+        "production",
+        "analysis"
+      ],
+      "language": "ja",
+      "word_count": 4214,
+      "complexity_score": 0.25513033894495174
+    },
+    "embeddings": [
+      0.3343518445616105,
+      -0.7554007154359841,
+      -0.8955093130551526,
+      0.8310487492843452,
+      -0.557897908200548,
+      0.8811086447910115,
+      -0.32734124694409505,
+      0.08542139551287198,
+      -0.040306682006617134,
+      -0.41097441697583204
+    ],
+    "created_at": "2025-06-16T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "d192b2d8-e9b7-4e6e-a9c3-9e41abbd6497",
+    "title": "Neural Field Research - d1278f27",
+    "type": "neural_field_research",
+    "content": "\n            # Neural Field Analysis: AgentAssignment\n            \n            ## Abstract\n            This research investigates the properties of AgentAssignment in context engineering.\n            \n            ## Methodology\n            - Field initialization: Kaiming\n            - Resonance measurement: Fourier Transform Analysis\n            - Convergence criteria: < 0.001 delta over 100 iterations\n            \n            ## Results\n            - Average resonance: 0.6002614981941111\n            - Stability coefficient: 0.8978443995122279\n            - Memory retention: 86%\n            \n            ## Conclusions\n            The AgentAssignment demonstrates 2423 performance under high-load production environment.\n            ",
+    "metadata": {
+      "author": "TestAuthor_6",
+      "version": "2.0",
+      "tags": [
+        "production",
+        "testing",
+        "analysis",
+        "context_engineering"
+      ],
+      "language": "ja",
+      "word_count": 209,
+      "complexity_score": 0.3619403828682437
+    },
+    "embeddings": [
+      -0.7175523590834336,
+      -0.6547789978946181,
+      -0.06978180602718442,
+      0.9699054597404442,
+      0.2375419311649336,
+      0.5004074765287518,
+      0.8122400747415315,
+      -0.5841416461804718,
+      -0.9141551083273778,
+      -0.43512798859173873
+    ],
+    "created_at": "2025-08-25T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "78507dd5-e03e-491e-b162-44ba6ef8bd3b",
+    "title": "Context Analysis - b485e57a",
+    "type": "context_analysis",
+    "content": "Generic document content for context_analysis",
+    "metadata": {
+      "author": "TestAuthor_6",
+      "version": "1.0",
+      "tags": [
+        "analysis",
+        "neural_fields"
+      ],
+      "language": "en",
+      "word_count": 3663,
+      "complexity_score": 0.8765036717220951
+    },
+    "embeddings": [
+      -0.7975133310910245,
+      0.37931446319295414,
+      -0.5414963825550021,
+      -0.37565982572212886,
+      0.8497960556412056,
+      0.009471592134223217,
+      0.8239826715146403,
+      0.29739462377365133,
+      -0.4700781674406005,
+      0.5312014339169653
+    ],
+    "created_at": "2025-08-22T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "d750b1ba-ac83-45a3-8b4a-63dedaaa833c",
+    "title": "Technical Specification - e8497f7e",
+    "type": "technical_specification",
+    "content": "\n            # Technical Specification: WorkflowEngine\n            \n            ## Overview\n            This specification defines the implementation requirements for WorkflowEngine.\n            \n            ## Requirements\n            - Performance: 9596 requests per second\n            - Latency: < 49ms p99\n            - Availability: 99.9%\n            \n            ## Implementation Details\n            The system utilizes TensorFlow for optimal performance. Key features include:\n            1. Automatic scaling\n            2. Real-time monitoring\n            3. Self-healing capabilities\n            \n            ## Neural Field Integration\n            Resonance threshold: 0.6231013752638077\n            Memory consolidation rate: 0.7798542061310307\n            ",
+    "metadata": {
+      "author": "TestAuthor_13",
+      "version": "2.6",
+      "tags": [
+        "testing",
+        "production",
+        "neural_fields",
+        "documentation"
+      ],
+      "language": "es",
+      "word_count": 4874,
+      "complexity_score": 0.8366809251445217
+    },
+    "embeddings": [
+      -0.31825322865069117,
+      0.028979854827231755,
+      -0.606431263451094,
+      0.4145151383708454,
+      0.8738087513018649,
+      -0.8018896821295431,
+      -0.3259894108256809,
+      -0.9854710887368416,
+      0.2346525606321852,
+      0.1790829646331653
+    ],
+    "created_at": "2025-08-14T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "7eb7725b-25c8-41e0-bdf5-84a135683440",
+    "title": "Api Documentation - d994e8d9",
+    "type": "api_documentation",
+    "content": "\n            # API Endpoint: /api/agents\n            \n            ## Description\n            Production-grade endpoint for enterprise operations\n            \n            ## Request\n            ```\n            POST /api/v1/agents/{id}\n            Content-Type: application/json\n            \n            {\n  \"example\": \"data\"\n}\n            ```\n            \n            ## Response\n            ```json\n            {\n  \"status\": \"success\",\n  \"data\": {}\n}\n            ```\n            \n            ## Error Codes\n            - 400: Invalid request\n            - 401: Unauthorized\n            - 500: Internal server error\n            ",
+    "metadata": {
+      "author": "TestAuthor_10",
+      "version": "2.0",
+      "tags": [
+        "context_engineering",
+        "analysis",
+        "production",
+        "documentation"
+      ],
+      "language": "es",
+      "word_count": 3880,
+      "complexity_score": 0.7937206512447165
+    },
+    "embeddings": [
+      -0.8208515910132907,
+      -0.9694989306446988,
+      0.6826504990334912,
+      -0.8355280625528638,
+      -0.6941641249838195,
+      0.7362131306228741,
+      0.11956309593021652,
+      -0.5823229047489613,
+      -0.7391852679469,
+      0.0757806284580278
+    ],
+    "created_at": "2025-08-05T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "cda3c2d2-2bf6-4e50-910e-ebb9755bec7e",
+    "title": "Code Review - 9245bfdf",
+    "type": "code_review",
+    "content": "Generic document content for code_review",
+    "metadata": {
+      "author": "TestAuthor_16",
+      "version": "3.5",
+      "tags": [
+        "documentation",
+        "analysis",
+        "performance",
+        "neural_fields"
+      ],
+      "language": "es",
+      "word_count": 114,
+      "complexity_score": 0.2701492678236367
+    },
+    "embeddings": [
+      -0.46887015659414666,
+      -0.31504035008561004,
+      0.05173243268905203,
+      -0.27892879519946323,
+      -0.03357313821615171,
+      -0.5806984813810536,
+      0.057896744432649916,
+      0.47178482887162954,
+      -0.7934596944241785,
+      -0.8954015094275278
+    ],
+    "created_at": "2025-06-17T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "12a7789f-d6cd-4ea2-9912-add3f730b3e9",
+    "title": "Architecture Design - 20244ee2",
+    "type": "architecture_design",
+    "content": "Generic document content for architecture_design",
+    "metadata": {
+      "author": "TestAuthor_1",
+      "version": "2.8",
+      "tags": [
+        "context_engineering",
+        "analysis",
+        "performance",
+        "testing",
+        "documentation"
+      ],
+      "language": "fr",
+      "word_count": 2333,
+      "complexity_score": 0.1691361254295981
+    },
+    "embeddings": [
+      0.38104548300615515,
+      0.14438116090843933,
+      0.6108233888757912,
+      0.21640264759291306,
+      -0.9278055330808845,
+      -0.9248302442079404,
+      0.4531041570755696,
+      0.8051485222311177,
+      0.995439490871382,
+      -0.17652238511811458
+    ],
+    "created_at": "2025-06-25T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "9efb82d8-ee18-4d1c-97bc-8129e12ba970",
+    "title": "Test Report - 4f564d1b",
+    "type": "test_report",
+    "content": "Generic document content for test_report",
+    "metadata": {
+      "author": "TestAuthor_7",
+      "version": "3.2",
+      "tags": [
+        "documentation",
+        "neural_fields",
+        "analysis"
+      ],
+      "language": "en",
+      "word_count": 1685,
+      "complexity_score": 0.6208873981672942
+    },
+    "embeddings": [
+      -0.21895224746508668,
+      0.07791733470444817,
+      -0.051469827692811165,
+      -0.2928189416078133,
+      0.3293864086745095,
+      -0.302351713193751,
+      0.41899764327279,
+      0.022642668371917418,
+      -0.19601288282387164,
+      -0.8421972953887034
+    ],
+    "created_at": "2025-08-29T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "4782b7e9-0178-48ca-a1c8-471c2c9c9edb",
+    "title": "Performance Analysis - a1424925",
+    "type": "performance_analysis",
+    "content": "Generic document content for performance_analysis",
+    "metadata": {
+      "author": "TestAuthor_6",
+      "version": "2.1",
+      "tags": [
+        "analysis",
+        "testing",
+        "performance",
+        "neural_fields"
+      ],
+      "language": "fr",
+      "word_count": 272,
+      "complexity_score": 0.6149426039967409
+    },
+    "embeddings": [
+      0.14419561591936003,
+      -0.5778452599213189,
+      -0.5895731145339842,
+      -0.7007145959055896,
+      -0.17477471545330414,
+      -0.5980925684963205,
+      0.16942164393957482,
+      0.04482164767315355,
+      0.5748386164675592,
+      -0.9591349459115694
+    ],
+    "created_at": "2025-06-16T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "a9c67dab-5ce4-44cd-891a-159d3da05660",
+    "title": "Security Assessment - 0149f641",
+    "type": "security_assessment",
+    "content": "Generic document content for security_assessment",
+    "metadata": {
+      "author": "TestAuthor_12",
+      "version": "2.6",
+      "tags": [
+        "documentation",
+        "analysis",
+        "neural_fields",
+        "performance"
+      ],
+      "language": "fr",
+      "word_count": 2159,
+      "complexity_score": 0.28302525076985685
+    },
+    "embeddings": [
+      0.616355685430837,
+      -0.36943438716802657,
+      0.6595696712131565,
+      -0.7922116228758087,
+      -0.22501101761327869,
+      -0.9024990184883774,
+      0.1319025824115614,
+      0.06215614568277794,
+      -0.5011811844388832,
+      -0.14494288734326144
+    ],
+    "created_at": "2025-06-30T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "d66aca3b-d1a3-4c64-b826-8056a0c885ad",
+    "title": "Neural Field Research - 26ddeacd",
+    "type": "neural_field_research",
+    "content": "\n            # Neural Field Analysis: CollectiveMemory\n            \n            ## Abstract\n            This research investigates the properties of CollectiveMemory in context engineering.\n            \n            ## Methodology\n            - Field initialization: Xavier\n            - Resonance measurement: Fourier Transform Analysis\n            - Convergence criteria: < 0.001 delta over 100 iterations\n            \n            ## Results\n            - Average resonance: 0.639428237914656\n            - Stability coefficient: 0.8137970374234278\n            - Memory retention: 92%\n            \n            ## Conclusions\n            The CollectiveMemory demonstrates 2461 performance under high-load production environment.\n            ",
+    "metadata": {
+      "author": "TestAuthor_13",
+      "version": "3.9",
+      "tags": [
+        "documentation",
+        "analysis"
+      ],
+      "language": "fr",
+      "word_count": 1428,
+      "complexity_score": 0.11299826314892247
+    },
+    "embeddings": [
+      0.4129106113306886,
+      -0.6111846930046609,
+      -0.6424206539715964,
+      -0.2374421985518631,
+      0.9863765250699399,
+      0.5051167270932175,
+      0.6663768663312404,
+      0.45783881057248044,
+      0.587217752438925,
+      -0.3734018112692761
+    ],
+    "created_at": "2025-06-04T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "73a86013-de03-4c15-9d0b-0477a2eb3167",
+    "title": "Context Analysis - 0a6a36c6",
+    "type": "context_analysis",
+    "content": "Generic document content for context_analysis",
+    "metadata": {
+      "author": "TestAuthor_1",
+      "version": "2.8",
+      "tags": [
+        "testing",
+        "production"
+      ],
+      "language": "ja",
+      "word_count": 268,
+      "complexity_score": 0.4309317326443418
+    },
+    "embeddings": [
+      0.23460501562612146,
+      -0.09991178626320885,
+      0.821445867709911,
+      0.5930749094810832,
+      -0.9099726266535488,
+      0.8880409396357527,
+      -0.3415077222957399,
+      -0.5716476788609108,
+      -0.19737313470156015,
+      0.41435717112608383
+    ],
+    "created_at": "2025-07-17T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "13700a48-28fe-4603-91f4-5a1e2a2824a3",
+    "title": "Technical Specification - 716fbdfb",
+    "type": "technical_specification",
+    "content": "\n            # Technical Specification: ContextProcessor\n            \n            ## Overview\n            This specification defines the implementation requirements for ContextProcessor.\n            \n            ## Requirements\n            - Performance: 4654 requests per second\n            - Latency: < 22ms p99\n            - Availability: 99.99%\n            \n            ## Implementation Details\n            The system utilizes TensorFlow for optimal performance. Key features include:\n            1. Automatic scaling\n            2. Real-time monitoring\n            3. Self-healing capabilities\n            \n            ## Neural Field Integration\n            Resonance threshold: 0.8682922616012381\n            Memory consolidation rate: 0.7081428262773425\n            ",
+    "metadata": {
+      "author": "TestAuthor_8",
+      "version": "3.4",
+      "tags": [
+        "analysis",
+        "neural_fields",
+        "performance",
+        "context_engineering"
+      ],
+      "language": "fr",
+      "word_count": 4010,
+      "complexity_score": 0.34644840260941584
+    },
+    "embeddings": [
+      0.4467538441626251,
+      0.5539755357513922,
+      0.3038326460635241,
+      -0.3721680669444878,
+      -0.5644274612770634,
+      0.665746370907111,
+      0.07825725115988913,
+      0.04194872587906939,
+      -0.42130142713624763,
+      -0.9422114344926495
+    ],
+    "created_at": "2025-06-26T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "234e83d7-863f-4afa-9734-5447ef549c2a",
+    "title": "Api Documentation - 48400827",
+    "type": "api_documentation",
+    "content": "\n            # API Endpoint: /api/agents\n            \n            ## Description\n            Production-grade endpoint for enterprise operations\n            \n            ## Request\n            ```\n            POST /api/v1/workflows/{id}\n            Content-Type: application/json\n            \n            {\n  \"example\": \"data\"\n}\n            ```\n            \n            ## Response\n            ```json\n            {\n  \"status\": \"success\",\n  \"data\": {}\n}\n            ```\n            \n            ## Error Codes\n            - 400: Invalid request\n            - 401: Unauthorized\n            - 500: Internal server error\n            ",
+    "metadata": {
+      "author": "TestAuthor_8",
+      "version": "3.4",
+      "tags": [
+        "production",
+        "context_engineering",
+        "neural_fields",
+        "performance",
+        "documentation"
+      ],
+      "language": "es",
+      "word_count": 912,
+      "complexity_score": 0.21111125570857503
+    },
+    "embeddings": [
+      -0.2992840896004709,
+      -0.5418862482483411,
+      0.23569199787837225,
+      -0.03338583220635227,
+      0.09284679058233469,
+      0.7876768291200473,
+      0.17264124939876213,
+      -0.8532367081799037,
+      -0.35528285833525564,
+      0.9951988597867918
+    ],
+    "created_at": "2025-07-14T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "3cdfde70-b087-4198-bc4e-698cc5e6f1fd",
+    "title": "Code Review - e82d34ed",
+    "type": "code_review",
+    "content": "Generic document content for code_review",
+    "metadata": {
+      "author": "TestAuthor_6",
+      "version": "2.9",
+      "tags": [
+        "analysis",
+        "performance"
+      ],
+      "language": "de",
+      "word_count": 1917,
+      "complexity_score": 0.7848083859855776
+    },
+    "embeddings": [
+      0.13264000460141046,
+      0.46513338749674227,
+      0.31662469493594747,
+      0.220527722877363,
+      0.8282937491623652,
+      -0.7885024312045465,
+      0.14189114892006405,
+      0.9609675864247027,
+      0.24670692375197234,
+      0.726623575907503
+    ],
+    "created_at": "2025-06-11T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "4fa0092a-cfd8-4b42-a88b-a929d466c769",
+    "title": "Architecture Design - bcec453a",
+    "type": "architecture_design",
+    "content": "Generic document content for architecture_design",
+    "metadata": {
+      "author": "TestAuthor_17",
+      "version": "2.1",
+      "tags": [
+        "testing",
+        "production"
+      ],
+      "language": "ja",
+      "word_count": 3287,
+      "complexity_score": 0.9053576639372924
+    },
+    "embeddings": [
+      -0.5378460609233253,
+      0.8609975606266709,
+      0.6857986648627794,
+      -0.5696006538451805,
+      -0.3834959051811191,
+      0.1852823606382501,
+      0.6345412139960209,
+      0.8775075359534485,
+      0.6781826812698395,
+      -0.3457233365292718
+    ],
+    "created_at": "2025-06-03T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "661282d5-7831-46d7-8656-2981aa1863ea",
+    "title": "Test Report - 742e6a03",
+    "type": "test_report",
+    "content": "Generic document content for test_report",
+    "metadata": {
+      "author": "TestAuthor_10",
+      "version": "2.5",
+      "tags": [
+        "analysis",
+        "context_engineering",
+        "neural_fields"
+      ],
+      "language": "es",
+      "word_count": 851,
+      "complexity_score": 0.4305451380517539
+    },
+    "embeddings": [
+      -0.47316418677892735,
+      -0.7491052769081499,
+      0.8211682036881769,
+      0.22103050533741042,
+      -0.9384927130793093,
+      0.8565698052209298,
+      -0.8111319244525481,
+      0.4775573629270491,
+      -0.7841904095185144,
+      0.052845093597593706
+    ],
+    "created_at": "2025-06-02T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "5aa601e6-b0bb-4d10-b5f5-5747599d4a2a",
+    "title": "Performance Analysis - a20446a4",
+    "type": "performance_analysis",
+    "content": "Generic document content for performance_analysis",
+    "metadata": {
+      "author": "TestAuthor_19",
+      "version": "2.9",
+      "tags": [
+        "documentation",
+        "testing",
+        "analysis",
+        "context_engineering",
+        "neural_fields"
+      ],
+      "language": "en",
+      "word_count": 1537,
+      "complexity_score": 0.5194749042716632
+    },
+    "embeddings": [
+      -0.9393489713374756,
+      -0.1097820983165183,
+      0.19872266445423437,
+      0.511738596936308,
+      0.06167323431386751,
+      0.7208283628266998,
+      0.47006394821722086,
+      0.9060035841713794,
+      0.7046129372286276,
+      -0.923159032482066
+    ],
+    "created_at": "2025-08-04T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "af223403-94e1-4ace-b9a1-0fb833a9eb0b",
+    "title": "Security Assessment - 2a3b0d52",
+    "type": "security_assessment",
+    "content": "Generic document content for security_assessment",
+    "metadata": {
+      "author": "TestAuthor_8",
+      "version": "2.4",
+      "tags": [
+        "performance",
+        "neural_fields",
+        "production"
+      ],
+      "language": "en",
+      "word_count": 3156,
+      "complexity_score": 0.954036125556011
+    },
+    "embeddings": [
+      -0.3938502426524637,
+      0.6175057175504566,
+      0.9378393809598402,
+      -0.5511019864489091,
+      0.1788984123609323,
+      -0.18691270116217718,
+      0.7285306515954428,
+      -0.6595243255253758,
+      0.45564873066233735,
+      0.2684881616012378
+    ],
+    "created_at": "2025-06-08T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "2eeb0ea1-5d75-45fa-88e9-d789506e0615",
+    "title": "Neural Field Research - fb0f7f6c",
+    "type": "neural_field_research",
+    "content": "\n            # Neural Field Analysis: AgentAssignment\n            \n            ## Abstract\n            This research investigates the properties of AgentAssignment in context engineering.\n            \n            ## Methodology\n            - Field initialization: Kaiming\n            - Resonance measurement: Fourier Transform Analysis\n            - Convergence criteria: < 0.001 delta over 100 iterations\n            \n            ## Results\n            - Average resonance: 0.7109929925657582\n            - Stability coefficient: 0.9613314753412987\n            - Memory retention: 87%\n            \n            ## Conclusions\n            The AgentAssignment demonstrates 6773 performance under high-load production environment.\n            ",
+    "metadata": {
+      "author": "TestAuthor_13",
+      "version": "1.1",
+      "tags": [
+        "neural_fields",
+        "analysis",
+        "production",
+        "performance"
+      ],
+      "language": "de",
+      "word_count": 4572,
+      "complexity_score": 0.3877558131493961
+    },
+    "embeddings": [
+      0.02166069160021933,
+      -0.3598013495204633,
+      -0.05313527489749803,
+      -0.2608908734171007,
+      0.4803370688087041,
+      0.5288020777305877,
+      0.7929162975078601,
+      -0.8513213094344518,
+      0.808041085087448,
+      0.7699924101666207
+    ],
+    "created_at": "2025-08-09T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "b22aa107-43d0-46f6-8147-05122fa604d7",
+    "title": "Context Analysis - 83d0bfe0",
+    "type": "context_analysis",
+    "content": "Generic document content for context_analysis",
+    "metadata": {
+      "author": "TestAuthor_6",
+      "version": "2.5",
+      "tags": [
+        "context_engineering",
+        "production"
+      ],
+      "language": "en",
+      "word_count": 2702,
+      "complexity_score": 0.9046823811822688
+    },
+    "embeddings": [
+      0.26242519430975375,
+      0.15808430388813588,
+      0.8411448981895335,
+      -0.8293428998498773,
+      -0.7071120120067436,
+      0.022463123135303853,
+      0.7350528007295931,
+      -0.7368452039815423,
+      -0.1516595828267575,
+      -0.16590953559011923
+    ],
+    "created_at": "2025-06-15T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "9a2b8def-9215-4c53-9199-142057f142dd",
+    "title": "Technical Specification - 158dc8e5",
+    "type": "technical_specification",
+    "content": "\n            # Technical Specification: AgentManager\n            \n            ## Overview\n            This specification defines the implementation requirements for AgentManager.\n            \n            ## Requirements\n            - Performance: 9628 requests per second\n            - Latency: < 77ms p99\n            - Availability: 99.95%\n            \n            ## Implementation Details\n            The system utilizes TensorFlow for optimal performance. Key features include:\n            1. Automatic scaling\n            2. Real-time monitoring\n            3. Self-healing capabilities\n            \n            ## Neural Field Integration\n            Resonance threshold: 0.8583017484426843\n            Memory consolidation rate: 0.9077512387769822\n            ",
+    "metadata": {
+      "author": "TestAuthor_15",
+      "version": "2.4",
+      "tags": [
+        "testing",
+        "neural_fields"
+      ],
+      "language": "de",
+      "word_count": 3053,
+      "complexity_score": 0.36144108406166053
+    },
+    "embeddings": [
+      0.5859211996044746,
+      -0.7683190970681524,
+      0.06006323020725457,
+      -0.23262994995861663,
+      -0.032866981413431695,
+      -0.8268678149019735,
+      -0.06718767668091674,
+      -0.26705346558829013,
+      -0.6654513825294344,
+      0.4157935339567147
+    ],
+    "created_at": "2025-07-12T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "b19a9fb6-a624-43ba-a01d-f447e1d3515d",
+    "title": "Api Documentation - a5ca1dbe",
+    "type": "api_documentation",
+    "content": "\n            # API Endpoint: /api/agents\n            \n            ## Description\n            Production-grade endpoint for enterprise operations\n            \n            ## Request\n            ```\n            POST /api/v1/agents/{id}\n            Content-Type: application/json\n            \n            {\n  \"example\": \"data\"\n}\n            ```\n            \n            ## Response\n            ```json\n            {\n  \"status\": \"success\",\n  \"data\": {}\n}\n            ```\n            \n            ## Error Codes\n            - 400: Invalid request\n            - 401: Unauthorized\n            - 500: Internal server error\n            ",
+    "metadata": {
+      "author": "TestAuthor_16",
+      "version": "2.7",
+      "tags": [
+        "testing",
+        "documentation",
+        "neural_fields"
+      ],
+      "language": "en",
+      "word_count": 4026,
+      "complexity_score": 0.5383514631541699
+    },
+    "embeddings": [
+      0.6963383994708743,
+      0.10352803981630387,
+      -0.6768225904672538,
+      0.4151808718960779,
+      -0.8152485529584184,
+      0.46306849562951946,
+      -0.43351091838626377,
+      0.8351231456529749,
+      0.5432207786609722,
+      0.5305664270938273
+    ],
+    "created_at": "2025-07-18T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "111a914e-d333-4bbd-9ee0-be4efa7d8cbd",
+    "title": "Code Review - ee1fefae",
+    "type": "code_review",
+    "content": "Generic document content for code_review",
+    "metadata": {
+      "author": "TestAuthor_19",
+      "version": "3.4",
+      "tags": [
+        "testing",
+        "neural_fields",
+        "analysis",
+        "production"
+      ],
+      "language": "fr",
+      "word_count": 2352,
+      "complexity_score": 0.3191062451737118
+    },
+    "embeddings": [
+      0.22676231457579998,
+      0.6931782771602506,
+      -0.04874258373781415,
+      -0.1982557572694712,
+      0.32112308946370405,
+      0.9014968153601903,
+      0.3135687416060866,
+      0.40819481363127874,
+      0.3510324257609234,
+      -0.5272382163902591
+    ],
+    "created_at": "2025-07-07T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "64076fd3-0c77-403d-b082-223f76bb1b60",
+    "title": "Architecture Design - 95f98667",
+    "type": "architecture_design",
+    "content": "Generic document content for architecture_design",
+    "metadata": {
+      "author": "TestAuthor_14",
+      "version": "3.1",
+      "tags": [
+        "neural_fields",
+        "testing",
+        "performance",
+        "production"
+      ],
+      "language": "de",
+      "word_count": 4949,
+      "complexity_score": 0.9265993687041525
+    },
+    "embeddings": [
+      0.14306901277138184,
+      -0.9242394351046608,
+      0.7073610326070052,
+      -0.9773751387741292,
+      -0.2777265523015249,
+      -0.41302098476510074,
+      -0.8120810730401473,
+      -0.239957145217786,
+      0.939949096494356,
+      -0.3451329500018461
+    ],
+    "created_at": "2025-06-03T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "e7f4862d-78f5-42c4-8728-25f091bc61ca",
+    "title": "Test Report - 79b82926",
+    "type": "test_report",
+    "content": "Generic document content for test_report",
+    "metadata": {
+      "author": "TestAuthor_5",
+      "version": "2.0",
+      "tags": [
+        "context_engineering",
+        "production",
+        "neural_fields"
+      ],
+      "language": "de",
+      "word_count": 4280,
+      "complexity_score": 0.1415352127874335
+    },
+    "embeddings": [
+      -0.6844007146657956,
+      0.05768132479328392,
+      -0.024993286304175744,
+      0.1267179526062574,
+      -0.727021310375487,
+      -0.660148056608836,
+      0.08151884533111686,
+      0.358322293790565,
+      -0.25783309071347427,
+      0.6696917570512104
+    ],
+    "created_at": "2025-08-28T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "89fde885-b940-4b04-a215-1eff17c48878",
+    "title": "Performance Analysis - 7ef530e7",
+    "type": "performance_analysis",
+    "content": "Generic document content for performance_analysis",
+    "metadata": {
+      "author": "TestAuthor_5",
+      "version": "3.4",
+      "tags": [
+        "analysis",
+        "documentation"
+      ],
+      "language": "de",
+      "word_count": 4453,
+      "complexity_score": 0.8871406473924908
+    },
+    "embeddings": [
+      0.43331560425056015,
+      -0.9747525237684636,
+      -0.757422643512246,
+      0.23336490727025594,
+      -0.08810746843777295,
+      0.5948670021377669,
+      0.0035148414939492056,
+      -0.4072853580352884,
+      -0.7538336061977442,
+      -0.2658968461838198
+    ],
+    "created_at": "2025-06-30T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "0fc9276e-1ade-46de-b6cd-6379756faa55",
+    "title": "Security Assessment - 1903d53a",
+    "type": "security_assessment",
+    "content": "Generic document content for security_assessment",
+    "metadata": {
+      "author": "TestAuthor_7",
+      "version": "1.7",
+      "tags": [
+        "neural_fields",
+        "documentation"
+      ],
+      "language": "de",
+      "word_count": 4039,
+      "complexity_score": 0.985746170417437
+    },
+    "embeddings": [
+      0.39179731366621917,
+      0.3122007442526371,
+      0.1173157477543727,
+      0.47236319552007755,
+      0.9062493186105502,
+      -0.19368125577874795,
+      -0.37531435809233926,
+      0.7077198842674257,
+      -0.6642011008000535,
+      -0.5045395622304576
+    ],
+    "created_at": "2025-08-07T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "b1a7b31e-387b-46dc-bdf0-22f56cdc54f8",
+    "title": "Neural Field Research - 61db0745",
+    "type": "neural_field_research",
+    "content": "\n            # Neural Field Analysis: ContextResonance\n            \n            ## Abstract\n            This research investigates the properties of ContextResonance in context engineering.\n            \n            ## Methodology\n            - Field initialization: Xavier\n            - Resonance measurement: Fourier Transform Analysis\n            - Convergence criteria: < 0.001 delta over 100 iterations\n            \n            ## Results\n            - Average resonance: 0.6603860921966342\n            - Stability coefficient: 0.930511132003638\n            - Memory retention: 92%\n            \n            ## Conclusions\n            The ContextResonance demonstrates 4221 performance under high-load production environment.\n            ",
+    "metadata": {
+      "author": "TestAuthor_13",
+      "version": "1.9",
+      "tags": [
+        "documentation",
+        "context_engineering",
+        "performance",
+        "testing",
+        "production"
+      ],
+      "language": "es",
+      "word_count": 1020,
+      "complexity_score": 0.3693821819135379
+    },
+    "embeddings": [
+      0.38109771116442803,
+      -0.010526422128222857,
+      -0.40567093987628877,
+      0.5787609058169239,
+      0.40305512786089204,
+      0.46374388103209374,
+      -0.5691105783997077,
+      0.6954978450385056,
+      -0.9789133895954047,
+      -0.23747147468927343
+    ],
+    "created_at": "2025-06-05T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "4e321695-1821-4d70-8f82-227050a66051",
+    "title": "Context Analysis - aee53dfd",
+    "type": "context_analysis",
+    "content": "Generic document content for context_analysis",
+    "metadata": {
+      "author": "TestAuthor_14",
+      "version": "1.1",
+      "tags": [
+        "context_engineering",
+        "performance",
+        "production"
+      ],
+      "language": "en",
+      "word_count": 118,
+      "complexity_score": 0.5028867435179639
+    },
+    "embeddings": [
+      -0.9805940710884227,
+      0.4657181823934404,
+      0.48600569912758407,
+      -0.6451376378531577,
+      0.8113103689065155,
+      0.9357110622997884,
+      -0.475197122789188,
+      0.7117890065934933,
+      -0.25496045438201187,
+      0.6000631372436376
+    ],
+    "created_at": "2025-06-13T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "72f6cefb-a300-4ce4-9540-1549f58cd6b2",
+    "title": "Technical Specification - 2f509f30",
+    "type": "technical_specification",
+    "content": "\n            # Technical Specification: WorkflowEngine\n            \n            ## Overview\n            This specification defines the implementation requirements for WorkflowEngine.\n            \n            ## Requirements\n            - Performance: 6184 requests per second\n            - Latency: < 66ms p99\n            - Availability: 99.95%\n            \n            ## Implementation Details\n            The system utilizes Custom Neural Engine for optimal performance. Key features include:\n            1. Automatic scaling\n            2. Real-time monitoring\n            3. Self-healing capabilities\n            \n            ## Neural Field Integration\n            Resonance threshold: 0.7322273350022088\n            Memory consolidation rate: 0.7886473338776055\n            ",
+    "metadata": {
+      "author": "TestAuthor_3",
+      "version": "1.1",
+      "tags": [
+        "documentation",
+        "production",
+        "analysis"
+      ],
+      "language": "ja",
+      "word_count": 3142,
+      "complexity_score": 0.7574600138299598
+    },
+    "embeddings": [
+      -0.29889173993643703,
+      0.9376593302149094,
+      -0.5123188910512608,
+      0.4571635171402757,
+      -0.5790530748572091,
+      -0.023294976743459594,
+      -0.7234505851894852,
+      0.9353205046854571,
+      -0.4946333874913007,
+      -0.3869450514749042
+    ],
+    "created_at": "2025-06-19T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "68fde03a-2d65-4957-97b9-0d18a6f5ec81",
+    "title": "Api Documentation - c1bbca76",
+    "type": "api_documentation",
+    "content": "\n            # API Endpoint: /api/context\n            \n            ## Description\n            Production-grade endpoint for enterprise operations\n            \n            ## Request\n            ```\n            DELETE /api/v1/documents/{id}\n            Content-Type: application/json\n            \n            {\n  \"example\": \"data\"\n}\n            ```\n            \n            ## Response\n            ```json\n            {\n  \"status\": \"success\",\n  \"data\": {}\n}\n            ```\n            \n            ## Error Codes\n            - 400: Invalid request\n            - 401: Unauthorized\n            - 500: Internal server error\n            ",
+    "metadata": {
+      "author": "TestAuthor_10",
+      "version": "2.9",
+      "tags": [
+        "neural_fields",
+        "context_engineering",
+        "performance",
+        "analysis"
+      ],
+      "language": "ja",
+      "word_count": 1293,
+      "complexity_score": 0.9241426373485179
+    },
+    "embeddings": [
+      0.8870147343822123,
+      -0.7527608544407758,
+      -0.5362442594304415,
+      -0.01496021683533244,
+      -0.0032223045607857603,
+      0.7377039292421734,
+      -0.23913540645853715,
+      -0.08631050031555643,
+      -0.5951334688531622,
+      -0.39472597420118194
+    ],
+    "created_at": "2025-06-12T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "16bfa638-a185-4d03-88f0-23cd93889647",
+    "title": "Code Review - 9a4009c6",
+    "type": "code_review",
+    "content": "Generic document content for code_review",
+    "metadata": {
+      "author": "TestAuthor_3",
+      "version": "1.5",
+      "tags": [
+        "analysis",
+        "production"
+      ],
+      "language": "ja",
+      "word_count": 2648,
+      "complexity_score": 0.5399253567470075
+    },
+    "embeddings": [
+      -0.11735072582529815,
+      -0.9424874770791334,
+      0.7123396548468963,
+      -0.20764125091963415,
+      -0.3192190282859684,
+      0.8748384585894089,
+      0.2526056848925413,
+      -0.9225763164174678,
+      0.09442334165478017,
+      0.09659954295028417
+    ],
+    "created_at": "2025-06-02T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "881a273d-e6df-46cb-be27-3a8a93922276",
+    "title": "Architecture Design - 7c91f3b4",
+    "type": "architecture_design",
+    "content": "Generic document content for architecture_design",
+    "metadata": {
+      "author": "TestAuthor_3",
+      "version": "1.4",
+      "tags": [
+        "context_engineering",
+        "testing",
+        "documentation"
+      ],
+      "language": "fr",
+      "word_count": 957,
+      "complexity_score": 0.19070110849843452
+    },
+    "embeddings": [
+      0.2674993546622253,
+      0.4740062850684754,
+      0.30780254730043266,
+      -0.4516781777133563,
+      0.5425603254163689,
+      0.9407984687507311,
+      -0.3222128252726526,
+      -0.6396213844483092,
+      0.2865153074273292,
+      0.34905963434415965
+    ],
+    "created_at": "2025-08-06T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "6ef68687-2162-43c3-a4fa-61fa64947df2",
+    "title": "Test Report - 3a501e6c",
+    "type": "test_report",
+    "content": "Generic document content for test_report",
+    "metadata": {
+      "author": "TestAuthor_16",
+      "version": "2.0",
+      "tags": [
+        "performance",
+        "context_engineering"
+      ],
+      "language": "fr",
+      "word_count": 1782,
+      "complexity_score": 0.5437245149719234
+    },
+    "embeddings": [
+      0.18881393195359797,
+      -0.5590191165041831,
+      0.41684408264027795,
+      0.4753397885557076,
+      0.4673118686306801,
+      0.35262329401442694,
+      0.3217635457291066,
+      0.5677604178618252,
+      -0.13747615883294384,
+      0.283639899734182
+    ],
+    "created_at": "2025-07-14T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "a1b3ca79-3cd2-4ccf-8d7c-bdf90c8e3096",
+    "title": "Performance Analysis - b157065a",
+    "type": "performance_analysis",
+    "content": "Generic document content for performance_analysis",
+    "metadata": {
+      "author": "TestAuthor_9",
+      "version": "2.7",
+      "tags": [
+        "analysis",
+        "context_engineering",
+        "testing",
+        "performance",
+        "neural_fields"
+      ],
+      "language": "de",
+      "word_count": 4734,
+      "complexity_score": 0.5480381045822277
+    },
+    "embeddings": [
+      0.1665647849057903,
+      0.03322104316256702,
+      0.699343352522896,
+      0.14015254961559553,
+      0.7475303620377747,
+      0.018098605716027727,
+      -0.1129792530038829,
+      0.41566066859985584,
+      0.5892839349611696,
+      0.6563362639242145
+    ],
+    "created_at": "2025-06-27T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "551a7ef0-be1a-47ed-87b0-ae591bcf57be",
+    "title": "Security Assessment - af840713",
+    "type": "security_assessment",
+    "content": "Generic document content for security_assessment",
+    "metadata": {
+      "author": "TestAuthor_8",
+      "version": "3.2",
+      "tags": [
+        "neural_fields",
+        "testing"
+      ],
+      "language": "de",
+      "word_count": 544,
+      "complexity_score": 0.2010828508570316
+    },
+    "embeddings": [
+      -0.7500828917352422,
+      -0.830301235144346,
+      -0.7788627343395718,
+      0.48183912548856656,
+      -0.09997053539786571,
+      -0.8399252452853767,
+      0.03772759507193091,
+      0.416473498777457,
+      -0.28477967734984544,
+      0.006137649921309052
+    ],
+    "created_at": "2025-08-01T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "1543ba14-1c0e-4554-9f65-867bfa2124ae",
+    "title": "Neural Field Research - 8f0502b3",
+    "type": "neural_field_research",
+    "content": "\n            # Neural Field Analysis: CollectiveMemory\n            \n            ## Abstract\n            This research investigates the properties of CollectiveMemory in context engineering.\n            \n            ## Methodology\n            - Field initialization: Custom Neural\n            - Resonance measurement: Fourier Transform Analysis\n            - Convergence criteria: < 0.001 delta over 100 iterations\n            \n            ## Results\n            - Average resonance: 0.6681038467274809\n            - Stability coefficient: 0.8036403962309547\n            - Memory retention: 90%\n            \n            ## Conclusions\n            The CollectiveMemory demonstrates 9775 performance under high-load production environment.\n            ",
+    "metadata": {
+      "author": "TestAuthor_12",
+      "version": "3.0",
+      "tags": [
+        "testing",
+        "context_engineering",
+        "neural_fields",
+        "analysis"
+      ],
+      "language": "fr",
+      "word_count": 3793,
+      "complexity_score": 0.5059970691551566
+    },
+    "embeddings": [
+      -0.2866010327591648,
+      -0.6954681779628433,
+      0.28412979157036733,
+      0.2634651176554017,
+      0.0914548511894071,
+      -0.2338746456999221,
+      -0.9966126369981021,
+      0.2571566646899255,
+      -0.010670712751120082,
+      0.5143860252494639
+    ],
+    "created_at": "2025-08-28T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "24aa8d28-c840-4873-b3b5-2362e70f54d0",
+    "title": "Context Analysis - 7c421c23",
+    "type": "context_analysis",
+    "content": "Generic document content for context_analysis",
+    "metadata": {
+      "author": "TestAuthor_19",
+      "version": "3.9",
+      "tags": [
+        "analysis",
+        "neural_fields",
+        "testing",
+        "production",
+        "performance"
+      ],
+      "language": "es",
+      "word_count": 3985,
+      "complexity_score": 0.4730140199561087
+    },
+    "embeddings": [
+      -0.3297064599575976,
+      -0.4916721596804674,
+      -0.6049131904471252,
+      0.7490906685802532,
+      -0.0340987301746587,
+      0.6614873769922072,
+      -0.9476717331430224,
+      0.43249522297523835,
+      -0.44219600376713664,
+      -0.13346868861170047
+    ],
+    "created_at": "2025-06-25T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "845d2bab-e158-4c67-b2b0-348c26d51d99",
+    "title": "Technical Specification - 132bcbe9",
+    "type": "technical_specification",
+    "content": "\n            # Technical Specification: WorkflowEngine\n            \n            ## Overview\n            This specification defines the implementation requirements for WorkflowEngine.\n            \n            ## Requirements\n            - Performance: 6486 requests per second\n            - Latency: < 73ms p99\n            - Availability: 99.99%\n            \n            ## Implementation Details\n            The system utilizes JAX for optimal performance. Key features include:\n            1. Automatic scaling\n            2. Real-time monitoring\n            3. Self-healing capabilities\n            \n            ## Neural Field Integration\n            Resonance threshold: 0.8311418470316461\n            Memory consolidation rate: 0.8701701870834275\n            ",
+    "metadata": {
+      "author": "TestAuthor_11",
+      "version": "1.9",
+      "tags": [
+        "context_engineering",
+        "documentation",
+        "performance",
+        "testing"
+      ],
+      "language": "ja",
+      "word_count": 2059,
+      "complexity_score": 0.6439448074520292
+    },
+    "embeddings": [
+      0.8669566384010405,
+      0.5650900767164482,
+      0.08737452610611851,
+      0.6214300890234203,
+      0.05354074255717678,
+      -0.9470971435979236,
+      0.9261410406247672,
+      0.7547954330365321,
+      0.42155151306984684,
+      -0.4236567939823601
+    ],
+    "created_at": "2025-07-03T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "399c466d-9f19-49a8-ab4a-f9f65c161a09",
+    "title": "Api Documentation - e27da93b",
+    "type": "api_documentation",
+    "content": "\n            # API Endpoint: /api/context\n            \n            ## Description\n            Production-grade endpoint for enterprise operations\n            \n            ## Request\n            ```\n            PUT /api/v1/documents/{id}\n            Content-Type: application/json\n            \n            {\n  \"example\": \"data\"\n}\n            ```\n            \n            ## Response\n            ```json\n            {\n  \"status\": \"success\",\n  \"data\": {}\n}\n            ```\n            \n            ## Error Codes\n            - 400: Invalid request\n            - 401: Unauthorized\n            - 500: Internal server error\n            ",
+    "metadata": {
+      "author": "TestAuthor_18",
+      "version": "2.0",
+      "tags": [
+        "documentation",
+        "performance"
+      ],
+      "language": "ja",
+      "word_count": 1278,
+      "complexity_score": 0.806754369515997
+    },
+    "embeddings": [
+      0.4594795093137707,
+      0.32806807552182304,
+      0.1388854364186265,
+      0.6647607177401602,
+      0.20808478883078463,
+      -0.34175528874292893,
+      0.4720560609968374,
+      0.5767561908813259,
+      -0.2543109831035548,
+      -0.7486298551836994
+    ],
+    "created_at": "2025-06-17T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "89f10987-3e36-4783-a25b-e4315ab2726b",
+    "title": "Code Review - ddd17686",
+    "type": "code_review",
+    "content": "Generic document content for code_review",
+    "metadata": {
+      "author": "TestAuthor_1",
+      "version": "2.8",
+      "tags": [
+        "analysis",
+        "neural_fields",
+        "documentation",
+        "performance",
+        "production"
+      ],
+      "language": "fr",
+      "word_count": 4546,
+      "complexity_score": 0.9672606469178295
+    },
+    "embeddings": [
+      0.013035873685214971,
+      -0.6220055361262813,
+      0.9746522994872151,
+      -0.2947341930681684,
+      -0.7494273082372491,
+      -0.33235768069628957,
+      0.4918914822454159,
+      0.6351952033258246,
+      0.29542348943041863,
+      -0.08378731965045749
+    ],
+    "created_at": "2025-07-09T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "ccdbf342-790e-41bb-8522-6257b2942516",
+    "title": "Architecture Design - ce43bfcf",
+    "type": "architecture_design",
+    "content": "Generic document content for architecture_design",
+    "metadata": {
+      "author": "TestAuthor_5",
+      "version": "1.5",
+      "tags": [
+        "context_engineering",
+        "performance",
+        "neural_fields",
+        "testing",
+        "analysis"
+      ],
+      "language": "en",
+      "word_count": 2883,
+      "complexity_score": 0.511210736705523
+    },
+    "embeddings": [
+      -0.7523704267157187,
+      0.8068810578593864,
+      -0.30216971978084994,
+      0.21738459798485965,
+      0.39614118458562575,
+      -0.42454278030831194,
+      0.4180558032954955,
+      -0.3443324963920744,
+      -0.4912394661858137,
+      -0.37407569682058006
+    ],
+    "created_at": "2025-07-13T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  },
+  {
+    "id": "327554e5-2017-40ba-9a42-be620bec1262",
+    "title": "Test Report - 3e39e67e",
+    "type": "test_report",
+    "content": "Generic document content for test_report",
+    "metadata": {
+      "author": "TestAuthor_17",
+      "version": "2.0",
+      "tags": [
+        "production",
+        "performance"
+      ],
+      "language": "ja",
+      "word_count": 4862,
+      "complexity_score": 0.9204087901216419
+    },
+    "embeddings": [
+      -0.49343254989366625,
+      0.9148525560424843,
+      0.35881338667712126,
+      -0.9396565010138114,
+      -0.7624734166884699,
+      -0.16436189922344058,
+      0.8906024615800037,
+      0.4432147088080931,
+      -0.22761673357434753,
+      0.36632360064239
+    ],
+    "created_at": "2025-07-15T02:58:23.490709",
+    "last_modified": "2025-08-30T02:58:23.490709"
+  }
+]

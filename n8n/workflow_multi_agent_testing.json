@@ -1,0 +1,859 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "start-manual",
+      "name": "Start (Manual)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [-800, 640]
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "set -euo pipefail; cd /root/automatos-testing; ./scripts/run_module_tests.sh agents || true"
+      },
+      "id": "test-agents",
+      "name": "Test: Agent Management APIs",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [-600, 400],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "ttzZzSoAJhfPWARF",
+          "name": "Automatos AI Server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "set -euo pipefail; cd /root/automatos-testing; ./scripts/run_module_tests.sh workflows || true"
+      },
+      "id": "test-workflows",
+      "name": "Test: Workflow Management APIs",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [-600, 500],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "ttzZzSoAJhfPWARF",
+          "name": "Automatos AI Server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "set -euo pipefail; cd /root/automatos-testing; ./scripts/run_module_tests.sh context || true"
+      },
+      "id": "test-context",
+      "name": "Test: Context Engineering APIs",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [-600, 600],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "ttzZzSoAJhfPWARF",
+          "name": "Automatos AI Server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "set -euo pipefail; cd /root/automatos-testing; ./scripts/run_module_tests.sh knowledge || true"
+      },
+      "id": "test-knowledge",
+      "name": "Test: Knowledge/Memory APIs",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [-600, 700],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "ttzZzSoAJhfPWARF",
+          "name": "Automatos AI Server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "set -euo pipefail; cd /root/automatos-testing; ./scripts/run_module_tests.sh playbooks || true"
+      },
+      "id": "test-playbooks",
+      "name": "Test: Multi-Agent System APIs",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [-600, 800],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "ttzZzSoAJhfPWARF",
+          "name": "Automatos AI Server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "set -euo pipefail; cd /root/automatos-testing; ./scripts/run_module_tests.sh settings || true"
+      },
+      "id": "test-settings",
+      "name": "Test: Security & Performance APIs",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [-600, 900],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "ttzZzSoAJhfPWARF",
+          "name": "Automatos AI Server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "set -euo pipefail; cd /root/automatos-testing; ./scripts/run_module_tests.sh analytics || true"
+      },
+      "id": "test-analytics",
+      "name": "Test: Analytics & Monitoring APIs",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [-600, 1000],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "ttzZzSoAJhfPWARF",
+          "name": "Automatos AI Server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "bash -lc \"python3 - <<'PY'\nimport json\npaths={'agents':'/root/reports/agents.json','workflows':'/root/reports/workflows.json','context':'/root/reports/context.json','knowledge':'/root/reports/knowledge.json','playbooks':'/root/reports/playbooks.json','settings':'/root/reports/settings.json','analytics':'/root/reports/analytics.json'}\nout={}\nfor k,p in paths.items():\n  try:\n    with open(p) as f: out[k]=json.load(f)\n  except Exception as e:\n    out[k]={'ok':False,'error':str(e),'path':p}\nprint(json.dumps(out))\nPY\""
+      },
+      "id": "collect-reports",
+      "name": "Collect: All Test Reports",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [-350, 640],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "ttzZzSoAJhfPWARF",
+          "name": "Automatos AI Server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate comprehensive test statistics\nconst originalStdout = $json.stdout || '{}';\nlet testReports = {};\n\ntry {\n  testReports = JSON.parse(originalStdout);\n} catch(e) {\n  console.log('Failed to parse stdout:', e.message);\n  testReports = {};\n}\n\nconst groups = ['agents','workflows','context','knowledge','playbooks','settings','analytics'];\nlet totalTests = 0, totalPassed = 0;\nconst moduleStats = [];\nconst allErrors = [];\n\n// Process each module\nfor (const group of groups) {\n  const report = testReports[group];\n  if (!report || report.ok === false) {\n    moduleStats.push({module: group, status: 'missing', error: 'No report found'});\n    continue;\n  }\n  \n  if (report.summary) {\n    const summary = report.summary;\n    const moduleTests = summary.total_tests || 0;\n    const modulePassed = summary.passed || 0;\n    const moduleRate = summary.success_rate || 0;\n    \n    totalTests += moduleTests;\n    totalPassed += modulePassed;\n    \n    moduleStats.push({\n      module: group,\n      tests: moduleTests,\n      passed: modulePassed,\n      failed: summary.failed || 0,\n      success_rate: moduleRate,\n      status: summary.status\n    });\n    \n    // Extract specific errors from detailed_results\n    if (report.detailed_results) {\n      for (const suite of report.detailed_results) {\n        if (suite.results) {\n          for (const test of suite.results) {\n            if (test.status === 'failed') {\n              allErrors.push({\n                module: group,\n                suite: suite.test_suite,\n                test: test.name,\n                error: test.error,\n                duration: test.duration\n              });\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\nconst overallSuccessRate = totalTests > 0 ? (totalPassed / totalTests) * 100 : 0;\nconst needsAnalysis = overallSuccessRate < 85 || allErrors.length > 0;\n\n// Categorize errors by type\nconst errorTypes = {\n  missing_endpoints: allErrors.filter(e => e.error && e.error.includes('404')),\n  validation_errors: allErrors.filter(e => e.error && e.error.includes('422')),\n  method_errors: allErrors.filter(e => e.error && e.error.includes('405')),\n  data_format_errors: allErrors.filter(e => e.error && (e.error.includes(\"'data'\") || e.error.includes('data field'))),\n  security_errors: allErrors.filter(e => e.error && e.error.includes('401') || e.error.includes('403') || e.error.includes('Expected 401/403')),\n  other_errors: allErrors.filter(e => e.error && !e.error.match(/404|422|405|'data'|data field|401|403/))\n};\n\nconsole.log(`Analysis Complete: ${totalPassed}/${totalTests} tests passed (${overallSuccessRate.toFixed(1)}%)`);\nconsole.log(`Error Breakdown: 404=${errorTypes.missing_endpoints.length}, 422=${errorTypes.validation_errors.length}, 405=${errorTypes.method_errors.length}, data=${errorTypes.data_format_errors.length}, security=${errorTypes.security_errors.length}, other=${errorTypes.other_errors.length}`);\n\nreturn [{\n  json: {\n    summary: {\n      totalTests,\n      totalPassed,\n      totalFailed: totalTests - totalPassed,\n      overallSuccessRate,\n      needsAnalysis\n    },\n    moduleStats,\n    errorAnalysis: {\n      totalErrors: allErrors.length,\n      errorTypes,\n      priorityOrder: [\n        {type: 'missing_endpoints', count: errorTypes.missing_endpoints.length, priority: 1},\n        {type: 'validation_errors', count: errorTypes.validation_errors.length, priority: 2},\n        {type: 'data_format_errors', count: errorTypes.data_format_errors.length, priority: 3},\n        {type: 'method_errors', count: errorTypes.method_errors.length, priority: 4},\n        {type: 'security_errors', count: errorTypes.security_errors.length, priority: 5},\n        {type: 'other_errors', count: errorTypes.other_errors.length, priority: 6}\n      ]\n    },\n    rawTestData: testReports,\n    sessionId: `multi-agent-${Date.now()}-${Math.random().toString(36).substr(2, 8)}`\n  }\n}];"
+      },
+      "id": "analyze-comprehensive",
+      "name": "Analyze: Comprehensive Test Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-150, 640]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are the **Test Results Supervisor** - the lead engineer coordinating a team of specialist AI agents to analyze and fix test failures in the Automatos AI platform.\n\n## Current Test Results Summary\n**Total Tests:** {{ $json.summary.totalTests }}\n**Passed:** {{ $json.summary.totalPassed }}\n**Failed:** {{ $json.summary.totalFailed }}\n**Success Rate:** {{ $json.summary.overallSuccessRate.toFixed(1) }}%\n**Session:** {{ $json.sessionId }}\n\n## Error Analysis Overview\n{{ JSON.stringify($json.errorAnalysis.priorityOrder, null, 2) }}\n\n## Module Breakdown\n{{ JSON.stringify($json.moduleStats, null, 2) }}\n\n## Your Team of Specialist Agents\n1. **Bug Analysis Agent** - Analyzes and categorizes ALL error types in detail\n2. **Code Fixer Agent** - Generates FastAPI code fixes for API issues\n3. **Blocker Reporter Agent** - Creates alerts for critical issues that need human intervention\n\n## Your Coordination Strategy\n1. **Always delegate to Bug Analysis Agent first** to get comprehensive error categorization\n2. **Based on Bug Analysis results, decide:**\n   - Send fixable issues (404, 422, 405, data format) to Code Fixer Agent\n   - Send blockers/complex issues to Blocker Reporter Agent\n3. **Coordinate the overall strategy** and ensure all error types are addressed\n\n## Decision Making\n- **Success Rate < 50%:** Critical situation, prioritize immediate fixes\n- **Success Rate 50-84%:** Standard workflow, systematic fixing\n- **Success Rate ≥ 85%:** Minor issues, focus on optimization\n\n## Instructions\n1. Start by asking Bug Analysis Agent to analyze the complete test failure data\n2. Review their categorization and impact assessment\n3. Delegate appropriate fixes to Code Fixer Agent\n4. Send any blockers or security issues to Blocker Reporter Agent\n5. Provide a final coordination summary\n\n**Begin by delegating to Bug Analysis Agent for comprehensive error analysis.**"
+      },
+      "id": "ai-supervisor",
+      "name": "AI Supervisor: Test Results Coordinator",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [100, 640]
+    },
+    {
+      "parameters": {
+        "name": "Bug Analysis Agent",
+        "description": "Analyzes test failures and categorizes all error types with impact assessment",
+        "promptType": "define",
+        "text": "=You are the **Bug Analysis Specialist** - an expert at analyzing test failures and categorizing ALL types of errors with detailed impact assessment.\n\n## Test Data to Analyze\n{{ JSON.stringify($fromAI('Complete test failure data for analysis', '', 'object'), null, 2) }}\n\n## Your Analysis Framework\n\n### 1. Error Categorization\nAnalyze and categorize EVERY error found:\n\n**API Endpoint Issues:**\n- 404 Not Found → Missing endpoints that need to be created\n- 405 Method Not Allowed → Wrong HTTP methods configured\n\n**Data Validation Issues:**\n- 422 Unprocessable Entity → Request/response validation problems\n- 'data' field errors → Response format inconsistencies\n- \"Response should contain data field\" → API wrapper missing\n\n**Security Issues:**\n- Authentication failures (401/403 expected but got 200)\n- Missing security headers\n- Access control problems\n\n**Performance Issues:**\n- Slow response times\n- Memory usage problems\n- Throughput issues\n\n**Infrastructure Issues:**\n- Database connectivity\n- Service availability\n- Configuration problems\n\n### 2. Impact Assessment\nFor each error category, provide:\n- **Count** of failures\n- **Affected modules**\n- **Business impact** (Critical/High/Medium/Low)\n- **Fix complexity** (Simple/Moderate/Complex)\n- **Dependencies** between issues\n\n### 3. Priority Matrix\nRank issues by:\n1. **Immediate fixes** (Simple API additions, format fixes)\n2. **Systematic fixes** (Multiple related endpoints)\n3. **Security fixes** (Authentication, authorization)\n4. **Performance fixes** (Optimization required)\n5. **Infrastructure fixes** (Requires system changes)\n\n### 4. Fixability Assessment\nClassify each issue as:\n- **Auto-fixable** → Can be resolved with code generation\n- **Manual-fixable** → Needs human developer intervention\n- **Blocker** → Requires architecture/infrastructure changes\n\n## Output Format\nProvide structured analysis:\n```json\n{\n  \"summary\": {\n    \"totalErrors\": number,\n    \"categoriesFound\": [...],\n    \"criticalIssues\": number,\n    \"autoFixableIssues\": number\n  },\n  \"errorCategories\": {\n    \"missing_endpoints\": {\n      \"count\": number,\n      \"impact\": \"Critical/High/Medium/Low\",\n      \"examples\": [...],\n      \"fixable\": \"auto/manual/blocker\"\n    },\n    // ... other categories\n  },\n  \"recommendations\": {\n    \"immediateActions\": [...],\n    \"systematicFixes\": [...],\n    \"manualReview\": [...]\n  },\n  \"riskAssessment\": \"...\"\n}\n```\n\n**Analyze ALL error types thoroughly - don't focus only on common ones!**"
+      },
+      "id": "bug-analysis-agent",
+      "name": "Bug Analysis Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [250, 400]
+    },
+    {
+      "parameters": {
+        "name": "Code Fixer Agent", 
+        "description": "Generates FastAPI code fixes for API endpoints and data format issues",
+        "promptType": "define",
+        "text": "=You are the **Code Fixer Specialist** - an expert FastAPI developer who generates precise code fixes for API issues.\n\n## Bug Analysis Results\n{{ $fromAI('Bug analysis results with categorized errors', '', 'object') }}\n\n## Your Code Generation Focus\n\n### 1. Missing Endpoints (404 Fixes)\nGenerate FastAPI route handlers:\n```python\n# Example structure for missing endpoints\n@router.get(\"/api/agents/{agent_id}/coordination-strategies\")\nasync def get_coordination_strategies(agent_id: int):\n    return {\"data\": {\"strategies\": [], \"agent_id\": agent_id}}\n```\n\n### 2. Data Format Issues\nEnsure all responses follow the {\"data\": result} pattern:\n```python\n# Fix response format\nreturn {\"data\": actual_result}  # Not just: return actual_result\n```\n\n### 3. HTTP Method Issues (405 Fixes)\nAdd missing HTTP methods to existing endpoints:\n```python\n# Add missing POST method\n@router.post(\"/api/agents/{agent_id}/skills\")\nasync def create_agent_skill(agent_id: int, skill_data: dict):\n    return {\"data\": {\"created\": True, \"agent_id\": agent_id}}\n```\n\n### 4. Validation Issues (422 Fixes)\nAdd proper Pydantic models and validation:\n```python\nfrom pydantic import BaseModel\n\nclass AgentRequest(BaseModel):\n    name: str\n    agent_type: str\n    skills: List[str] = []\n```\n\n## Code Generation Rules\n1. **Always use {\"data\": ...} response format**\n2. **Include proper HTTP status codes**\n3. **Add async/await patterns**\n4. **Include basic error handling**\n5. **Follow FastAPI best practices**\n6. **Add type hints and documentation**\n\n## Output Format\nGenerate a complete bash script that:\n```bash\n#!/bin/bash\nset -e\ncd /root/automatos-ai/orchestrator\n\n# Create feature branch\nBRANCH=\"api-fixes-$(date +%Y%m%d-%H%M%S)\"\ngit checkout -b \"$BRANCH\"\n\necho \"🔧 Adding missing API endpoints...\"\n\n# Generate specific fixes based on Bug Analysis results\n# Add missing endpoints to appropriate files\n# Update router registrations if needed\n# Restart application\n\necho \"✅ API fixes completed!\"\n```\n\n**Focus on the specific errors identified by Bug Analysis Agent - don't create generic fixes!**"
+      },
+      "id": "code-fixer-agent",
+      "name": "Code Fixer Agent",
+            "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [250, 500]
+    },
+    {
+      "parameters": {
+        "name": "Blocker Reporter Agent",
+        "description": "Creates detailed alerts for critical issues requiring human intervention", 
+        "promptType": "define",
+        "text": "=You are the **Blocker Reporter Specialist** - an expert at identifying critical issues that require human intervention and creating comprehensive alert reports.\n\n## Bug Analysis Results\n{{ $fromAI('Bug analysis with blocker identification', '', 'object') }}\n\n## Your Alerting Focus\n\n### 1. Critical Blockers\nIdentify issues that CANNOT be auto-fixed:\n- **Security vulnerabilities** requiring architecture changes\n- **Infrastructure failures** (database, connectivity)\n- **Complex business logic errors**\n- **Performance issues** requiring optimization\n- **Configuration problems** needing manual review\n\n### 2. Alert Prioritization\n- **P0 - System Down:** Critical infrastructure failures\n- **P1 - Security Risk:** Authentication, authorization issues\n- **P2 - Major Functionality:** Core features broken\n- **P3 - Minor Issues:** Non-critical feature problems\n\n### 3. Discord Alert Format\nCreate structured alerts:\n```markdown\n🚨 P{priority}: {Issue Category} - {Specific Problem}\n\n**Failed Tests:** {count} tests across {modules}\n**Error Details:** {specific error messages}\n**Root Cause:** {technical explanation}\n**Business Impact:** {what's broken for users}\n\n**Manual Actions Required:**\n1. {specific action with file paths}\n2. {specific command or change}\n3. {verification step}\n\n**Files to Check:** {exact file paths}\n**Estimated Fix Time:** {time estimate}\n**Session:** {session_id}\n```\n\n### 4. GitHub Issue Creation\nFor complex blockers, create detailed GitHub issues:\n- **Title:** Clear, searchable issue title\n- **Labels:** bug, blocker, priority/{level}\n- **Assignee:** Appropriate team member\n- **Description:** Full technical details and reproduction steps\n\n## Decision Logic\n- **Auto-fixable errors:** Don't alert, let Code Fixer handle\n- **Security issues:** Always alert with P1 priority\n- **Infrastructure problems:** Alert with context about dependencies\n- **Complex logic errors:** Alert with detailed analysis\n\n## Tools Available\n- **Discord Message:** Send urgent alerts to #issues-tracker\n- **GitHub Issue Creation:** Create detailed tracking issues\n\n**Only create alerts for issues that genuinely need human intervention!**"
+      },
+      "id": "blocker-reporter-agent", 
+      "name": "Blocker Reporter Agent",
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 1,
+      "position": [250, 600]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list", 
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [400, 640],
+      "id": "claude-supervisor",
+      "name": "Claude Supervisor Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GtbTWlV78oOccG7G",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514", 
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [400, 400],
+      "id": "claude-bug-analysis",
+      "name": "Claude Bug Analysis Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GtbTWlV78oOccG7G",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic", 
+      "typeVersion": 1.3,
+      "position": [400, 500],
+      "id": "claude-code-fixer",
+      "name": "Claude Code Fixer Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GtbTWlV78oOccG7G",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [400, 600],
+      "id": "claude-blocker-reporter", 
+      "name": "Claude Blocker Reporter Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GtbTWlV78oOccG7G",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Send urgent alerts to Discord #issues-tracker for critical blockers requiring immediate human attention",
+        "resource": "message",
+        "guildId": {
+          "__rl": true,
+          "value": "1400562549258453155",
+          "mode": "list",
+          "cachedResultName": "Automatos AI"
+        },
+        "channelId": {
+          "__rl": true,
+          "value": "1405555518067708026", 
+          "mode": "list",
+          "cachedResultName": "issues-tracker"
+        },
+        "content": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Discord alert message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.discordTool",
+      "typeVersion": 2,
+      "position": [550, 600],
+      "id": "discord-alerts",
+      "name": "Discord Alerts",
+      "credentials": {
+        "discordBotApi": {
+          "id": "MWeH3thIHEuDMblO",
+          "name": "Discord Bot account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "owner": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "list", 
+          "value": ""
+        },
+        "labels": [],
+        "assignees": []
+      },
+      "type": "n8n-nodes-base.githubTool",
+      "typeVersion": 1.1,
+      "position": [550, 700],
+      "id": "github-issues",
+      "name": "GitHub Issues",
+      "credentials": {
+        "githubApi": {
+          "id": "TJDs2pnNbxKg9tyu",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "cd /root && echo '{{ $('AI Supervisor: Test Results Coordinator').json.output }}' > /tmp/autofix_script.sh && chmod +x /tmp/autofix_script.sh && /tmp/autofix_script.sh"
+      },
+      "id": "execute-fixes",
+      "name": "Execute: Apply Generated Fixes",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [700, 640],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "ttzZzSoAJhfPWARF",
+          "name": "Automatos AI Server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "cd /root/automatos-ai/orchestrator && echo '🚀 Deploying updated application...' && docker-compose down --remove-orphans && docker-compose build --no-cache && docker-compose up -d && echo '✅ Application deployed successfully' && docker-compose ps"
+      },
+      "id": "deploy-restart",
+      "name": "Deploy: Restart Application",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [900, 640],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "ttzZzSoAJhfPWARF",
+          "name": "Automatos AI Server"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "http://206.81.0.227:8000/health",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "health-check",
+      "name": "Verify: Application Health Check",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1100, 640]
+    },
+    {
+      "parameters": {
+        "sessionTTL": 3600,
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
+      "typeVersion": 1.5,
+      "position": [550, 400],
+      "id": "redis-bug-analysis",
+      "name": "Redis Bug Analysis Memory",
+      "credentials": {
+        "redis": {
+          "id": "yITWWxItlw15UiB3",
+          "name": "Automatos Redis"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionTTL": 3600,
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
+      "typeVersion": 1.5,
+      "position": [550, 500],
+      "id": "redis-code-fixer",
+      "name": "Redis Code Fixer Memory",
+      "credentials": {
+        "redis": {
+          "id": "yITWWxItlw15UiB3",
+          "name": "Automatos Redis"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionTTL": 3600,
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
+      "typeVersion": 1.5,
+      "position": [550, 600],
+      "id": "redis-blocker-reporter",
+      "name": "Redis Blocker Reporter Memory",
+      "credentials": {
+        "redis": {
+          "id": "yITWWxItlw15UiB3",
+          "name": "Automatos Redis"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionTTL": 3600,
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
+      "typeVersion": 1.5,
+      "position": [400, 740],
+      "id": "redis-supervisor",
+      "name": "Redis Supervisor Memory",
+      "credentials": {
+        "redis": {
+          "id": "yITWWxItlw15UiB3",
+          "name": "Automatos Redis"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [700, 400],
+      "id": "claude-bug-analysis",
+      "name": "Claude Bug Analysis Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GtbTWlV78oOccG7G",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [700, 500],
+      "id": "claude-code-fixer",
+      "name": "Claude Code Fixer Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GtbTWlV78oOccG7G",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "claude-sonnet-4-20250514",
+          "cachedResultName": "Claude 4 Sonnet"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [700, 600],
+      "id": "claude-blocker-reporter",
+      "name": "Claude Blocker Reporter Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "GtbTWlV78oOccG7G",
+          "name": "Anthropic account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Start (Manual)": {
+      "main": [
+        [
+          {
+            "node": "Test: Agent Management APIs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Test: Workflow Management APIs", 
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Test: Context Engineering APIs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Test: Knowledge/Memory APIs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Test: Multi-Agent System APIs",
+            "type": "main", 
+            "index": 0
+          },
+          {
+            "node": "Test: Security & Performance APIs",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Test: Analytics & Monitoring APIs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test: Agent Management APIs": {
+      "main": [
+        [
+          {
+            "node": "Collect: All Test Reports",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test: Workflow Management APIs": {
+      "main": [
+        [
+          {
+            "node": "Collect: All Test Reports",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test: Context Engineering APIs": {
+      "main": [
+        [
+          {
+            "node": "Collect: All Test Reports",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test: Knowledge/Memory APIs": {
+      "main": [
+        [
+          {
+            "node": "Collect: All Test Reports",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test: Multi-Agent System APIs": {
+      "main": [
+        [
+          {
+            "node": "Collect: All Test Reports",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test: Security & Performance APIs": {
+      "main": [
+        [
+          {
+            "node": "Collect: All Test Reports",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Test: Analytics & Monitoring APIs": {
+      "main": [
+        [
+          {
+            "node": "Collect: All Test Reports",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect: All Test Reports": {
+      "main": [
+        [
+          {
+            "node": "Analyze: Comprehensive Test Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze: Comprehensive Test Results": {
+      "main": [
+        [
+          {
+            "node": "AI Supervisor: Test Results Coordinator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude Supervisor Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Supervisor: Test Results Coordinator",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude Bug Analysis Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Bug Analysis Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude Code Fixer Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Code Fixer Agent",
+            "type": "ai_languageModel", 
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude Blocker Reporter Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Blocker Reporter Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+        "AI Supervisor: Test Results Coordinator": {
+      "main": [
+        [
+          {
+            "node": "Execute: Apply Generated Fixes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute: Apply Generated Fixes": {
+      "main": [
+        [
+          {
+            "node": "Deploy: Restart Application",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deploy: Restart Application": {
+      "main": [
+        [
+          {
+            "node": "Verify: Application Health Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bug Analysis Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Supervisor: Test Results Coordinator",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code Fixer Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Supervisor: Test Results Coordinator",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Blocker Reporter Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Supervisor: Test Results Coordinator",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Discord Alerts": {
+      "ai_tool": [
+        [
+          {
+            "node": "Blocker Reporter Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Issues": {
+      "ai_tool": [
+        [
+          {
+            "node": "Blocker Reporter Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+
+    "Redis Supervisor Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Supervisor: Test Results Coordinator",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Bug Analysis Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Bug Analysis Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Code Fixer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Code Fixer Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Blocker Reporter Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Blocker Reporter Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}
